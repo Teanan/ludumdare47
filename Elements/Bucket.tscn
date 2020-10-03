@@ -4,29 +4,33 @@
 [ext_resource path="res://Assets/Sprites/goal-bucket.png" type="Texture" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 3.15617
-height = 0.0
+radius = 2.52524
+height = 14.8338
 
 [node name="Bucket" type="StaticBody2D"]
-position = Vector2( 0.45347, 0.0983772 )
+position = Vector2( -0.20204, 0.0515566 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.05, 0.05 )
+scale = Vector2( 0.6, 0.6 )
+z_index = 10
 texture = ExtResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( -2.52839, -3.09026 )
 build_mode = 1
-polygon = PoolVector2Array( -6.61628, -4.84669, -4.84851, 5.22958, -2.85768, 6.79766, 2.04857, 6.79766, 4.43227, 5.31797, 6.37682, -4.8025, 5.75809, -4.62572, 4.07982, 4.86016, 1.82982, 6.29766, -2.57643, 6.29766, -4.49496, 4.78764, -5.99756, -4.71411 )
+polygon = PoolVector2Array( -8.24571, -1.45163, -8.62029, 9.78568, -4.59359, 13.0632, 9.45305, 13.1569, 13.4797, 9.87932, 13.5734, -1.31116, 10.7172, -5.33786, 11.9346, 8.84924, 8.938, 11.6586, -3.89125, 11.4245, -5.76414, 9.36428, -5.67049, -5.15057 )
 
 [node name="Area" type="Area2D" parent="."]
 position = Vector2( -0.114536, 1.95928 )
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area"]
+position = Vector2( 0.187289, 2.43475 )
+rotation = 1.5708
 scale = Vector2( 1.09677, 1 )
 shape = SubResource( 1 )
 [connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
