@@ -1,20 +1,17 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Levels/Level.gd" type="Script" id=1]
 [ext_resource path="res://addons/GameTemplate/Assets/Fonts/m5x7_64.tres" type="DynamicFont" id=2]
 [ext_resource path="res://icon.png" type="Texture" id=3]
 [ext_resource path="res://Levels/player.gd" type="Script" id=4]
+[ext_resource path="res://Elements/Platform.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Elements/Ball.tscn" type="PackedScene" id=6]
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 1 )
 Next_Scene = "res://MainMenu/MainMenu.tscn"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0.662745, 1, 0.537255, 1 )
 
 [node name="Button" type="Button" parent="CanvasLayer"]
 anchor_left = 0.5
@@ -36,4 +33,10 @@ position = Vector2( 156.129, 131.574 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 3 )
 script = ExtResource( 4 )
+
+[node name="Ball" parent="." instance=ExtResource( 6 )]
+position = Vector2( 34.4822, 58.635 )
+
+[node name="RigidBody2D" parent="." instance=ExtResource( 5 )]
+position = Vector2( 48.0885, 133.504 )
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_Button_pressed"]
