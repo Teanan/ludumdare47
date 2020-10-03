@@ -63,14 +63,16 @@ isActive = true
 position = Vector2( 20.6653, 133.777 )
 
 [node name="Trampoline" parent="." instance=ExtResource( 4 )]
-position = Vector2( 85.0113, 133.865 )
+position = Vector2( 114.822, 133.568 )
+rotation = -0.0349066
 
 [node name="Platform" parent="." instance=ExtResource( 5 )]
-position = Vector2( 216.36, 39.6188 )
+position = Vector2( 224.528, 39.2825 )
 rotation = -0.139626
-scale = Vector2( 2, 0.5 )
+scale = Vector2( 2.479, 0.5 )
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
 autostart = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
