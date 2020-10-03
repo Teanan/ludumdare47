@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Levels/Level.gd" type="Script" id=1]
 [ext_resource path="res://Elements/géniteur.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Elements/Ball.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Levels/Piscine.gd" type="Script" id=4]
 [ext_resource path="res://Elements/Platform.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Elements/Trampoline.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Elements/Blower.tscn" type="PackedScene" id=8]
@@ -76,3 +77,10 @@ rotation = 1.5708
 [node name="Blower" parent="." instance=ExtResource( 8 )]
 position = Vector2( 277.476, 141.423 )
 rotation = -3.14159
+
+[node name="Piscine" type="Node" parent="."]
+script = ExtResource( 4 )
+
+[node name="GenitionTimer" type="Timer" parent="Piscine"]
+[connection signal="did_genit" from="Piscine" to="." method="update_poissons_hud"]
+[connection signal="timeout" from="Piscine/GenitionTimer" to="." method="_geniter"]
