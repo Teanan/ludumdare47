@@ -21,6 +21,7 @@ func _ready()->void:
 	preload_elmts()
 	
 	set_money(999)
+	update_poissons_hud()
 	
 	Hud.connect("buy_item", self, "_on_buy_item")
 
@@ -95,3 +96,11 @@ func preload_elmts():
 func set_money(_money):
 	money = _money
 	Hud.set_money(_money)
+	
+func update_poissons_hud():
+	Hud.set_poissons($Piscine.poissons)
+	
+func add_poisson():
+	print("dans le seau")
+	$Piscine.poissons += 1
+	update_poissons_hud()
