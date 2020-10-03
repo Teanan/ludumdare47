@@ -5,46 +5,47 @@
 [ext_resource path="res://Levels/Level.gd" type="Script" id=3]
 [ext_resource path="res://Elements/Bucket.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Levels/Piscine.gd" type="Script" id=5]
+[ext_resource path="res://Levels/Camera2D.gd" type="Script" id=6]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 3 )
 
 [node name="RigidBody2D" parent="." instance=ExtResource( 1 )]
-position = Vector2( 108.798, 36.0406 )
+position = Vector2( 928.798, 492.041 )
 rotation = 0.244346
 scale = Vector2( 2.19, 0.625 )
 
 [node name="RigidBody2D2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 253.469, 133.81 )
+position = Vector2( 1073.47, 589.81 )
 rotation = -0.836013
 scale = Vector2( 1.161, 0.722 )
 
 [node name="RigidBody2D3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 90.7693, 145.484 )
+position = Vector2( 910.769, 601.484 )
 rotation = 1.5708
 scale = Vector2( 0.826, 0.648 )
 
 [node name="RigidBody2D4" parent="." instance=ExtResource( 1 )]
-position = Vector2( 149.169, 142.153 )
+position = Vector2( 969.169, 598.153 )
 rotation = 0.169297
 scale = Vector2( 1, 0.71 )
 
 [node name="Bucket" parent="." instance=ExtResource( 4 )]
-position = Vector2( 57.5179, 119.9 )
+position = Vector2( 877.518, 575.9 )
 scale = Vector2( 1.5, 1.5 )
 
 [node name="RigidBody2D6" parent="." instance=ExtResource( 1 )]
-position = Vector2( 23.6934, 121.457 )
+position = Vector2( 843.693, 577.457 )
 rotation = 0.811578
 scale = Vector2( 0.594, 0.606 )
 
 [node name="RigidBody2D7" parent="." instance=ExtResource( 1 )]
-position = Vector2( 67.4095, 126.796 )
+position = Vector2( 887.409, 582.796 )
 rotation = -0.542797
 scale = Vector2( 0.594, 0.606 )
 
 [node name="géniteur" parent="." instance=ExtResource( 2 )]
-position = Vector2( 31.3688, 0.667419 )
+position = Vector2( 851.369, 456.667 )
 
 [node name="Piscine" type="Node" parent="."]
 script = ExtResource( 5 )
@@ -54,3 +55,11 @@ wait_time = 2.0
 [connection signal="ballEntered" from="Bucket" to="." method="add_poisson"]
 [connection signal="did_genit" from="Piscine" to="." method="update_poissons_hud"]
 [connection signal="timeout" from="Piscine/GenitionTimer" to="Piscine" method="_geniter"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 960, 540 )
+current = true
+zoom = Vector2( 0.2, 0.2 )
+script = ExtResource( 6 )
+[connection signal="niveauSup" from="." to="Camera2D" method="dezoom"]
+[connection signal="ballEntered" from="Bucket" to="." method="inc_poisson"]

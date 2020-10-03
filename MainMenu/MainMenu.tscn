@@ -32,30 +32,30 @@ custom_constants/margin_bottom = 16
 [node name="VBoxMain" type="VBoxContainer" parent="BG/MarginContainer"]
 margin_left = 16.0
 margin_top = 16.0
-margin_right = 304.0
-margin_bottom = 164.0
+margin_right = 1904.0
+margin_bottom = 1064.0
 size_flags_vertical = 3
 
 [node name="CenterLogo" type="CenterContainer" parent="BG/MarginContainer/VBoxMain"]
-margin_right = 288.0
+margin_right = 1888.0
 margin_bottom = 64.0
 
 [node name="Logo" type="TextureRect" parent="BG/MarginContainer/VBoxMain/CenterLogo"]
-margin_left = 112.0
-margin_right = 176.0
+margin_left = 912.0
+margin_right = 976.0
 margin_bottom = 64.0
 texture = ExtResource( 2 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="BG/MarginContainer/VBoxMain"]
 margin_top = 68.0
-margin_right = 288.0
-margin_bottom = 148.0
+margin_right = 1888.0
+margin_bottom = 1048.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="ButtonContainer" type="VBoxContainer" parent="BG/MarginContainer/VBoxMain/HBoxContainer"]
 margin_right = 55.0
-margin_bottom = 80.0
+margin_bottom = 980.0
 size_flags_vertical = 3
 custom_constants/separation = 1
 
@@ -80,8 +80,8 @@ text = "Exit"
 
 [node name="RightMargin" type="Control" parent="BG/MarginContainer/VBoxMain/HBoxContainer"]
 margin_left = 59.0
-margin_right = 288.0
-margin_bottom = 80.0
+margin_right = 1888.0
+margin_bottom = 980.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 [connection signal="pressed" from="BG/MarginContainer/VBoxMain/HBoxContainer/ButtonContainer/NewGame" to="." method="_on_NewGame_pressed"]

@@ -1,5 +1,7 @@
 extends Node2D
 
+signal niveauSup
+
 export (String, FILE, "*.tscn") var Next_Scene: String
 
 var elements = {}
@@ -7,6 +9,8 @@ var cursorElement: Node2D = null
 var cursorElementName: String
 var justCreated = false
 var money: int
+var poissonsReussis: int
+var seuils = [10, 20, 30, 40, 50]
 
 var cost = {
 	"Platform": 20,
@@ -15,6 +19,7 @@ var cost = {
 }
 
 func _ready()->void:
+	poissonsReussis = 0
 	Hud.visible = true
 	PauseMenu.can_show = true
 	
@@ -60,7 +65,8 @@ func _input(event):
 
 	if event is InputEventMouseMotion:
 		if cursorElement:
-			cursorElement.position = event.position
+			#cursorElement.position = event.position
+			cursorElement.position = get_local_mouse_position()
 
 func _on_buy_item(name):
 	if not name in elements:
@@ -104,3 +110,10 @@ func add_poisson():
 	print("dans le seau")
 	$Piscine.poissons += 1
 	update_poissons_hud()
+
+func inc_poisson(body):
+	if not body.is_in_group("balls"):
+		pass
+	poissonsReussis = poissonsReussis + 1
+	if poissonsReussis in seuils:
+		emit_signal("niveauSup")
