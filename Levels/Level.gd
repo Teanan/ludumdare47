@@ -65,5 +65,5 @@ func preload_elmts():
 	var element = elements_directory.get_next()
 	while element != "":
 		if ".tscn" in element:
-		    elements[element.replace(".tscn", "")] = load("res://Elements/" + element)
+			elements[element.replace(".tscn", "")] = load("res://Elements/" + element)
 		element = elements_directory.get_next()

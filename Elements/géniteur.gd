@@ -8,15 +8,17 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# À DÉCOMMENTER SI BESOIN DE TESTER : UNE BALLE PAR SECONDE !
-	#var timer = Timer.new()
-	#timer.connect("timeout",self,"_geniter")
-	#add_child(timer) #to process
-	#timer.start()
-	pass # Replace with function body.
+	# ctrl+K
+#	var timer = Timer.new()
+#	timer.connect("timeout",self,"_geniter")
+#	add_child(timer) #to process
+#	timer.start(
+	pass
 
 func _geniter():
 	var balle = load("res://Elements/Ball.tscn")
 	var noeud = balle.instance()
+	noeud.add_to_group("balls")
 	add_child(noeud)
 	pass
 	
