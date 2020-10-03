@@ -1,89 +1,95 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://addons/GameTemplate/GUI/Buttons/DefaultButton.tscn" type="PackedScene" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Elements/géniteur.tscn" type="PackedScene" id=2]
 [ext_resource path="res://MainMenu/MainMenu.gd" type="Script" id=3]
+[ext_resource path="res://Elements/Trampoline.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Elements/Platform.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Elements/Bucket.tscn" type="PackedScene" id=6]
+[ext_resource path="res://addons/GameTemplate/Assets/Fonts/m5x7_64.tres" type="DynamicFont" id=7]
 
 [sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.0941176, 0.0784314, 0.145098, 1 )
+bg_color = Color( 0.027451, 0.368627, 0.517647, 1 )
 
 [node name="MainMenu" type="CanvasLayer"]
 layer = 0
 script = ExtResource( 3 )
 First_Level = "res://Levels/niveau.tscn"
 
-[node name="BG" type="Panel" parent="."]
-pause_mode = 2
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="Panel" type="Panel" parent="."]
+light_mask = 16
+margin_right = 320.0
+margin_bottom = 180.0
 custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MarginContainer" type="MarginContainer" parent="BG"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_constants/margin_right = 16
-custom_constants/margin_top = 16
-custom_constants/margin_left = 16
-custom_constants/margin_bottom = 16
-
-[node name="VBoxMain" type="VBoxContainer" parent="BG/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 margin_left = 16.0
-margin_top = 16.0
+margin_top = 160.0
 margin_right = 304.0
-margin_bottom = 164.0
-size_flags_vertical = 3
-
-[node name="CenterLogo" type="CenterContainer" parent="BG/MarginContainer/VBoxMain"]
-margin_right = 288.0
-margin_bottom = 64.0
-
-[node name="Logo" type="TextureRect" parent="BG/MarginContainer/VBoxMain/CenterLogo"]
-margin_left = 112.0
-margin_right = 176.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
-
-[node name="HBoxContainer" type="HBoxContainer" parent="BG/MarginContainer/VBoxMain"]
-margin_top = 68.0
-margin_right = 288.0
-margin_bottom = 148.0
+margin_bottom = 174.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="ButtonContainer" type="VBoxContainer" parent="BG/MarginContainer/VBoxMain/HBoxContainer"]
-margin_right = 55.0
-margin_bottom = 80.0
-size_flags_vertical = 3
-custom_constants/separation = 1
-
-[node name="NewGame" parent="BG/MarginContainer/VBoxMain/HBoxContainer/ButtonContainer" groups=[
+[node name="NewGame" parent="HBoxContainer" groups=[
 "MainMenu",
 ] instance=ExtResource( 1 )]
-margin_right = 55.0
+margin_right = 93.0
 margin_bottom = 14.0
 text = "New Game"
 
-[node name="Options" parent="BG/MarginContainer/VBoxMain/HBoxContainer/ButtonContainer" instance=ExtResource( 1 )]
-margin_top = 15.0
-margin_right = 55.0
-margin_bottom = 29.0
+[node name="Options" parent="HBoxContainer" instance=ExtResource( 1 )]
+margin_left = 97.0
+margin_right = 190.0
+margin_bottom = 14.0
 text = "Options"
 
-[node name="Exit" parent="BG/MarginContainer/VBoxMain/HBoxContainer/ButtonContainer" instance=ExtResource( 1 )]
-margin_top = 30.0
-margin_right = 55.0
-margin_bottom = 44.0
+[node name="Exit" parent="HBoxContainer" instance=ExtResource( 1 )]
+margin_left = 194.0
+margin_right = 288.0
+margin_bottom = 14.0
 text = "Exit"
 
-[node name="RightMargin" type="Control" parent="BG/MarginContainer/VBoxMain/HBoxContainer"]
-margin_left = 59.0
-margin_right = 288.0
-margin_bottom = 80.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-[connection signal="pressed" from="BG/MarginContainer/VBoxMain/HBoxContainer/ButtonContainer/NewGame" to="." method="_on_NewGame_pressed"]
-[connection signal="pressed" from="BG/MarginContainer/VBoxMain/HBoxContainer/ButtonContainer/Options" to="." method="_on_Options_pressed"]
-[connection signal="pressed" from="BG/MarginContainer/VBoxMain/HBoxContainer/ButtonContainer/Exit" to="." method="_on_Exit_pressed"]
+[node name="Geniteur" parent="." instance=ExtResource( 2 )]
+position = Vector2( 286.474, 13.1522 )
+isActive = true
+
+[node name="Bucket" parent="." instance=ExtResource( 6 )]
+position = Vector2( 20.6653, 133.777 )
+
+[node name="Trampoline" parent="." instance=ExtResource( 4 )]
+position = Vector2( 85.0113, 133.865 )
+
+[node name="Platform" parent="." instance=ExtResource( 5 )]
+position = Vector2( 216.36, 39.6188 )
+rotation = -0.139626
+scale = Vector2( 2, 0.5 )
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 160.0
+margin_top = 63.0
+margin_right = 305.0
+margin_bottom = 149.0
+custom_fonts/normal_font = ExtResource( 7 )
+bbcode_enabled = true
+bbcode_text = "[center][wave amp=100 freq=2]Titre
+du
+jeu[/wave][/center]"
+text = "Titre
+du
+jeu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="HBoxContainer/NewGame" to="." method="_on_NewGame_pressed"]
+[connection signal="pressed" from="HBoxContainer/Options" to="." method="_on_Options_pressed"]
+[connection signal="pressed" from="HBoxContainer/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="timeout" from="Timer" to="Geniteur" method="_geniter"]
