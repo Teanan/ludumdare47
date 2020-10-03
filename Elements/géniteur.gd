@@ -2,6 +2,8 @@ extends Node2D
 
 export var isActive = false
 
+signal myPoissonDied
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	self.add_to_group("geniteurs")
@@ -12,6 +14,7 @@ func _geniter():
 		var balle = load("res://Elements/Ball.tscn")
 		var noeud = balle.instance()
 		noeud.add_to_group("balls")
+		noeud.connect("poissonDied",self,"myPoissonDied")
 		add_child(noeud)
 
 #var timer = Timer.new()
@@ -29,6 +32,10 @@ func toggleGeniteur():
 		get_child(1).modulate = '6c0d0d'
 
 func _on_Geniteur_input_event(viewport, event, shape_idx):
+	print(event)
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.is_pressed():
 		toggleGeniteur()
 	
+
+func myPoissonDied():
+	emit_signal("myPoissonDied")

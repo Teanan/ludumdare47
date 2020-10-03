@@ -65,5 +65,6 @@ current = true
 script = ExtResource( 6 )
 [connection signal="niveauSup" from="." to="Camera2D" method="dezoom"]
 [connection signal="ballEntered" from="Bucket" to="." method="add_poisson"]
+[connection signal="myPoissonDied" from="géniteur" to="." method="remove_poisson_died"]
 [connection signal="did_genit" from="Piscine" to="." method="update_poissons_hud"]
 [connection signal="timeout" from="Piscine/GenitionTimer" to="Piscine" method="_geniter"]

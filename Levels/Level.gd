@@ -105,13 +105,23 @@ func set_money(_money):
 	Hud.set_money(_money)
 	
 func update_poissons_hud():
-	Hud.set_poissons($Piscine.poissons)
+	Hud.set_poissons($Piscine.poissonsInPool, $Piscine.poissonsTotal)
 	
+# used by bucket
 func add_poisson():
-	print("dans le seau")
-	$Piscine.poissons += 1
+	$Piscine.poissonsInPool += 1
+	$Piscine.poissonsTotal += 1
 	update_poissons_hud()
-
-	poissonsReussis = poissonsReussis + 1
+	
+	poissonsReussis += 1
 	if poissonsReussis in seuils:
 		emit_signal("niveauSup")
+
+func add_poisson_max():
+	$Piscine.poissonsInPool += 1
+	$Piscine.poissonsTotal += 1
+	update_poissons_hud()
+
+func remove_poisson_died():
+	$Piscine.poissonsTotal -= 1
+	update_poissons_hud()

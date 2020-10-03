@@ -35,10 +35,20 @@ func set_money(value: int):
 	if value < 10:
 		money.text = \"0\" + money.text
 
-func set_poissons(value: int):
-	poissons.text = str(value)
-	if value < 10:
-		poissons.text = \"0\" + poissons.text
+func set_poissons(inPool: int, total: int):
+	var texte = \"\"
+	
+	if (inPool < 10):
+		texte += \"0\" + str(inPool)
+	else:
+		texte += str(inPool)
+	texte += \"/\"
+	if (total < 10):
+		texte += \"0\" + str(total)
+	else: 
+		texte += str(total)
+		
+	poissons.text = texte
 
 func _on_BuyItem1_pressed():
 	emit_signal(\"buy_item\", \"Platform\")
