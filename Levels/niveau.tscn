@@ -5,8 +5,20 @@
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Node2D" parent="." instance=ExtResource( 1 )]
-position = Vector2( 15.874, 96.4346 )
+[node name="bloc" parent="." instance=ExtResource( 1 )]
+position = Vector2( 11.0124, 23.026 )
+rotation = 0.127409
+scale = Vector2( 2.751, 0.654 )
+
+[node name="bloc2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 237.602, 143.829 )
+rotation = -0.762709
+scale = Vector2( 1.009, 0.553 )
 
 [node name="Ball" parent="." instance=ExtResource( 2 )]
-position = Vector2( 48.0139, 39.684 )
+position = Vector2( 34.0334, 7.34058 )
+
+[node name="bloc3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 59.4004, 125.475 )
+rotation = 0.345575
+scale = Vector2( 1.466, 0.615 )
