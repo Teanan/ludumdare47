@@ -40,7 +40,7 @@ func _on_BuyItem2_pressed():
 	emit_signal(\"buy_item\", \"Trampoline\")
 
 func _on_BuyItem3_pressed():
-	emit_signal(\"buy_item\", \"item_3\")
+	emit_signal(\"buy_item\", \"Blower\")
 
 func _on_BuyItem4_pressed():
 	emit_signal(\"buy_item\", \"item_4\")
@@ -166,7 +166,7 @@ margin_left = 148.0
 margin_top = 7.0
 margin_right = 200.0
 margin_bottom = 21.0
-text = "Item 3"
+text = "Pfffff"
 
 [node name="BuyItem4" parent="CanvasLayer/GUI/MarginContainer/VBoxContainer2/Top3" instance=ExtResource( 3 )]
 margin_left = 204.0

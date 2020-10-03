@@ -10,7 +10,8 @@ var money: int
 
 var cost = {
 	"Platform": 20,
-	"Trampoline": 50
+	"Trampoline": 50,
+	"Blower": 150
 }
 
 func _ready()->void:
@@ -39,7 +40,7 @@ func _process(delta):
 			if money >= c:
 				set_money(money - c)
 				cursorElement.modulate = Color(1, 1, 1, 1)
-				cursorElement.get_node("CollisionShape2D").disabled = false
+				cursorElement.disable_collision(false)
 				cursorElement = null;
 			else:
 				print("not enought money")
@@ -74,7 +75,7 @@ func _on_buy_item(name):
 		cursorElement = prefab.instance()
 		cursorElement.position = mouse
 		cursorElement.modulate = Color(1, 1, 1, 0.5)
-		cursorElement.get_node("CollisionShape2D").disabled = true
+		cursorElement.disable_collision(true)
 		cursorElementName = name
 		justCreated = true
 
