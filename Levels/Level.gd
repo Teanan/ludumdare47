@@ -4,13 +4,22 @@ export (String, FILE, "*.tscn") var Next_Scene: String
 
 var elements = {}
 var cursorElement: Node2D = null
+var cursorElementName: String
 var justCreated = false
+var money: int
+
+var cost = {
+	"Platform": 20,
+	"Trampoline": 50
+}
 
 func _ready()->void:
 	Hud.visible = true
 	PauseMenu.can_show = true
 	
 	preload_elmts()
+	
+	set_money(999)
 	
 	Hud.connect("buy_item", self, "_on_buy_item")
 
@@ -25,10 +34,15 @@ func _process(delta):
 	if Input.is_action_just_released("click"):
 		if justCreated:
 			justCreated = false
-		else:
-			cursorElement.modulate = Color(1, 1, 1, 1)
-			cursorElement.get_node("CollisionShape2D").disabled = false
-			cursorElement = null;
+		elif cursorElement:
+			var c = cost[cursorElementName]
+			if money >= c:
+				set_money(money - c)
+				cursorElement.modulate = Color(1, 1, 1, 1)
+				cursorElement.get_node("CollisionShape2D").disabled = false
+				cursorElement = null;
+			else:
+				print("not enought money")
 	if Input.is_action_just_released("cancel"):
 		remove_child(cursorElement)
 		cursorElement.queue_free()
@@ -61,6 +75,7 @@ func _on_buy_item(name):
 		cursorElement.position = mouse
 		cursorElement.modulate = Color(1, 1, 1, 0.5)
 		cursorElement.get_node("CollisionShape2D").disabled = true
+		cursorElementName = name
 		justCreated = true
 
 		add_child(cursorElement)
@@ -75,3 +90,7 @@ func preload_elmts():
 		if ".tscn" in element:
 			elements[element.replace(".tscn", "")] = load("res://Elements/" + element)
 		element = elements_directory.get_next()
+
+func set_money(_money):
+	money = _money
+	Hud.set_money(_money)
