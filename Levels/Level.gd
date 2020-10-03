@@ -26,7 +26,13 @@ func _process(delta):
 		if justCreated:
 			justCreated = false
 		else:
+			cursorElement.modulate = Color(1, 1, 1, 1)
+			cursorElement.get_node("CollisionShape2D").disabled = false
 			cursorElement = null;
+	if Input.is_action_just_released("cancel"):
+		remove_child(cursorElement)
+		cursorElement.queue_free()
+		cursorElement = null;
 
 func _input(event):	
 	if event is InputEventMouseButton:
@@ -53,6 +59,8 @@ func _on_buy_item(name):
 
 		cursorElement = prefab.instance()
 		cursorElement.position = mouse
+		cursorElement.modulate = Color(1, 1, 1, 0.5)
+		cursorElement.get_node("CollisionShape2D").disabled = true
 		justCreated = true
 
 		add_child(cursorElement)
