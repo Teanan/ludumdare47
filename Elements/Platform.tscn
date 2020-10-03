@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 43.3426, 5.1783 )
 
-[node name="RigidBody2D" type="RigidBody2D"]
+[node name="Platform" type="RigidBody2D"]
 mode = 1
 physics_material_override = ExtResource( 2 )
 script = ExtResource( 3 )

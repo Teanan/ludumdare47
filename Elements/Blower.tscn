@@ -1,168 +1,71 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Assets/Sprites/wind_texture_02.png" type="Texture" id=1]
-[ext_resource path="res://Assets/Sprites/wind_texture_01.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/water_spray_01.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Sprites/water_flow_01.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Sprites/blower_sprite.png" type="Texture" id=3]
 [ext_resource path="res://Assets/PhysicMaterials/wood_material.tres" type="PhysicsMaterial" id=4]
 [ext_resource path="res://Elements/Blower.gd" type="Script" id=5]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 10.5111
-height = 17.8869
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 16.3731, 10.7575 )
-
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 1 ) ],
+"frames": [ ExtResource( 1 ) ],
 "loop": true,
-"name": "blower_wind",
-"speed": 4.0
+"name": "default",
+"speed": 5.0
 } ]
 
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 7.20419, 21.3729 )
+
 [node name="Blower" type="Node2D"]
-position = Vector2( 0, -11.8921 )
+position = Vector2( 0, -6 )
+scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 5 )
 
-[node name="Fan" type="RigidBody2D" parent="."]
+[node name="faucet" type="RigidBody2D" parent="."]
 mode = 1
 physics_material_override = ExtResource( 4 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Fan"]
-position = Vector2( 3.8147e-06, 21.9127 )
-rotation = 1.5708
-shape = SubResource( 1 )
-
-[node name="Sprite" type="Sprite" parent="Fan"]
-position = Vector2( 3.8147e-06, 22.2312 )
-scale = Vector2( 0.618969, 0.641962 )
+[node name="Sprite" type="Sprite" parent="faucet"]
+position = Vector2( 0.0787468, 11.8369 )
 texture = ExtResource( 3 )
 
-[node name="Wind" type="Area2D" parent="."]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="faucet"]
+visible = false
+polygon = PoolVector2Array( 7.0742, -13.6697, 20.3041, 23.1957, 17.9257, 27.5066, 4.99309, 27.5066, -23.5479, 19.3308, -23.3992, -5.93986, -17.1559, -13.3724, -9.42604, -16.0481, -0.0610428, -16.0481 )
+
+[node name="water_spray" type="Area2D" parent="."]
 space_override = 1
+gravity_point = true
+gravity_vec = Vector2( 5, 0 )
 gravity = -200.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wind"]
-position = Vector2( 0.148655, 4.90923 )
-shape = SubResource( 2 )
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="water_spray"]
+position = Vector2( 11.2201, 75.8267 )
+rotation = 3.14159
+frames = SubResource( 1 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Wind"]
-position = Vector2( -43.3807, 34.765 )
-scale = Vector2( 0.188666, 0.21166 )
-frames = SubResource( 3 )
-animation = "blower_wind"
-playing = true
-offset = Vector2( 166.75, -108.415 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="water_spray"]
+polygon = PoolVector2Array( 19.2039, 59.9484, 43.1424, 59.6334, 42.5124, 72.8626, 32.4331, 81.6821, -7.56944, 82.312, -19.5781, 73.3062, -19.9526, 59.8214, 4.7148, 59.9484 )
 
-[node name="AnimatedSprite2" type="AnimatedSprite" parent="Wind"]
-position = Vector2( -43.3807, 34.765 )
-scale = Vector2( 0.188666, 0.21166 )
-frames = SubResource( 3 )
-animation = "blower_wind"
-playing = true
-offset = Vector2( 198.506, -108.415 )
+[node name="water_flow" type="Area2D" parent="."]
+space_override = 1
+gravity_point = true
+gravity_vec = Vector2( 5, 0 )
+gravity = -300.0
 
-[node name="AnimatedSprite3" type="AnimatedSprite" parent="Wind"]
-position = Vector2( -43.3807, 34.765 )
-scale = Vector2( 0.188666, 0.21166 )
-frames = SubResource( 3 )
-animation = "blower_wind"
-playing = true
-offset = Vector2( 293.844, -108.415 )
+[node name="AnimatedSprite" type="AnimatedSprite" parent="water_flow"]
+position = Vector2( 11.2516, 43.9211 )
+frames = SubResource( 2 )
 
-[node name="AnimatedSprite4" type="AnimatedSprite" parent="Wind"]
-position = Vector2( -43.3807, 34.765 )
-scale = Vector2( 0.188666, 0.21166 )
-frames = SubResource( 3 )
-animation = "blower_wind"
-playing = true
-offset = Vector2( 261.752, -108.415 )
-
-[node name="AnimatedSprite5" type="AnimatedSprite" parent="Wind"]
-position = Vector2( -43.3807, 34.765 )
-scale = Vector2( 0.188666, 0.21166 )
-frames = SubResource( 3 )
-animation = "blower_wind"
-playing = true
-offset = Vector2( 230.363, -108.206 )
-
-[node name="AnimatedSprite11" type="AnimatedSprite" parent="Wind"]
-position = Vector2( -43.3807, 21.9357 )
-scale = Vector2( 0.188666, 0.21166 )
-frames = SubResource( 3 )
-animation = "blower_wind"
-playing = true
-offset = Vector2( 166.75, -108.415 )
-
-[node name="AnimatedSprite12" type="AnimatedSprite" parent="Wind"]
-position = Vector2( -43.3807, 21.9357 )
-scale = Vector2( 0.188666, 0.21166 )
-frames = SubResource( 3 )
-animation = "blower_wind"
-playing = true
-offset = Vector2( 198.506, -108.415 )
-
-[node name="AnimatedSprite13" type="AnimatedSprite" parent="Wind"]
-position = Vector2( -43.3807, 21.9357 )
-scale = Vector2( 0.188666, 0.21166 )
-frames = SubResource( 3 )
-animation = "blower_wind"
-playing = true
-offset = Vector2( 293.844, -108.415 )
-
-[node name="AnimatedSprite14" type="AnimatedSprite" parent="Wind"]
-position = Vector2( -43.3807, 21.9357 )
-scale = Vector2( 0.188666, 0.21166 )
-frames = SubResource( 3 )
-animation = "blower_wind"
-playing = true
-offset = Vector2( 261.752, -108.415 )
-
-[node name="AnimatedSprite15" type="AnimatedSprite" parent="Wind"]
-position = Vector2( -43.3807, 21.9357 )
-scale = Vector2( 0.188666, 0.21166 )
-frames = SubResource( 3 )
-animation = "blower_wind"
-playing = true
-offset = Vector2( 230.363, -108.206 )
-
-[node name="AnimatedSprite6" type="AnimatedSprite" parent="Wind"]
-position = Vector2( 6.46303, 2.0084 )
-scale = Vector2( 0.188666, 0.21166 )
-frames = SubResource( 3 )
-animation = "blower_wind"
-playing = true
-offset = Vector2( -97.4404, 16 )
-
-[node name="AnimatedSprite7" type="AnimatedSprite" parent="Wind"]
-position = Vector2( 12.4544, 2.0084 )
-scale = Vector2( 0.188666, 0.21166 )
-frames = SubResource( 3 )
-animation = "blower_wind"
-playing = true
-offset = Vector2( -97.4404, 16 )
-
-[node name="AnimatedSprite8" type="AnimatedSprite" parent="Wind"]
-position = Vector2( 30.4415, 2.0084 )
-scale = Vector2( 0.188666, 0.21166 )
-frames = SubResource( 3 )
-animation = "blower_wind"
-playing = true
-offset = Vector2( -97.4404, 16 )
-
-[node name="AnimatedSprite9" type="AnimatedSprite" parent="Wind"]
-position = Vector2( 24.3868, 2.0084 )
-scale = Vector2( 0.188666, 0.21166 )
-frames = SubResource( 3 )
-animation = "blower_wind"
-playing = true
-offset = Vector2( -97.4404, 16 )
-
-[node name="AnimatedSprite10" type="AnimatedSprite" parent="Wind"]
-position = Vector2( 18.4648, 2.0526 )
-scale = Vector2( 0.188666, 0.21166 )
-frames = SubResource( 3 )
-animation = "blower_wind"
-playing = true
-offset = Vector2( -97.4404, 16 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="water_flow"]
+position = Vector2( 11.2484, 46.7421 )
+shape = SubResource( 3 )

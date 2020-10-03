@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Levels/Level.gd" type="Script" id=1]
 [ext_resource path="res://Elements/géniteur.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Elements/Ball.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Elements/Platform.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Elements/Trampoline.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Elements/Blower.tscn" type="PackedScene" id=8]
@@ -18,7 +19,7 @@ position = Vector2( -11.6673, 51.9724 )
 rotation = 1.0472
 
 [node name="Platform2" parent="géniteur" instance=ExtResource( 5 )]
-position = Vector2( 51.9724, 95.1059 )
+position = Vector2( 50.2046, 99.7021 )
 rotation = 2.0944
 scale = Vector2( 0.5, 1 )
 
@@ -28,7 +29,14 @@ rotation = 1.22173
 scale = Vector2( 0.5, 1 )
 
 [node name="Blower" parent="géniteur" instance=ExtResource( 8 )]
-position = Vector2( 30.052, 129.529 )
+position = Vector2( 59.0434, 157.106 )
+rotation = 2.35619
+
+[node name="Ball" parent="géniteur" instance=ExtResource( 3 )]
+position = Vector2( -2.12416, 20.4369 )
+
+[node name="Ball2" parent="géniteur" instance=ExtResource( 3 )]
+position = Vector2( 110.659, 15.1336 )
 
 [node name="géniteur2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 155.368, 12.4383 )
@@ -44,4 +52,27 @@ rotation = 1.91986
 scale = Vector2( 1.3, 1 )
 
 [node name="Blower" parent="géniteur2" instance=ExtResource( 8 )]
-position = Vector2( 20.1526, 110.437 )
+position = Vector2( 28.6378, 126.7 )
+rotation = 3.14159
+
+[node name="Ball" parent="." instance=ExtResource( 3 )]
+position = Vector2( 272.837, 58.6813 )
+
+[node name="RigidBody2D" parent="." instance=ExtResource( 5 )]
+position = Vector2( 274.251, 38.8823 )
+rotation = 0.00715336
+
+[node name="Blower3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 219.847, 97.2291 )
+rotation = -1.5708
+
+[node name="Ball" parent="Blower3" instance=ExtResource( 3 )]
+position = Vector2( 87.7023, 163.963 )
+
+[node name="Blower2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 323.084, 84.8547 )
+rotation = 1.5708
+
+[node name="Blower" parent="." instance=ExtResource( 8 )]
+position = Vector2( 277.476, 141.423 )
+rotation = -3.14159
