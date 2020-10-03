@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Levels/Level.gd" type="Script" id=1]
 [ext_resource path="res://addons/GameTemplate/Assets/Fonts/m5x7_64.tres" type="DynamicFont" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Levels/player.gd" type="Script" id=4]
 [ext_resource path="res://Elements/Platform.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Elements/Ball.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Elements/Trampoline.tscn" type="PackedScene" id=7]
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 1 )
@@ -29,14 +30,19 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer"]
-position = Vector2( 156.129, 131.574 )
+position = Vector2( 259.676, 130.171 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 3 )
 script = ExtResource( 4 )
+
+[node name="RigidBody2D" parent="CanvasLayer/Sprite" instance=ExtResource( 7 )]
+position = Vector2( -179.895, 87.1644 )
+scale = Vector2( 10, 1 )
 
 [node name="Ball" parent="." instance=ExtResource( 6 )]
 position = Vector2( 34.4822, 58.635 )
 
 [node name="RigidBody2D" parent="." instance=ExtResource( 5 )]
-position = Vector2( 48.0885, 133.504 )
+position = Vector2( 43.8793, 131.259 )
+rotation = 0.445059
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_Button_pressed"]
