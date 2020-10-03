@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://addons/GameTemplate/Assets/Fonts/m5x7_16.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/Sprites/shopping-cart.png" type="Texture" id=2]
+[ext_resource path="res://addons/GameTemplate/GUI/Buttons/DefaultButton.tscn" type="PackedScene" id=3]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node
@@ -8,6 +10,8 @@ script/source = "extends Node
 onready var hp: = $CanvasLayer/GUI/MarginContainer/VBoxContainer/Top/HP
 onready var score: = $CanvasLayer/GUI/MarginContainer/VBoxContainer/Top/Score
 onready var gui: = $CanvasLayer/GUI
+
+signal buy_item(name)
 
 var visible: = false setget set_visible
 
@@ -17,6 +21,21 @@ func _ready()->void:
 func set_visible(value: bool)->void:
 	visible = value
 	gui.visible = value
+
+func _on_BuyItem1_pressed():
+	emit_signal(\"buy_item\", \"item_1\")
+
+func _on_BuyItem2_pressed():
+	emit_signal(\"buy_item\", \"item_2\")
+
+func _on_BuyItem3_pressed():
+	emit_signal(\"buy_item\", \"item_3\")
+
+func _on_BuyItem4_pressed():
+	emit_signal(\"buy_item\", \"item_4\")
+
+func _on_BuyItem5_pressed():
+	emit_signal(\"buy_item\", \"item_5\")
 "
 
 [node name="Hud" type="Node"]
@@ -72,3 +91,63 @@ margin_bottom = 13.0
 custom_fonts/font = ExtResource( 1 )
 text = "Score: 0000"
 align = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/GUI/MarginContainer"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 316.0
+margin_bottom = 176.0
+alignment = 2
+
+[node name="Top3" type="HBoxContainer" parent="CanvasLayer/GUI/MarginContainer/VBoxContainer2"]
+margin_top = 144.0
+margin_right = 312.0
+margin_bottom = 172.0
+mouse_filter = 2
+alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GUI/MarginContainer/VBoxContainer2/Top3"]
+margin_right = 32.0
+margin_bottom = 28.0
+texture = ExtResource( 2 )
+stretch_mode = 1
+
+[node name="BuyItem1" parent="CanvasLayer/GUI/MarginContainer/VBoxContainer2/Top3" instance=ExtResource( 3 )]
+margin_left = 36.0
+margin_top = 7.0
+margin_right = 88.0
+margin_bottom = 21.0
+text = "Item 1"
+
+[node name="BuyItem2" parent="CanvasLayer/GUI/MarginContainer/VBoxContainer2/Top3" instance=ExtResource( 3 )]
+margin_left = 92.0
+margin_top = 7.0
+margin_right = 144.0
+margin_bottom = 21.0
+text = "Item 2"
+
+[node name="BuyItem3" parent="CanvasLayer/GUI/MarginContainer/VBoxContainer2/Top3" instance=ExtResource( 3 )]
+margin_left = 148.0
+margin_top = 7.0
+margin_right = 200.0
+margin_bottom = 21.0
+text = "Item 3"
+
+[node name="BuyItem4" parent="CanvasLayer/GUI/MarginContainer/VBoxContainer2/Top3" instance=ExtResource( 3 )]
+margin_left = 204.0
+margin_top = 7.0
+margin_right = 256.0
+margin_bottom = 21.0
+text = "Item 4"
+
+[node name="BuyItem5" parent="CanvasLayer/GUI/MarginContainer/VBoxContainer2/Top3" instance=ExtResource( 3 )]
+margin_left = 260.0
+margin_top = 7.0
+margin_right = 312.0
+margin_bottom = 21.0
+text = "Item 5"
+[connection signal="pressed" from="CanvasLayer/GUI/MarginContainer/VBoxContainer2/Top3/BuyItem1" to="." method="_on_BuyItem1_pressed"]
+[connection signal="pressed" from="CanvasLayer/GUI/MarginContainer/VBoxContainer2/Top3/BuyItem2" to="." method="_on_BuyItem2_pressed"]
+[connection signal="pressed" from="CanvasLayer/GUI/MarginContainer/VBoxContainer2/Top3/BuyItem3" to="." method="_on_BuyItem3_pressed"]
+[connection signal="pressed" from="CanvasLayer/GUI/MarginContainer/VBoxContainer2/Top3/BuyItem4" to="." method="_on_BuyItem4_pressed"]
+[connection signal="pressed" from="CanvasLayer/GUI/MarginContainer/VBoxContainer2/Top3/BuyItem5" to="." method="_on_BuyItem5_pressed"]
