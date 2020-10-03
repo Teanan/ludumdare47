@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Levels/Level.gd" type="Script" id=1]
 [ext_resource path="res://addons/GameTemplate/Assets/Fonts/m5x7_64.tres" type="DynamicFont" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Elements/Platform.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Elements/Ball.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Elements/Trampoline.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Elements/Blower.tscn" type="PackedScene" id=8]
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 1 )
@@ -19,10 +20,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -95.2949
-margin_top = -48.678
-margin_right = 80.7051
-margin_bottom = 8.32202
+margin_left = -30.2115
+margin_top = -83.204
+margin_right = 145.789
+margin_bottom = -26.2039
 custom_fonts/font = ExtResource( 2 )
 text = "GO BACK"
 __meta__ = {
@@ -35,14 +36,18 @@ scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 3 )
 script = ExtResource( 4 )
 
-[node name="RigidBody2D" parent="CanvasLayer/Sprite" instance=ExtResource( 7 )]
-position = Vector2( -179.895, 87.1644 )
-scale = Vector2( 10, 1 )
-
 [node name="Ball" parent="." instance=ExtResource( 6 )]
-position = Vector2( 34.4822, 58.635 )
+position = Vector2( 35.2759, 20.5374 )
+
+[node name="RigidBody2D2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 117.802, 112.554 )
+scale = Vector2( 1.5, 0.5 )
 
 [node name="RigidBody2D" parent="." instance=ExtResource( 5 )]
-position = Vector2( 43.8793, 131.259 )
+position = Vector2( 43.8793, 73.7157 )
 rotation = 0.445059
+
+[node name="Node2D" parent="." instance=ExtResource( 8 )]
+position = Vector2( 198.301, 101.828 )
+scale = Vector2( 2, 2 )
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_Button_pressed"]
