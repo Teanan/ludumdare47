@@ -1,5 +1,7 @@
 extends Node2D
 
+signal niveauSup
+
 export (String, FILE, "*.tscn") var Next_Scene: String
 
 var elements = {}
@@ -8,6 +10,7 @@ var cursorElementName: String
 var justCreated = false
 var money: int
 var poissonsReussis: int
+var seuils = [10, 20, 30, 40, 50]
 
 var cost = {
 	"Platform": 20,
@@ -100,3 +103,5 @@ func set_money(_money):
 
 func inc_poisson():
 	poissonsReussis = poissonsReussis + 1
+	if poissonsReussis in seuils:
+		emit_signal("niveauSup")
