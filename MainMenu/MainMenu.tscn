@@ -34,6 +34,47 @@ scale = Vector2( 3, 3 )
 texture = ExtResource( 8 )
 flip_h = true
 
+[node name="Geniteur" parent="." instance=ExtResource( 2 )]
+position = Vector2( 286.474, 13.1522 )
+isActive = true
+
+[node name="Bucket" parent="." instance=ExtResource( 6 )]
+position = Vector2( 20.6653, 133.777 )
+
+[node name="Trampoline" parent="." instance=ExtResource( 4 )]
+position = Vector2( 114.822, 133.568 )
+rotation = -0.0349066
+
+[node name="Platform" parent="." instance=ExtResource( 5 )]
+position = Vector2( 224.528, 39.2825 )
+rotation = -0.139626
+scale = Vector2( 2.479, 0.5 )
+
+[node name="Platform2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 10.4869, 184.364 )
+scale = Vector2( 1, 8 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 181.0
+margin_top = 33.0
+margin_right = 305.0
+margin_bottom = 157.0
+custom_fonts/normal_font = ExtResource( 7 )
+bbcode_enabled = true
+bbcode_text = " [center][wave amp=100 freq=2]Titre
+du
+jeu[/wave][/center]"
+text = " Titre
+du
+jeu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 margin_left = 16.0
 margin_top = 160.0
@@ -63,44 +104,7 @@ margin_left = 194.0
 margin_right = 288.0
 margin_bottom = 14.0
 text = "Exit"
-
-[node name="Geniteur" parent="." instance=ExtResource( 2 )]
-position = Vector2( 286.474, 13.1522 )
-isActive = true
-
-[node name="Bucket" parent="." instance=ExtResource( 6 )]
-position = Vector2( 20.6653, 133.777 )
-
-[node name="Trampoline" parent="." instance=ExtResource( 4 )]
-position = Vector2( 114.822, 133.568 )
-rotation = -0.0349066
-
-[node name="Platform" parent="." instance=ExtResource( 5 )]
-position = Vector2( 224.528, 39.2825 )
-rotation = -0.139626
-scale = Vector2( 2.479, 0.5 )
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
-autostart = true
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 160.0
-margin_top = 63.0
-margin_right = 305.0
-margin_bottom = 149.0
-custom_fonts/normal_font = ExtResource( 7 )
-bbcode_enabled = true
-bbcode_text = "[center][wave amp=100 freq=2]Titre
-du
-jeu[/wave][/center]"
-text = "Titre
-du
-jeu"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[connection signal="timeout" from="Timer" to="Geniteur" method="_geniter"]
 [connection signal="pressed" from="HBoxContainer/NewGame" to="." method="_on_NewGame_pressed"]
 [connection signal="pressed" from="HBoxContainer/Options" to="." method="_on_Options_pressed"]
 [connection signal="pressed" from="HBoxContainer/Exit" to="." method="_on_Exit_pressed"]
-[connection signal="timeout" from="Timer" to="Geniteur" method="_geniter"]
