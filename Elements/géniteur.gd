@@ -9,10 +9,10 @@ extends Node2D
 func _ready():
 	# À DÉCOMMENTER SI BESOIN DE TESTER : UNE BALLE PAR SECONDE !
 	# ctrl+K
-#	var timer = Timer.new()
-#	timer.connect("timeout",self,"_geniter")
-#	add_child(timer) #to process
-#	timer.start(
+	var timer = Timer.new()
+	timer.connect("timeout",self,"_geniter")
+	add_child(timer)
+	timer.start()
 	pass
 
 func _geniter():
