@@ -44,3 +44,4 @@ scale = Vector2( 0.594, 0.606 )
 
 [node name="géniteur" parent="." instance=ExtResource( 2 )]
 position = Vector2( 31.3688, 0.667419 )
+[connection signal="ballEntered" from="Bucket" to="." method="inc_poisson"]

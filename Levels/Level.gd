@@ -7,6 +7,7 @@ var cursorElement: Node2D = null
 var cursorElementName: String
 var justCreated = false
 var money: int
+var poissonsReussis: int
 
 var cost = {
 	"Platform": 20,
@@ -15,6 +16,7 @@ var cost = {
 }
 
 func _ready()->void:
+	poissonsReussis = 0
 	Hud.visible = true
 	PauseMenu.can_show = true
 	
@@ -95,3 +97,6 @@ func preload_elmts():
 func set_money(_money):
 	money = _money
 	Hud.set_money(_money)
+
+func inc_poisson():
+	poissonsReussis = poissonsReussis + 1
