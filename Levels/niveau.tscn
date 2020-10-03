@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Elements/Platform.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Elements/géniteur.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Elements/Bucket.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Levels/Piscine.gd" type="Script" id=5]
 [ext_resource path="res://Levels/Camera2D.gd" type="Script" id=6]
+[ext_resource path="res://Elements/Trampoline.tscn" type="PackedScene" id=7]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 3 )
@@ -29,6 +30,11 @@ scale = Vector2( 0.826, 0.648 )
 position = Vector2( 969.169, 598.153 )
 rotation = 0.169297
 scale = Vector2( 1, 0.71 )
+
+[node name="Trampoline" parent="." instance=ExtResource( 7 )]
+position = Vector2( 852, 472 )
+rotation = 0.436332
+scale = Vector2( 1, 1 )
 
 [node name="Bucket" parent="." instance=ExtResource( 4 )]
 position = Vector2( 877.518, 575.9 )

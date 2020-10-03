@@ -5,7 +5,7 @@
 [ext_resource path="res://Elements/Platform.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 43.3426, 5.1783 )
+extents = Vector2( 29.0825, 2.62119 )
 
 [node name="Platform" type="RigidBody2D"]
 mode = 1
@@ -13,10 +13,8 @@ physics_material_override = ExtResource( 2 )
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -0.0399139, 0.0353718 )
-scale = Vector2( 0.206441, 0.0329959 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.025238, 0 )
+position = Vector2( 0.0684052, -2.43475 )
 shape = SubResource( 1 )
