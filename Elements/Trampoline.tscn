@@ -5,7 +5,7 @@
 [ext_resource path="res://Elements/Trampoline.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 23.7644, 4.48136 )
+extents = Vector2( 29.1496, 2.32465 )
 
 [node name="Trampoline" type="RigidBody2D"]
 mode = 1
@@ -13,10 +13,8 @@ physics_material_override = ExtResource( 2 )
 script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 0.0625 )
+position = Vector2( -0.583992, -5.11 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -0.0496082, -1.66893e-06 )
-scale = Vector2( 1.48676, 0.299311 )
 texture = ExtResource( 1 )
