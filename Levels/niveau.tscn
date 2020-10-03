@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Elements/Platform.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Elements/géniteur.tscn" type="PackedScene" id=2]
@@ -52,14 +52,12 @@ script = ExtResource( 5 )
 
 [node name="GenitionTimer" type="Timer" parent="Piscine"]
 wait_time = 2.0
-[connection signal="ballEntered" from="Bucket" to="." method="add_poisson"]
-[connection signal="did_genit" from="Piscine" to="." method="update_poissons_hud"]
-[connection signal="timeout" from="Piscine/GenitionTimer" to="Piscine" method="_geniter"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 960, 540 )
 current = true
-zoom = Vector2( 0.2, 0.2 )
 script = ExtResource( 6 )
 [connection signal="niveauSup" from="." to="Camera2D" method="dezoom"]
-[connection signal="ballEntered" from="Bucket" to="." method="inc_poisson"]
+[connection signal="ballEntered" from="Bucket" to="." method="add_poisson"]
+[connection signal="did_genit" from="Piscine" to="." method="update_poissons_hud"]
+[connection signal="timeout" from="Piscine/GenitionTimer" to="Piscine" method="_geniter"]

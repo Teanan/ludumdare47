@@ -10,7 +10,7 @@ var cursorElementName: String
 var justCreated = false
 var money: int
 var poissonsReussis: int
-var seuils = [10, 20, 30, 40, 50]
+var seuils = [3, 6, 9, 12]
 
 var cost = {
 	"Platform": 20,
@@ -51,9 +51,10 @@ func _process(delta):
 			else:
 				print("not enought money")
 	if Input.is_action_just_released("cancel"):
-		remove_child(cursorElement)
-		cursorElement.queue_free()
-		cursorElement = null;
+		if cursorElement:
+			remove_child(cursorElement)
+			cursorElement.queue_free()
+			cursorElement = null;
 
 func _input(event):	
 	if event is InputEventMouseButton:
@@ -111,9 +112,6 @@ func add_poisson():
 	$Piscine.poissons += 1
 	update_poissons_hud()
 
-func inc_poisson(body):
-	if not body.is_in_group("balls"):
-		pass
 	poissonsReussis = poissonsReussis + 1
 	if poissonsReussis in seuils:
 		emit_signal("niveauSup")
