@@ -10,6 +10,7 @@ radius = 4.22992
 position = Vector2( -0.00501823, -0.00103998 )
 rotation = 0.00715336
 physics_material_override = ExtResource( 2 )
+gravity_scale = 4.0
 __meta__ = {
 "_edit_group_": true
 }
