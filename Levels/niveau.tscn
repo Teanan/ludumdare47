@@ -4,12 +4,10 @@
 [ext_resource path="res://Elements/Ball.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Levels/Level.gd" type="Script" id=3]
 [ext_resource path="res://Elements/Bucket.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Elements/géniteur.tscn" type="PackedScene" id=2]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 3 )
-
-[node name="Ball" parent="." instance=ExtResource( 2 )]
-position = Vector2( 34.0334, 7.34058 )
 
 [node name="RigidBody2D" parent="." instance=ExtResource( 1 )]
 position = Vector2( 108.798, 36.0406 )
@@ -34,3 +32,16 @@ scale = Vector2( 1, 0.71 )
 [node name="Bucket" parent="." instance=ExtResource( 4 )]
 position = Vector2( 57.5179, 119.9 )
 scale = Vector2( 1.5, 1.5 )
+
+[node name="RigidBody2D6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 23.6934, 121.457 )
+rotation = 0.811578
+scale = Vector2( 0.594, 0.606 )
+
+[node name="RigidBody2D7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 67.4095, 126.796 )
+rotation = -0.542797
+scale = Vector2( 0.594, 0.606 )
+
+[node name="géniteur" parent="." instance=ExtResource( 2 )]
+position = Vector2( 31.3688, 0.667419 )
