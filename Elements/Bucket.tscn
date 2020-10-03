@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Elements/Bucket.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sprites/goal-bucket.png" type="Texture" id=2]
+
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 4.47316
+height = 1.37543
+
+[node name="Bucket" type="StaticBody2D"]
+position = Vector2( 0.45347, 0.0983772 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.05, 0.05 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+build_mode = 1
+polygon = PoolVector2Array( -6.61628, -4.84669, -4.84851, 5.22958, -2.85768, 6.79766, 2.04857, 6.79766, 4.43227, 5.31797, 6.37682, -4.8025, 5.75809, -4.62572, 4.07982, 4.86016, 1.82982, 6.29766, -2.57643, 6.29766, -4.49496, 4.78764, -5.99756, -4.71411 )
+
+[node name="Area" type="Area2D" parent="."]
+position = Vector2( -0.15625, 1.125 )
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area"]
+scale = Vector2( 1.09677, 1 )
+shape = SubResource( 1 )
+[connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
