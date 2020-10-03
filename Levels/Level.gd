@@ -64,7 +64,8 @@ func _input(event):
 
 	if event is InputEventMouseMotion:
 		if cursorElement:
-			cursorElement.position = event.position
+			#cursorElement.position = event.position
+			cursorElement.position = get_local_mouse_position()
 
 func _on_buy_item(name):
 	if not name in elements:
@@ -101,7 +102,9 @@ func set_money(_money):
 	money = _money
 	Hud.set_money(_money)
 
-func inc_poisson():
+func inc_poisson(body):
+	if not body.is_in_group("balls"):
+		pass
 	poissonsReussis = poissonsReussis + 1
 	if poissonsReussis in seuils:
 		emit_signal("niveauSup")
