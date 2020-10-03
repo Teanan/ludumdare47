@@ -1,16 +1,21 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Elements/géniteur.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sprites/wood_texture.png" type="Texture" id=2]
 
-[node name="géniteur" type="Node2D"]
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 5.005, 5.01051 )
+
+[node name="Geniteur" type="Area2D"]
+position = Vector2( 22.1825, 11.323 )
 script = ExtResource( 1 )
 
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -5.0
-margin_top = -5.0
-margin_right = 5.0
-margin_bottom = 5.0
-color = Color( 0.423529, 0.0509804, 0.0509804, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0.423529, 0.0509804, 0.0509804, 1 )
+position = Vector2( 0.0131378, 0 )
+scale = Vector2( 0.0238134, 0.032 )
+texture = ExtResource( 2 )
+[connection signal="input_event" from="." to="." method="_on_Geniteur_input_event"]
