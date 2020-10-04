@@ -62,6 +62,7 @@ func _process(delta):
 				cursorElement.canBeDestroyed = true
 				cursorElement.connect("wasDestroyed", self, "refund_object")
 				cursorElement = null;
+				Hud.set_shop_visible(true)
 			else:
 				print("not enought money")
 	if Input.is_action_just_released("cancel"):
@@ -69,6 +70,7 @@ func _process(delta):
 			remove_child(cursorElement)
 			cursorElement.queue_free()
 			cursorElement = null;
+			Hud.set_shop_visible(true)
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -103,6 +105,8 @@ func _on_buy_item(name):
 		if cursorElement:
 			remove_child(cursorElement)
 			cursorElement.queue_free()
+
+		Hud.set_shop_visible(false)
 
 		var prefab = elements[name]
 

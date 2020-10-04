@@ -22,6 +22,7 @@ signal buy_item(name)
 signal buy_fish(amount)
 
 var visible: = false setget set_visible
+var shop_visible: = false setget set_shop_visible
 
 func _ready()->void:
 	gui.visible = visible
@@ -29,6 +30,9 @@ func _ready()->void:
 func set_visible(value: bool)->void:
 	visible = value
 	gui.visible = value
+
+func set_shop_visible(value: bool)->void:
+	$CanvasLayer/GUI/MarginContainer/VBoxContainer2.visible = value
 
 func set_money(value: int):
 	money.text = str(value)
