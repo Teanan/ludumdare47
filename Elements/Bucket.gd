@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-signal ballEntered
+signal ballEntered(node)
 
 var rng = RandomNumberGenerator.new()
 
@@ -18,5 +18,5 @@ func _on_Area_body_entered(body):
 		if plouf == 4:
 			$PloufPlayer4.play()
 
-		emit_signal("ballEntered")
+		emit_signal("ballEntered", self)
 		body.queue_free()

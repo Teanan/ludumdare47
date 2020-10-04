@@ -63,7 +63,9 @@ func _process(delta):
 				cursorElement.connect("wasDestroyed", self, "refund_object")
 				cursorElement = null;
 				Hud.set_shop_visible(true)
+				popup("-" + str(c), Color(255, 0, 0), get_local_mouse_position())
 			else:
+				popup("not enought money!", Color(255, 0, 0), get_local_mouse_position())
 				print("not enought money")
 	if Input.is_action_just_released("cancel"):
 		if cursorElement:
@@ -127,6 +129,9 @@ func _on_buy_fish(amount: int):
 	if money >= c:
 		set_money(money - c)
 		add_poisson_max(amount)
+		popup("-" + str(c), Color(255, 0, 0), get_local_mouse_position())
+	else:
+		popup("not enought money!", Color(255, 0, 0), get_local_mouse_position())
 
 func preload_elmts():
 	var elements_directory = Directory.new()
@@ -147,10 +152,11 @@ func update_poissons_hud():
 	Hud.set_poissons($Piscine.poissonsInPool, $Piscine.poissonsTotal)
 
 # used by bucket
-func poisson_reached_bucket():
+func poisson_reached_bucket(poissonNode):
 	$Piscine.poissonsInPool += 1
 	update_poissons_hud()
 
+	popup("+" + str(moneyPerPoisson), Color(0, 255, 0), poissonNode.position)
 	set_money(money + moneyPerPoisson)
 
 	poissonsReussis += 1
@@ -172,3 +178,11 @@ func remove_poisson_died():
 func refund_object(body):
 	var c = cost[body.objectType]
 	set_money(money + (c/2))
+	popup("+" + str(c/2), Color(0, 255, 0), get_local_mouse_position())
+
+func popup(text, color, pos):
+	var t = load("res://Elements/Text.tscn").instance()
+	add_child(t)
+	t.position = pos
+	t.set_floating_text(text)
+	t.set_floating_color(color)
