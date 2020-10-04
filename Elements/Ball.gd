@@ -11,6 +11,12 @@ func _ready():
 	rng.randomize()
 
 func _free():
+	if (randi()%2):
+		$AudioAeiou1.play()
+		yield($AudioAeiou1, "finished")
+	else:
+		$AudioAeiou2.play()
+		yield($AudioAeiou2, "finished")
 	emit_signal("poissonDied")
 	self.queue_free()
 
