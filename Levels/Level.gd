@@ -4,6 +4,8 @@ signal niveauSup
 
 export (String, FILE, "*.tscn") var Next_Scene: String
 
+const ROTATE_STEP = PI / 8.0;
+
 var elements = {}
 var cursorElement: Node2D = null
 var cursorElementName: String
@@ -60,9 +62,9 @@ func _input(event):
 	if event is InputEventMouseButton:
 		if event.is_pressed() and cursorElement:
 			if event.button_index == BUTTON_WHEEL_UP:
-				cursorElement.rotate(0.2)
+				cursorElement.rotate(ROTATE_STEP)
 			if event.button_index == BUTTON_WHEEL_DOWN:
-				cursorElement.rotate(-0.2)
+				cursorElement.rotate(-ROTATE_STEP)
 
 	if event is InputEventMouseMotion:
 		if cursorElement:
@@ -86,6 +88,9 @@ func _on_buy_item(name):
 		cursorElement.disable_collision(true)
 		cursorElementName = name
 		justCreated = true
+
+		if name == "Blower":
+			cursorElement.rotate(PI)
 
 		add_child(cursorElement)
 
