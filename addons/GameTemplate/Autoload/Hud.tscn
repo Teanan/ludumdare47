@@ -19,6 +19,7 @@ onready var money: = $CanvasLayer/GUI/MarginContainer/VBoxContainer/Top/TopRight
 onready var poissons: = $CanvasLayer/GUI/MarginContainer/VBoxContainer/Top/TopRight/PoissonsWrapper/Poissons
 onready var gui: = $CanvasLayer/GUI
 onready var hide: = $CanvasLayer/GUI/MarginContainer/VBoxContainer2/Hide
+onready var topr: = $CanvasLayer/GUI/MarginContainer/VBoxContainer/Top/TopRight
 
 signal buy_item(name)
 signal buy_fish(amount)
@@ -53,7 +54,7 @@ func set_money(value: int):
 
 var slope = (1.0 - 0.0) / (50.0 - 20.0)
 func _process(delta):
-	var vec = money.get_local_mouse_position().length()
+	var vec = (topr.get_local_mouse_position() - topr.rect_size / 2.0).length()
 	var output = 0.0 + slope * (vec - 20.0)
 	output = clamp(output, 0.0, 1.0)
 	$CanvasLayer/GUI/MarginContainer/VBoxContainer.modulate = Color(1, 1, 1, output)
