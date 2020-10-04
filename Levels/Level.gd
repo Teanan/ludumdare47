@@ -26,8 +26,17 @@ var cost = {
 	"Trampoline": 50,
 	"conveyor": 75,
 	"Blower": 150,
-	"Fish": 25
+	"Fish": 25,
 }
+
+var geniteurCost = [
+	0,
+	50,
+	100,
+	200,
+	500,
+	500,
+]
 
 func _ready()->void:
 
@@ -148,10 +157,18 @@ func _on_buy_fish(amount: int):
 		popup("not enought money!", Color(255, 0, 0), get_local_mouse_position())
 
 func _on_buy_genitor(genitor):
-	# TODO add money logic
-	genitor.toggleGeniteur()
-	chainePoissons = 0
-	geniteursActifs += 1
+	var c = geniteurCost[currentNiveau]
+	if money >= c:
+		set_money(money - c)
+		genitor.toggleGeniteur()
+		chainePoissons = 0
+		geniteursActifs += 1
+		popup("-" + str(c), Color(255, 0, 0), get_local_mouse_position())
+
+func refresh_genitor_prices():
+	var geniteurs = get_tree().get_nodes_in_group("geniteurs")
+	for geniteur in geniteurs:
+		geniteur._update_price(geniteurCost[currentNiveau])
 
 func preload_elmts():
 	var elements_directory = Directory.new()
@@ -185,12 +202,16 @@ func poisson_reached_bucket(poissonNode):
 
 	if chainePoissons >= seuilsPoissons[currentNiveau] && geniteursActifs >= seuilsGeniteurs[currentNiveau]:
 		chainePoissons = 0
-		currentNiveau += 1
+		level_up()
 		$Camera.set_zoom_level(currentNiveau)
 	
 	if currentNiveau == 5 and chainePoissons > 100 and geniteursActifs == totalGeniteurs:
 		chainePoissons = 0
 		$Piscine.set_timer($Piscine.get_timer() * 0.9)
+
+func level_up():
+	currentNiveau += 1
+	refresh_genitor_prices()
 
 func add_poisson_max(amount: int):
 	$Piscine.poissonsInPool += amount
@@ -201,9 +222,12 @@ func remove_poisson_died():
 	chainePoissons = 0
 	$Piscine.poissonsTotal -= 1
 	update_poissons_hud()
-	if not $Piscine.poissonsTotal:
-		get_tree().change_scene("res://Levels/défaite.tscn")
-		ChefOrchestre.stop()
+	if not $Piscine.poissonsTotal and money < cost["Fish"]:
+		game_over()
+
+func game_over(): 
+	get_tree().change_scene("res://Levels/défaite.tscn")
+	ChefOrchestre.stop()
 
 func refund_object(body):
 	var c = cost[body.objectType]

@@ -1,7 +1,7 @@
 extends Node2D
 
 export var isActive = false
-export var price = "500"
+export var defaultPrice = "50"
 
 signal myPoissonDied
 signal iWasClicked(me)
@@ -11,9 +11,12 @@ var tex_closed = load('res://Assets/Sprites/geniteur_sprite_closed.png')
 
 func _ready():
 	self.add_to_group("geniteurs")
-	get_node("Money_tag/Price").set_text(price)
+	get_node("Money_tag/Price").set_text(defaultPrice)
 	setSprite(isActive)
 
+func _update_price(newPrice: int):
+	get_node("Money_tag/Price").set_text(str(newPrice))
+	
 func _geniter():
 	if isActive:
 		var balle = load("res://Elements/Ball.tscn")
