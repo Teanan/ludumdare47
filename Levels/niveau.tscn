@@ -19,41 +19,34 @@ wait_time = 2.0
 
 [node name="LevelFrame" type="Node2D" parent="."]
 
-[node name="Platform" parent="LevelFrame" instance=ExtResource( 1 )]
-position = Vector2( 927.537, 498.768 )
-rotation = 0.244346
-scale = Vector2( 2.19, 0.625 )
-
-[node name="Platform2" parent="LevelFrame" instance=ExtResource( 1 )]
-position = Vector2( 1073.47, 589.81 )
-rotation = -0.836013
-scale = Vector2( 1.161, 0.722 )
-
-[node name="Platform3" parent="LevelFrame" instance=ExtResource( 1 )]
-position = Vector2( 910.769, 586.348 )
-rotation = 1.5708
-scale = Vector2( 0.826, 0.648 )
-
-[node name="Platform4" parent="LevelFrame" instance=ExtResource( 1 )]
-position = Vector2( 969.169, 598.153 )
-rotation = 0.169297
-scale = Vector2( 1, 0.71 )
-
-[node name="Platform5" parent="LevelFrame" instance=ExtResource( 1 )]
-position = Vector2( 847.898, 549.287 )
-rotation = 0.811578
-scale = Vector2( 0.594, 0.606 )
-
 [node name="Trampoline" parent="LevelFrame" instance=ExtResource( 7 )]
-position = Vector2( 850.739, 478.727 )
+position = Vector2( 850, 500 )
 rotation = 0.523598
 
+[node name="Platform" parent="LevelFrame" instance=ExtResource( 1 )]
+position = Vector2( 915, 510 )
+rotation = 0.0872665
+
+[node name="Platform2" parent="LevelFrame" instance=ExtResource( 1 )]
+position = Vector2( 980, 520 )
+rotation = 0.0872665
+
+[node name="Platform3" parent="LevelFrame" instance=ExtResource( 1 )]
+position = Vector2( 1050, 560 )
+rotation = -0.698132
+
+[node name="Platform4" parent="LevelFrame" instance=ExtResource( 1 )]
+position = Vector2( 960, 580 )
+
+[node name="Platform5" parent="LevelFrame" instance=ExtResource( 1 )]
+position = Vector2( 865, 600 )
+
 [node name="Bucket" parent="." instance=ExtResource( 4 )]
-position = Vector2( 877.518, 575.9 )
+position = Vector2( 870, 580 )
 scale = Vector2( 1.5, 1.5 )
 
 [node name="Geniteur_1" parent="." instance=ExtResource( 2 )]
-position = Vector2( 851.369, 454.985 )
+position = Vector2( 850, 465 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 960, 540 )
