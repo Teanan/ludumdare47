@@ -37,5 +37,5 @@ func _was_clicked(viewport, event, shape_idx):
 	and event.button_index == BUTTON_RIGHT and event.is_pressed():
 		#print(velocity.length())
 		#if (velocity.length() < velocityThreshold):
-		self.queue_free()
+		_free()
 
