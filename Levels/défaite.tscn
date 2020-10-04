@@ -1,234 +1,80 @@
-[gd_scene load_steps=89 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Assets/Sprites/vague/vague1.png" type="Texture" id=1]
-[ext_resource path="res://Assets/Sprites/vague/vague2.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Sprites/vague/vague6.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Sprites/vague/vague7.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Sprites/vague/vague3.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Sprites/vague/vague34.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Sprites/vague/vague35.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Sprites/vague/vague18.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Sprites/vague/vague19.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Sprites/vague/vague16.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Sprites/vague/vague17.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Sprites/vague/vague4.png" type="Texture" id=12]
-[ext_resource path="res://Assets/Sprites/vague/vague22.png" type="Texture" id=13]
-[ext_resource path="res://Assets/Sprites/vague/vague12.png" type="Texture" id=14]
-[ext_resource path="res://Assets/Sprites/vague/vague11.png" type="Texture" id=15]
-[ext_resource path="res://Assets/Sprites/vague/vague31.png" type="Texture" id=16]
-[ext_resource path="res://Assets/Sprites/vague/vague32.png" type="Texture" id=17]
-[ext_resource path="res://Assets/Sprites/vague/vague36.png" type="Texture" id=18]
-[ext_resource path="res://Assets/Sprites/vague/vague14.png" type="Texture" id=19]
-[ext_resource path="res://Assets/Sprites/vague/vague23.png" type="Texture" id=20]
-[ext_resource path="res://Assets/Sprites/vague/vague21.png" type="Texture" id=21]
-[ext_resource path="res://Assets/Sprites/vague/vague9.png" type="Texture" id=22]
-[ext_resource path="res://Assets/Sprites/vague/vague10.png" type="Texture" id=23]
-[ext_resource path="res://Assets/Sprites/vague/vague24.png" type="Texture" id=24]
-[ext_resource path="res://Assets/Sprites/vague/vague38.png" type="Texture" id=25]
-[ext_resource path="res://Assets/Sprites/vague/vague37.png" type="Texture" id=26]
-[ext_resource path="res://Assets/Sprites/vague/vague20.png" type="Texture" id=27]
-[ext_resource path="res://Assets/Sprites/vague/vague33.png" type="Texture" id=28]
-[ext_resource path="res://Assets/Sprites/vague/vague8.png" type="Texture" id=29]
-[ext_resource path="res://Assets/Sprites/vague/vague39.png" type="Texture" id=30]
-[ext_resource path="res://Assets/Sprites/vague/vague27.png" type="Texture" id=31]
-[ext_resource path="res://Assets/Sprites/vague/vague26.png" type="Texture" id=32]
-[ext_resource path="res://Assets/Sprites/vague/vague13.png" type="Texture" id=33]
-[ext_resource path="res://Assets/Sprites/vague/vague15.png" type="Texture" id=34]
-[ext_resource path="res://Assets/Sprites/vague/vague28.png" type="Texture" id=35]
-[ext_resource path="res://Assets/Sprites/vague/vague29.png" type="Texture" id=36]
-[ext_resource path="res://Assets/Sprites/vague/vague5.png" type="Texture" id=37]
-[ext_resource path="res://Assets/Sprites/vague/vague30.png" type="Texture" id=38]
-[ext_resource path="res://Assets/Sprites/vague/vague25.png" type="Texture" id=39]
-[ext_resource path="res://Assets/Sprites/vague/vague40.png" type="Texture" id=40]
-[ext_resource path="res://Assets/Sprites/vague/vague61.png" type="Texture" id=41]
-[ext_resource path="res://Assets/Sprites/vague/vague68.png" type="Texture" id=42]
-[ext_resource path="res://Assets/Sprites/vague/vague74.png" type="Texture" id=43]
-[ext_resource path="res://Assets/Sprites/vague/vague58.png" type="Texture" id=44]
-[ext_resource path="res://Assets/Sprites/vague/vague81.png" type="Texture" id=45]
-[ext_resource path="res://Assets/Sprites/vague/vague67.png" type="Texture" id=46]
-[ext_resource path="res://Assets/Sprites/vague/vague60.png" type="Texture" id=47]
-[ext_resource path="res://Assets/Sprites/vague/vague71.png" type="Texture" id=48]
-[ext_resource path="res://Assets/Sprites/vague/vague69.png" type="Texture" id=49]
-[ext_resource path="res://Assets/Sprites/vague/vague54.png" type="Texture" id=50]
-[ext_resource path="res://Assets/Sprites/vague/vague65.png" type="Texture" id=51]
-[ext_resource path="res://Assets/Sprites/vague/vague55.png" type="Texture" id=52]
-[ext_resource path="res://Assets/Sprites/vague/vague62.png" type="Texture" id=53]
-[ext_resource path="res://Assets/Sprites/vague/vague46.png" type="Texture" id=54]
-[ext_resource path="res://Assets/Sprites/vague/vague47.png" type="Texture" id=55]
-[ext_resource path="res://Assets/Sprites/vague/vague59.png" type="Texture" id=56]
-[ext_resource path="res://Assets/Sprites/vague/vague42.png" type="Texture" id=57]
-[ext_resource path="res://Assets/Sprites/vague/vague52.png" type="Texture" id=58]
-[ext_resource path="res://Assets/Sprites/vague/vague45.png" type="Texture" id=59]
-[ext_resource path="res://Assets/Sprites/vague/vague72.png" type="Texture" id=60]
-[ext_resource path="res://Assets/Sprites/vague/vague70.png" type="Texture" id=61]
-[ext_resource path="res://Assets/Sprites/vague/vague56.png" type="Texture" id=62]
-[ext_resource path="res://Assets/Sprites/vague/vague48.png" type="Texture" id=63]
-[ext_resource path="res://Assets/Sprites/vague/vague44.png" type="Texture" id=64]
-[ext_resource path="res://Assets/Sprites/vague/vague75.png" type="Texture" id=65]
-[ext_resource path="res://Assets/Sprites/vague/vague64.png" type="Texture" id=66]
-[ext_resource path="res://Assets/Sprites/vague/vague77.png" type="Texture" id=67]
-[ext_resource path="res://Assets/Sprites/vague/vague73.png" type="Texture" id=68]
-[ext_resource path="res://Assets/Sprites/vague/vague63.png" type="Texture" id=69]
-[ext_resource path="res://Assets/Sprites/vague/vague66.png" type="Texture" id=70]
-[ext_resource path="res://Assets/Sprites/vague/vague51.png" type="Texture" id=71]
-[ext_resource path="res://Assets/Sprites/vague/vague53.png" type="Texture" id=72]
-[ext_resource path="res://Assets/Sprites/vague/vague79.png" type="Texture" id=73]
-[ext_resource path="res://Assets/Sprites/vague/vague49.png" type="Texture" id=74]
-[ext_resource path="res://Assets/Sprites/vague/vague43.png" type="Texture" id=75]
-[ext_resource path="res://Assets/Sprites/vague/vague50.png" type="Texture" id=76]
-[ext_resource path="res://Assets/Sprites/vague/vague78.png" type="Texture" id=77]
-[ext_resource path="res://Assets/Sprites/vague/vague57.png" type="Texture" id=78]
-[ext_resource path="res://Assets/Sprites/vague/vague76.png" type="Texture" id=79]
-[ext_resource path="res://Assets/Sprites/vague/vague80.png" type="Texture" id=80]
-[ext_resource path="res://Assets/Sprites/vague/vague41.png" type="Texture" id=81]
-[ext_resource path="res://Assets/Sprites/vague/vague82.png" type="Texture" id=82]
 [ext_resource path="res://addons/GameTemplate/Assets/Fonts/m5x7_64.tres" type="DynamicFont" id=83]
 [ext_resource path="res://Assets/Sprites/sad_jj.png" type="Texture" id=84]
 [ext_resource path="res://Assets/Sounds/échec.wav" type="AudioStream" id=85]
+[ext_resource path="res://Elements/effet_vague.tscn" type="PackedScene" id=86]
 
-[sub_resource type="ShaderMaterial" id=2]
+[sub_resource type="ShaderMaterial" id=1]
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.356863, 0.431373, 0.882353, 1 )
-
-[sub_resource type="SpriteFrames" id=1]
-animations = [ {
-"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 12 ), ExtResource( 37 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 29 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 15 ), ExtResource( 14 ), ExtResource( 33 ), ExtResource( 19 ), ExtResource( 34 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 27 ), ExtResource( 21 ), ExtResource( 13 ), ExtResource( 20 ), ExtResource( 24 ), ExtResource( 39 ), ExtResource( 32 ), ExtResource( 31 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 28 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 18 ), ExtResource( 26 ), ExtResource( 25 ), ExtResource( 30 ), ExtResource( 40 ), ExtResource( 81 ), ExtResource( 57 ), ExtResource( 75 ), ExtResource( 64 ), ExtResource( 59 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 63 ), ExtResource( 74 ), ExtResource( 76 ), ExtResource( 71 ), ExtResource( 58 ), ExtResource( 72 ), ExtResource( 50 ), ExtResource( 52 ), ExtResource( 62 ), ExtResource( 78 ), ExtResource( 44 ), ExtResource( 56 ), ExtResource( 47 ), ExtResource( 41 ), ExtResource( 53 ), ExtResource( 69 ), ExtResource( 66 ), ExtResource( 51 ), ExtResource( 70 ), ExtResource( 46 ), ExtResource( 42 ), ExtResource( 49 ), ExtResource( 61 ), ExtResource( 48 ), ExtResource( 60 ), ExtResource( 68 ), ExtResource( 43 ), ExtResource( 65 ), ExtResource( 79 ), ExtResource( 67 ), ExtResource( 77 ), ExtResource( 73 ), ExtResource( 80 ), ExtResource( 45 ), ExtResource( 82 ) ],
-"loop": true,
-"name": "vague",
-"speed": 60.0
-} ]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Panel" type="Panel" parent="."]
-material = SubResource( 2 )
+material = SubResource( 1 )
 margin_right = 320.0
 margin_bottom = 180.0
-custom_styles/panel = SubResource( 3 )
+custom_styles/panel = SubResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 85 )
+autoplay = true
+
+[node name="vague" parent="." instance=ExtResource( 86 )]
 position = Vector2( 25, 0 )
-frames = SubResource( 1 )
-animation = "vague"
-frame = 29
-playing = true
-centered = false
 
-[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
-position = Vector2( 25, 82 )
-frames = SubResource( 1 )
-animation = "vague"
-frame = 29
-playing = true
-centered = false
-
-[node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
-position = Vector2( 25, 164 )
-frames = SubResource( 1 )
-animation = "vague"
-frame = 29
-playing = true
-centered = false
-
-[node name="AnimatedSprite4" type="AnimatedSprite" parent="."]
+[node name="vague2" parent="." instance=ExtResource( 86 )]
 position = Vector2( 85, 0 )
-frames = SubResource( 1 )
-animation = "vague"
-frame = 29
-playing = true
-centered = false
 
-[node name="AnimatedSprite5" type="AnimatedSprite" parent="."]
-position = Vector2( 85, 82 )
-frames = SubResource( 1 )
-animation = "vague"
-frame = 29
-playing = true
-centered = false
-
-[node name="AnimatedSprite6" type="AnimatedSprite" parent="."]
-position = Vector2( 85, 164 )
-frames = SubResource( 1 )
-animation = "vague"
-frame = 29
-playing = true
-centered = false
-
-[node name="AnimatedSprite7" type="AnimatedSprite" parent="."]
+[node name="vague3" parent="." instance=ExtResource( 86 )]
 position = Vector2( 145, 0 )
-frames = SubResource( 1 )
-animation = "vague"
-frame = 29
-playing = true
-centered = false
 
-[node name="AnimatedSprite8" type="AnimatedSprite" parent="."]
-position = Vector2( 145, 82 )
-frames = SubResource( 1 )
-animation = "vague"
-frame = 29
-playing = true
-centered = false
-
-[node name="AnimatedSprite9" type="AnimatedSprite" parent="."]
-position = Vector2( 145, 164 )
-frames = SubResource( 1 )
-animation = "vague"
-frame = 29
-playing = true
-centered = false
-
-[node name="AnimatedSprite10" type="AnimatedSprite" parent="."]
+[node name="vague4" parent="." instance=ExtResource( 86 )]
 position = Vector2( 205, 0 )
-frames = SubResource( 1 )
-animation = "vague"
-frame = 29
-playing = true
-centered = false
 
-[node name="AnimatedSprite11" type="AnimatedSprite" parent="."]
-position = Vector2( 205, 82 )
-frames = SubResource( 1 )
-animation = "vague"
-frame = 29
-playing = true
-centered = false
-
-[node name="AnimatedSprite12" type="AnimatedSprite" parent="."]
-position = Vector2( 205, 164 )
-frames = SubResource( 1 )
-animation = "vague"
-frame = 29
-playing = true
-centered = false
-
-[node name="AnimatedSprite13" type="AnimatedSprite" parent="."]
+[node name="vague5" parent="." instance=ExtResource( 86 )]
 position = Vector2( 265, 0 )
-frames = SubResource( 1 )
-animation = "vague"
-frame = 29
-playing = true
-centered = false
 
-[node name="AnimatedSprite14" type="AnimatedSprite" parent="."]
+[node name="vague6" parent="." instance=ExtResource( 86 )]
+position = Vector2( 25, 82 )
+
+[node name="vague7" parent="." instance=ExtResource( 86 )]
+position = Vector2( 85, 82 )
+
+[node name="vague8" parent="." instance=ExtResource( 86 )]
+position = Vector2( 145, 82 )
+
+[node name="vague9" parent="." instance=ExtResource( 86 )]
+position = Vector2( 205, 82 )
+
+[node name="vague10" parent="." instance=ExtResource( 86 )]
 position = Vector2( 265, 82 )
-frames = SubResource( 1 )
-animation = "vague"
-frame = 29
-playing = true
-centered = false
 
-[node name="AnimatedSprite15" type="AnimatedSprite" parent="."]
+[node name="vague11" parent="." instance=ExtResource( 86 )]
+position = Vector2( 25, 164 )
+
+[node name="vague12" parent="." instance=ExtResource( 86 )]
+position = Vector2( 85, 164 )
+
+[node name="vague13" parent="." instance=ExtResource( 86 )]
+position = Vector2( 145, 164 )
+
+[node name="vague14" parent="." instance=ExtResource( 86 )]
+position = Vector2( 205, 164 )
+
+[node name="vague15" parent="." instance=ExtResource( 86 )]
 position = Vector2( 265, 164 )
-frames = SubResource( 1 )
-animation = "vague"
-frame = 29
-playing = true
-centered = false
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 160, 90 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 84 )
+flip_h = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 margin_top = 20.0
@@ -247,13 +93,3 @@ fit_content_height = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 160, 90 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 84 )
-flip_h = true
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 85 )
-autoplay = true
