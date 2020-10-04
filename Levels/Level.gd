@@ -11,8 +11,12 @@ var cursorElement: Node2D = null
 var cursorElementName: String
 var justCreated = false
 var money: int
-var poissonsReussis: int
-var seuils = [3, 6, 9, 12]
+
+var chainePoissons: int = 0
+var geniteursActifs: int = 0
+var currentNiveau: int = 0
+var seuilsPoissons = [5, 10, 20, 20, 20]
+var seuilsGeniteurs = [1, 2, 4, 7, 10]
 
 var moneyPerPoisson: int = 10
 
@@ -31,7 +35,12 @@ func _ready()->void:
 	# Initialize resource values
 	set_money(999)
 	update_poissons_hud()
-	poissonsReussis = 0
+
+	# Initialize genitors
+	var geniteurs = get_tree().get_nodes_in_group("geniteurs")
+	for geniteur in geniteurs:
+		geniteur.connect("iWasClicked", self, "_on_buy_genitor")
+		geniteur.connect("myPoissonDied", self, "remove_poisson_died")
 
 	# Initialize HUD
 	Hud.visible = true
@@ -41,6 +50,7 @@ func _ready()->void:
 
 	# Start first Genitor
 	$Geniteur_1.toggleGeniteur()
+	geniteursActifs += 1
 
 func _on_Button_pressed()->void:
 	Game.emit_signal("ChangeScene", Next_Scene)
@@ -99,7 +109,6 @@ func switch_conveyor():
 		cursorElement.set_rotation(current - PI)
 	cursorElement.apply_scale(Vector2(-1, 1))
 
-
 func _on_buy_item(name):
 	if not name in elements:
 		printerr("cannot find element res://Elements/" + name + ".tscn")
@@ -128,10 +137,16 @@ func _on_buy_fish(amount: int):
 	var c = cost["Fish"]
 	if money >= c:
 		set_money(money - c)
-		add_poisson_max(amount)
+		add_poisson_max(amount * geniteursActifs)
 		popup("-" + str(c), Color(255, 0, 0), get_local_mouse_position())
 	else:
 		popup("not enought money!", Color(255, 0, 0), get_local_mouse_position())
+
+func _on_buy_genitor(genitor):
+	# TODO add money logic
+	genitor.toggleGeniteur()
+	chainePoissons = 0
+	geniteursActifs += 1
 
 func preload_elmts():
 	var elements_directory = Directory.new()
@@ -159,9 +174,14 @@ func poisson_reached_bucket(poissonNode):
 	popup("+" + str(moneyPerPoisson), Color(0, 255, 0), poissonNode.position)
 	set_money(money + moneyPerPoisson)
 
-	poissonsReussis += 1
-	if poissonsReussis in seuils:
-		emit_signal("niveauSup")
+	chainePoissons += 1
+
+	print("Poi: " + str(chainePoissons) + " Gen: " + str(geniteursActifs) + " Niv: " + str(currentNiveau))
+
+	if chainePoissons >= seuilsPoissons[currentNiveau] && geniteursActifs >= seuilsGeniteurs[currentNiveau]:
+		chainePoissons = 0
+		currentNiveau += 1
+		$Camera.dezoom()
 
 func add_poisson_max(amount: int):
 	$Piscine.poissonsInPool += amount
@@ -169,6 +189,7 @@ func add_poisson_max(amount: int):
 	update_poissons_hud()
 
 func remove_poisson_died():
+	chainePoissons = 0
 	$Piscine.poissonsTotal -= 1
 	update_poissons_hud()
 	if not $Piscine.poissonsTotal:

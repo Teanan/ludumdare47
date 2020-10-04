@@ -4,17 +4,17 @@ export var isActive = false
 export var price = "500"
 
 signal myPoissonDied
+signal iWasClicked(me)
 
 var tex_open = load('res://Assets/Sprites/geniteur_sprite.png')
 var tex_closed = load('res://Assets/Sprites/geniteur_sprite_closed.png')
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	self.add_to_group("geniteurs")
 	get_node("Money_tag/Price").set_text(price)
 	setSprite(isActive)
 
 func _geniter():
-#	print("je genite")
 	if isActive:
 		var balle = load("res://Elements/Ball.tscn")
 		var noeud = balle.instance()
@@ -33,10 +33,9 @@ func setSprite(open):
 	else:
 		get_node("Sprite").set_texture(tex_closed)
 
-
 func _on_Geniteur_input_event(viewport, event, shape_idx):
 	if !isActive and event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.is_pressed():
-		toggleGeniteur()
+		emit_signal("iWasClicked", self)
 
 func myPoissonDied():
 	emit_signal("myPoissonDied")
