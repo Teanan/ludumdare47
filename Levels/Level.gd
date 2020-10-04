@@ -25,20 +25,20 @@ var cost = {
 }
 
 func _ready()->void:
-	
+
 	preload_elmts()
-	
+
 	# Initialize resource values
 	set_money(999)
 	update_poissons_hud()
 	poissonsReussis = 0
-	
+
 	# Initialize HUD
 	Hud.visible = true
 	Hud.connect("buy_item", self, "_on_buy_item")
 	Hud.connect("buy_fish", self, "_on_buy_fish")
 	PauseMenu.can_show = true
-	
+
 	# Start first Genitor
 	$Geniteur_1.toggleGeniteur()
 
@@ -70,18 +70,31 @@ func _process(delta):
 			cursorElement.queue_free()
 			cursorElement = null;
 
-func _input(event):	
+func _input(event):
 	if event is InputEventMouseButton:
 		if event.is_pressed() and cursorElement:
 			if event.button_index == BUTTON_WHEEL_UP:
 				cursorElement.rotate(ROTATE_STEP)
+				if cursorElementName == "conveyor" and fmod(abs(cursorElement.get_rotation()), PI) > PI/2 :
+					switch_conveyor()
 			if event.button_index == BUTTON_WHEEL_DOWN:
 				cursorElement.rotate(-ROTATE_STEP)
+				if cursorElementName == "conveyor" and fmod(abs(cursorElement.get_rotation()), PI) > PI/2 :
+					switch_conveyor()
 
 	if event is InputEventMouseMotion:
 		if cursorElement:
 			#cursorElement.position = event.position
 			cursorElement.position = get_local_mouse_position()
+
+func switch_conveyor():
+	var current = cursorElement.get_rotation()
+	if current < 0:
+		cursorElement.set_rotation(current + PI)
+	else:
+		cursorElement.set_rotation(current - PI)
+	cursorElement.apply_scale(Vector2(-1, 1))
+
 
 func _on_buy_item(name):
 	if not name in elements:
@@ -125,17 +138,17 @@ func preload_elmts():
 func set_money(_money):
 	money = _money
 	Hud.set_money(_money)
-	
+
 func update_poissons_hud():
 	Hud.set_poissons($Piscine.poissonsInPool, $Piscine.poissonsTotal)
-	
+
 # used by bucket
 func poisson_reached_bucket():
 	$Piscine.poissonsInPool += 1
 	update_poissons_hud()
-	
+
 	set_money(money + moneyPerPoisson)
-	
+
 	poissonsReussis += 1
 	if poissonsReussis in seuils:
 		emit_signal("niveauSup")
