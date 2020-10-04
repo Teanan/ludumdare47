@@ -85,6 +85,9 @@ func _process(delta):
 				cursorElement.disable_collision(false)
 				cursorElement.canBeDestroyed = true
 				cursorElement.connect("wasDestroyed", self, "refund_object")
+				if cursorElementName == "conveyor":
+					cursorElement.get_node("clockwiseArrows").set_visible(false)
+					cursorElement.get_node("counterClockwiseArrows").set_visible(false)
 				cursorElement = null;
 				Hud.set_shop_visible(true)
 				popup("-" + str(c), Color(255, 0, 0), get_local_mouse_position())
@@ -121,6 +124,10 @@ func switch_conveyor():
 		cursorElement.set_rotation(current + PI)
 	else:
 		cursorElement.set_rotation(current - PI)
+	cursorElement.get_node("clockwiseArrows").set_visible(not cursorElement.get_node("clockwiseArrows").is_visible())
+	cursorElement.get_node("counterClockwiseArrows").set_visible(not cursorElement.get_node("counterClockwiseArrows").is_visible())
+	print(cursorElement.get_node("clockwiseArrows").is_visible())
+	print(cursorElement.get_node("counterClockwiseArrows").is_visible())
 	cursorElement.apply_scale(Vector2(-1, 1))
 
 func _on_buy_item(name):
@@ -141,6 +148,9 @@ func _on_buy_item(name):
 		cursorElement.disable_collision(true)
 		cursorElementName = name
 		justCreated = true
+
+		if cursorElementName == "conveyor":
+			cursorElement.get_node("clockwiseArrows").set_visible(true)
 
 		if name == "Blower":
 			cursorElement.rotate(PI)
