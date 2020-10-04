@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 var velocity: Vector2
-var velocityThreshold: int = 10
+#var velocityThreshold: int = 10
 var rng = RandomNumberGenerator.new()
 
 signal poissonDied
@@ -35,7 +35,7 @@ func _on_Ball_body_entered(body):
 func _was_clicked(viewport, event, shape_idx):
 	if event is InputEventMouseButton \
 	and event.button_index == BUTTON_RIGHT and event.is_pressed():
-		print(velocity.length())
-		if (velocity.length() < velocityThreshold):
-			self.queue_free()
+		#print(velocity.length())
+		#if (velocity.length() < velocityThreshold):
+		self.queue_free()
 
