@@ -43,7 +43,7 @@ func _ready()->void:
 	preload_elmts()
 
 	# Initialize resource values
-	set_money(999)
+	set_money(500)
 	update_poissons_hud()
 
 	# Initialize zoom
@@ -164,6 +164,8 @@ func _on_buy_genitor(genitor):
 		chainePoissons = 0
 		geniteursActifs += 1
 		popup("-" + str(c), Color(255, 0, 0), get_local_mouse_position())
+	else :
+		popup("not enought money!", Color(255, 0, 0), get_local_mouse_position())
 
 func refresh_genitor_prices():
 	var geniteurs = get_tree().get_nodes_in_group("geniteurs")
