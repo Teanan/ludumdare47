@@ -1,0 +1,138 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/PhysicMaterials/wood_material.tres" type="PhysicsMaterial" id=2]
+[ext_resource path="res://Assets/Sprites/tapis_roulant_sprite.png" type="Texture" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "conveyor_animation"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 5.71583
+height = 45.4256
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 26.2562, 1.27389 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 2.72375, 1.15318 )
+
+[node name="Conveyor" type="RigidBody2D"]
+mode = 1
+physics_material_override = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+hframes = 4
+frame = 1
+region_rect = Rect2( 0, 0, 65.2238, 17.0692 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "conveyor_animation"
+playback_speed = 2.0
+anims/conveyor_animation = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.630672, 0 )
+rotation = 1.5708
+shape = SubResource( 2 )
+
+[node name="Collision zone" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Collision zone"]
+space_override = 1
+gravity_point = true
+gravity_vec = Vector2( 50, -6 )
+gravity = 200.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision zone/Area2D"]
+position = Vector2( 0.2, -6 )
+shape = SubResource( 3 )
+
+[node name="Area2D2" type="Area2D" parent="Collision zone"]
+space_override = 1
+gravity_point = true
+gravity_vec = Vector2( -50, 6 )
+gravity = 200.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision zone/Area2D2"]
+position = Vector2( 0.2, 6 )
+shape = SubResource( 3 )
+
+[node name="Area2D3" type="Area2D" parent="Collision zone"]
+space_override = 1
+gravity_point = true
+gravity_vec = Vector2( -50, -30 )
+gravity = 200.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision zone/Area2D3"]
+position = Vector2( -27.1139, 4.33823 )
+rotation = 0.785398
+shape = SubResource( 4 )
+
+[node name="Area2D4" type="Area2D" parent="Collision zone"]
+space_override = 1
+gravity_point = true
+gravity_vec = Vector2( 40, -50 )
+gravity = 200.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision zone/Area2D4"]
+position = Vector2( -27.0026, -4.1253 )
+rotation = 2.35619
+shape = SubResource( 4 )
+
+[node name="Area2D5" type="Area2D" parent="Collision zone"]
+space_override = 1
+gravity_point = true
+gravity_vec = Vector2( 0, -10 )
+gravity = 200.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision zone/Area2D5"]
+position = Vector2( -28.4072, -0.192247 )
+rotation = 1.5708
+shape = SubResource( 4 )
+
+[node name="Area2D6" type="Area2D" parent="Collision zone"]
+space_override = 1
+gravity_point = true
+gravity_vec = Vector2( 50, 15 )
+gravity = 200.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision zone/Area2D6"]
+position = Vector2( 27.4806, -4.46432 )
+rotation = 0.785398
+shape = SubResource( 4 )
+
+[node name="Area2D7" type="Area2D" parent="Collision zone"]
+space_override = 1
+gravity_point = true
+gravity_vec = Vector2( -5, 25 )
+gravity = 200.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision zone/Area2D7"]
+position = Vector2( 27.7421, 4.8415 )
+rotation = 2.35619
+shape = SubResource( 4 )
+
+[node name="Area2D8" type="Area2D" parent="Collision zone"]
+space_override = 1
+gravity_point = true
+gravity_vec = Vector2( 0, 10 )
+gravity = 200.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision zone/Area2D8"]
+position = Vector2( 29.4051, 0.161703 )
+rotation = 1.5708
+shape = SubResource( 4 )
