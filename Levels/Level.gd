@@ -19,6 +19,7 @@ var moneyPerPoisson: int = 10
 var cost = {
 	"Platform": 20,
 	"Trampoline": 50,
+	"conveyor": 75,
 	"Blower": 150
 }
 

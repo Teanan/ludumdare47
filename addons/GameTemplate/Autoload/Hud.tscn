@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://addons/GameTemplate/Assets/Fonts/m5x7_16.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Assets/Sprites/shopping-cart.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Assets/Sprites/shop_wood_texture.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Sprites/shop_blower_sprite.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Sprites/shop_rubber_texture.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Sprites/shop_tapis.png" type="Texture" id=9]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node
@@ -60,10 +61,10 @@ func _on_BuyItem2_pressed():
 	emit_signal(\"buy_item\", \"Trampoline\")
 
 func _on_BuyItem3_pressed():
-	emit_signal(\"buy_item\", \"Blower\")
+	emit_signal(\"buy_item\", \"conveyor\")
 
 func _on_BuyItem4_pressed():
-	emit_signal(\"buy_item\", \"item_4\")
+	emit_signal(\"buy_item\", \"Blower\")
 
 func _on_BuyItem5_pressed():
 	emit_signal(\"buy_item\", \"item_5\")
@@ -196,7 +197,7 @@ margin_top = 148.0
 margin_right = 312.0
 margin_bottom = 172.0
 mouse_filter = 2
-custom_constants/separation = 16
+custom_constants/separation = 8
 alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/GUI/MarginContainer/VBoxContainer2/Top3"]
@@ -208,34 +209,43 @@ expand = true
 stretch_mode = 5
 
 [node name="BuyItem1" parent="CanvasLayer/GUI/MarginContainer/VBoxContainer2/Top3" instance=ExtResource( 3 )]
-margin_left = 48.0
+margin_left = 40.0
 margin_top = 5.0
-margin_right = 102.0
+margin_right = 88.0
 margin_bottom = 19.0
 text = "20"
 icon = ExtResource( 6 )
 expand_icon = true
 
 [node name="BuyItem2" parent="CanvasLayer/GUI/MarginContainer/VBoxContainer2/Top3" instance=ExtResource( 3 )]
-margin_left = 118.0
+margin_left = 96.0
 margin_top = 5.0
-margin_right = 172.0
+margin_right = 144.0
 margin_bottom = 19.0
 text = "50"
 icon = ExtResource( 8 )
 expand_icon = true
 
 [node name="BuyItem3" parent="CanvasLayer/GUI/MarginContainer/VBoxContainer2/Top3" instance=ExtResource( 3 )]
-margin_left = 188.0
+margin_left = 152.0
 margin_top = 5.0
-margin_right = 242.0
+margin_right = 200.0
+margin_bottom = 19.0
+text = "75"
+icon = ExtResource( 9 )
+expand_icon = true
+
+[node name="BuyItem4" parent="CanvasLayer/GUI/MarginContainer/VBoxContainer2/Top3" instance=ExtResource( 3 )]
+margin_left = 208.0
+margin_top = 5.0
+margin_right = 256.0
 margin_bottom = 19.0
 text = "150"
 icon = ExtResource( 7 )
 expand_icon = true
 
 [node name="BuyFish" parent="CanvasLayer/GUI/MarginContainer/VBoxContainer2/Top3" instance=ExtResource( 3 )]
-margin_left = 258.0
+margin_left = 264.0
 margin_top = 5.0
 margin_right = 312.0
 margin_bottom = 19.0
@@ -245,4 +255,5 @@ expand_icon = true
 [connection signal="pressed" from="CanvasLayer/GUI/MarginContainer/VBoxContainer2/Top3/BuyItem1" to="." method="_on_BuyItem1_pressed"]
 [connection signal="pressed" from="CanvasLayer/GUI/MarginContainer/VBoxContainer2/Top3/BuyItem2" to="." method="_on_BuyItem2_pressed"]
 [connection signal="pressed" from="CanvasLayer/GUI/MarginContainer/VBoxContainer2/Top3/BuyItem3" to="." method="_on_BuyItem3_pressed"]
+[connection signal="pressed" from="CanvasLayer/GUI/MarginContainer/VBoxContainer2/Top3/BuyItem4" to="." method="_on_BuyItem4_pressed"]
 [connection signal="pressed" from="CanvasLayer/GUI/MarginContainer/VBoxContainer2/Top3/BuyFish" to="." method="_on_BuyFish_pressed"]
