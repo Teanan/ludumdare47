@@ -14,6 +14,8 @@ var money: int
 var poissonsReussis: int
 var seuils = [3, 6, 9, 12]
 
+var moneyPerPoisson: int = 10
+
 var cost = {
 	"Platform": 20,
 	"Trampoline": 50,
@@ -21,16 +23,21 @@ var cost = {
 }
 
 func _ready()->void:
-	poissonsReussis = 0
-	Hud.visible = true
-	PauseMenu.can_show = true
 	
 	preload_elmts()
 	
+	# Initialize resource values
 	set_money(999)
 	update_poissons_hud()
+	poissonsReussis = 0
 	
+	# Initialize HUD
+	Hud.visible = true
 	Hud.connect("buy_item", self, "_on_buy_item")
+	PauseMenu.can_show = true
+	
+	# Start first Genitor
+	$Geniteur_1.toggleGeniteur()
 
 func _on_Button_pressed()->void:
 	Game.emit_signal("ChangeScene", Next_Scene)
@@ -113,10 +120,12 @@ func update_poissons_hud():
 	Hud.set_poissons($Piscine.poissonsInPool, $Piscine.poissonsTotal)
 	
 # used by bucket
-func add_poisson():
+func poisson_reached_bucket():
 	$Piscine.poissonsInPool += 1
 	$Piscine.poissonsTotal += 1
 	update_poissons_hud()
+	
+	set_money(money + moneyPerPoisson)
 	
 	poissonsReussis += 1
 	if poissonsReussis in seuils:

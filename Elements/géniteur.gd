@@ -17,12 +17,6 @@ func _geniter():
 		noeud.connect("poissonDied",self,"myPoissonDied")
 		add_child(noeud)
 
-#var timer = Timer.new()
-#timer.name = "timer"
-#timer.connect("timeout",self,"_geniter")
-#add_child(timer)
-#timer.start()
-
 func toggleGeniteur():
 	isActive = !isActive
 	
@@ -32,10 +26,8 @@ func toggleGeniteur():
 		get_child(1).modulate = '6c0d0d'
 
 func _on_Geniteur_input_event(viewport, event, shape_idx):
-	print(event)
-	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.is_pressed():
+	if !isActive and event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.is_pressed():
 		toggleGeniteur()
-	
 
 func myPoissonDied():
 	emit_signal("myPoissonDied")
