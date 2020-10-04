@@ -149,3 +149,5 @@ shape = SubResource( 4 )
 rotation = 1.57079
 shape = SubResource( 5 )
 [connection signal="input_event" from="ZoneDeClik" to="." method="was_clicked"]
+[connection signal="mouse_entered" from="ZoneDeClik" to="." method="_on_ZoneDeClik_mouse_entered"]
+[connection signal="mouse_exited" from="ZoneDeClik" to="." method="_on_ZoneDeClik_mouse_exited"]

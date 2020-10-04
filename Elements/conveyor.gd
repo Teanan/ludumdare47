@@ -9,6 +9,7 @@ func _ready():
 	pass # Replace with function body.
 
 func disable_collision(disabled: bool):
+	$"CollisionShape2D".disabled = disabled
 	$"Collision zone/Area2D/CollisionShape2D".disabled = disabled
 	$"Collision zone/Area2D2/CollisionShape2D".disabled = disabled
 	$"Collision zone/Area2D3/CollisionShape2D".disabled = disabled
@@ -23,3 +24,10 @@ func was_clicked(viewport, event, shape_idx):
 	and event.button_index == BUTTON_RIGHT and event.is_pressed():
 		self.queue_free()
 		emit_signal("wasDestroyed", self)
+
+func _on_ZoneDeClik_mouse_entered():
+	if canBeDestroyed and get_parent() != null and get_parent().cursorElement == null:
+		modulate = Color(1, 0.1, 0.1, 1)
+
+func _on_ZoneDeClik_mouse_exited():
+	modulate = Color(1, 1, 1, 1)

@@ -25,3 +25,5 @@ texture = ExtResource( 1 )
 position = Vector2( 0.166855, 1.08456 )
 polygon = PoolVector2Array( -30.2245, -3.88489, -28.8896, 1.03734, -26.8874, -3.6346, -21.3811, -3.71803, -13.6224, 1.70476, -8.70017, -1.13178, 2.7294, 6.87726, 18.8309, -3.71803, 24.7543, -3.88489, 24.7543, 0.787054, 26.4228, 3.20645, 27.9363, 1.43304, 28.0151, -2.97669, 28.8025, -3.05543, 28.96, -8.56759, -29.9413, -8.4101 )
 [connection signal="input_event" from="Area2D" to="." method="was_clicked"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_Area2D_mouse_exited"]
