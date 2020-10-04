@@ -3,6 +3,8 @@ extends Node2D
 export var isActive = false
 export var defaultPrice = "50"
 
+var shinyRate = 100
+
 signal myPoissonDied
 signal iWasClicked(me)
 
@@ -23,6 +25,10 @@ func _geniter():
 		var noeud = balle.instance()
 		noeud.add_to_group("balls")
 		noeud.connect("poissonDied", self, "myPoissonDied")
+
+		if (not randi() % shinyRate):
+			noeud.modulate = "#ffd700"
+
 		add_child(noeud)
 
 func toggleGeniteur():
