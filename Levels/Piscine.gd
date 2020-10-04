@@ -28,7 +28,6 @@ func _geniter():
 
 
 func _attempt_refill():
-	print("hello")
 	if (poissonsTotal < 10):
 		poissonsTotal += 1
 		poissonsInPool += 1

@@ -143,6 +143,5 @@ func remove_poisson_died():
 	update_poissons_hud()
 
 func refund_object(body):
-	print(body.objectType)
 	var c = cost[body.objectType]
 	set_money(money + (c/2))
