@@ -5,8 +5,8 @@ signal did_genit
 var poissonsTotal: int = 10
 var poissonsInPool: int = poissonsTotal
 
-var baseGenitionTimerValue: int = 3
-var baseRefillTimerValue: int = 10
+var baseGenitionTimerValue: float = 3
+var baseRefillTimerValue: float = 10
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,8 +15,12 @@ func _ready():
 	$RefillTimer.wait_time = baseRefillTimerValue
 #	$RefillTimer.start()
 
-func set_timer(timer: int):
+func set_timer(timer: float):
+	print("New timer " + str(timer))
 	$GenitionTimer.wait_time = timer
+	
+func get_timer():
+	return $GenitionTimer.wait_time
 
 func _geniter():
 	var geniteurs = get_tree().get_nodes_in_group("geniteurs")

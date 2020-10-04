@@ -9,10 +9,9 @@ func _ready():
 	self.zoom = ratios[0]
 	pass # Replace with function body.
 
-func dezoom():
-	if NbDeFoisDezoomee < 5:
-		NbDeFoisDezoomee += 1
-	self.zoom = ratios[NbDeFoisDezoomee]
+func set_zoom_level(index: int):
+	if index < ratios.size():
+		self.zoom = ratios[index]
 #	self.zoom = self.zoom * 1.5
 #	self.zoom = self.zoom * pow((float(1)/ratioBase.x), (float(1)/float(self.get_parent().seuils.size())))
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -238,37 +238,29 @@ rotation = 3.14159
 
 [node name="Bucket" parent="." instance=ExtResource( 4 )]
 position = Vector2( 870, 580 )
-scale = Vector2( 1.5, 1.5 )
 
 [node name="Bucket8" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1143.72, 638.52 )
-scale = Vector2( 1.5, 1.5 )
 
 [node name="Bucket5" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1006.29, 790.932 )
-scale = Vector2( 1.5, 1.5 )
 
 [node name="Bucket4" parent="." instance=ExtResource( 4 )]
 position = Vector2( 660.679, 697.326 )
 rotation = 1.57079
-scale = Vector2( 1.5, 1.5 )
 
 [node name="Bucket3" parent="." instance=ExtResource( 4 )]
 position = Vector2( 507.045, 646.647 )
-scale = Vector2( 1.5, 1.5 )
 
 [node name="Bucket7" parent="." instance=ExtResource( 4 )]
 position = Vector2( 443.965, 340.83 )
 rotation = -3.14159
-scale = Vector2( 1.5, 1.5 )
 
 [node name="Bucket2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1229.19, 753.982 )
-scale = Vector2( 1.5, 1.5 )
 
 [node name="Bucket6" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1402.43, 753.982 )
-scale = Vector2( 1.5, 1.5 )
 
 [node name="Geniteur_1" parent="." instance=ExtResource( 2 )]
 position = Vector2( 850, 465 )

@@ -12,6 +12,7 @@ var cursorElementName: String
 var justCreated = false
 var money: int
 
+var totalGeniteurs: int
 var chainePoissons: int = 0
 var geniteursActifs: int = 0
 var currentNiveau: int = 0
@@ -36,8 +37,12 @@ func _ready()->void:
 	set_money(999)
 	update_poissons_hud()
 
+	# Initialize zoom
+	$Camera.set_zoom_level(currentNiveau)
+
 	# Initialize genitors
 	var geniteurs = get_tree().get_nodes_in_group("geniteurs")
+	totalGeniteurs = geniteurs.size()
 	for geniteur in geniteurs:
 		geniteur.connect("iWasClicked", self, "_on_buy_genitor")
 		geniteur.connect("myPoissonDied", self, "remove_poisson_died")
@@ -181,7 +186,11 @@ func poisson_reached_bucket(poissonNode):
 	if chainePoissons >= seuilsPoissons[currentNiveau] && geniteursActifs >= seuilsGeniteurs[currentNiveau]:
 		chainePoissons = 0
 		currentNiveau += 1
-		$Camera.dezoom()
+		$Camera.set_zoom_level(currentNiveau)
+	
+	if currentNiveau == 5 and chainePoissons > 100 and geniteursActifs == totalGeniteurs:
+		chainePoissons = 0
+		$Piscine.set_timer($Piscine.get_timer() * 0.9)
 
 func add_poisson_max(amount: int):
 	$Piscine.poissonsInPool += amount
