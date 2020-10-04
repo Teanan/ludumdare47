@@ -1,6 +1,7 @@
 extends RigidBody2D
 
 var velocity: Vector2
+var velocityThreshold: int = 10
 
 signal poissonDied
 
@@ -22,3 +23,12 @@ func _on_Ball_body_entered(body):
 		var note = bar_notes[rand_range(0,bar_notes.size())]
 		$AudioStreamPlayer2D.play()
 		$AudioStreamPlayer2D.pitch_scale = ChefOrchestre.pitch[note]
+
+
+func _was_clicked(viewport, event, shape_idx):
+	if event is InputEventMouseButton \
+	and event.button_index == BUTTON_RIGHT and event.is_pressed():
+		print(velocity.length())
+		if (velocity.length() < velocityThreshold):
+			self.queue_free()
+

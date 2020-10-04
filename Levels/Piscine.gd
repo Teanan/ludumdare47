@@ -13,7 +13,7 @@ func _ready():
 	$GenitionTimer.wait_time = baseGenitionTimerValue
 	$GenitionTimer.start()
 	$RefillTimer.wait_time = baseRefillTimerValue
-	$RefillTimer.start()
+#	$RefillTimer.start()
 
 func set_timer(timer: int):
 	$GenitionTimer.wait_time = timer
@@ -25,7 +25,6 @@ func _geniter():
 			geniteur._geniter()
 			poissonsInPool -= 1
 			emit_signal("did_genit")
-
 
 func _attempt_refill():
 	if (poissonsTotal < 10):
