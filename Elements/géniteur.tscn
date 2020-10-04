@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Elements/géniteur.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/geniteur_sprite.png" type="Texture" id=2]
+[ext_resource path="res://Elements/Money_tag.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 3.50576
@@ -26,4 +27,7 @@ shape = SubResource( 2 )
 position = Vector2( 2.87501, 1.375 )
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 2 )
+
+[node name="Money_tag" parent="." instance=ExtResource( 3 )]
+position = Vector2( 5.2772, 5.87153 )
 [connection signal="input_event" from="." to="." method="_on_Geniteur_input_event"]

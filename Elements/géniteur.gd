@@ -1,6 +1,7 @@
 extends Node2D
 
 export var isActive = false
+export var price = "500"
 
 signal myPoissonDied
 
@@ -9,6 +10,7 @@ var tex_closed = load('res://Assets/Sprites/geniteur_sprite_closed.png')
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	self.add_to_group("geniteurs")
+	get_node("Money_tag/Price").set_text(price)
 	setSprite(isActive)
 
 func _geniter():
@@ -27,6 +29,7 @@ func toggleGeniteur():
 func setSprite(open):
 	if open:
 		get_node("Sprite").set_texture(tex_open)
+		get_node("Money_tag").set_visible(false)
 	else:
 		get_node("Sprite").set_texture(tex_closed)
 
