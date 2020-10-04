@@ -8,23 +8,14 @@
 [ext_resource path="res://Elements/Bucket.tscn" type="PackedScene" id=6]
 [ext_resource path="res://addons/GameTemplate/Assets/Fonts/m5x7_64.tres" type="DynamicFont" id=7]
 [ext_resource path="res://Assets/Sprites/ball_sprite.png" type="Texture" id=8]
-
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.027451, 0.368627, 0.517647, 1 )
+[ext_resource path="res://Elements/Background_full.tscn" type="PackedScene" id=9]
 
 [node name="MainMenu" type="CanvasLayer"]
 layer = 0
 script = ExtResource( 3 )
 First_Level = "res://Levels/niveau.tscn"
 
-[node name="Panel" type="Panel" parent="."]
-light_mask = 16
-margin_right = 320.0
-margin_bottom = 180.0
-custom_styles/panel = SubResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Background" parent="." instance=ExtResource( 9 )]
 
 [node name="Sprite" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0.32549 )

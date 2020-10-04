@@ -1,0 +1,1646 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Elements/Background.tscn" type="PackedScene" id=1]
+
+[node name="Background" type="CanvasModulate"]
+light_mask = 16
+color = Color( 0.8, 0.8, 0.8, 1 )
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="line" type="Node2D" parent="Node2D"]
+
+[node name="Node2D" type="Node2D" parent="Node2D/line"]
+
+[node name="background" parent="Node2D/line/Node2D" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D/line/Node2D" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D/line/Node2D" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D/line/Node2D" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D2" type="Node2D" parent="Node2D/line"]
+position = Vector2( 512, 0 )
+
+[node name="background" parent="Node2D/line/Node2D2" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D/line/Node2D2" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D/line/Node2D2" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D/line/Node2D2" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D3" type="Node2D" parent="Node2D/line"]
+position = Vector2( 1024, 0 )
+
+[node name="background" parent="Node2D/line/Node2D3" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D/line/Node2D3" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D/line/Node2D3" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D/line/Node2D3" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D4" type="Node2D" parent="Node2D/line"]
+position = Vector2( 1536, 0 )
+
+[node name="background" parent="Node2D/line/Node2D4" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D/line/Node2D4" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D/line/Node2D4" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D/line/Node2D4" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="line2" type="Node2D" parent="Node2D"]
+position = Vector2( 0, 128 )
+
+[node name="Node2D" type="Node2D" parent="Node2D/line2"]
+
+[node name="background" parent="Node2D/line2/Node2D" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D/line2/Node2D" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D/line2/Node2D" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D/line2/Node2D" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D2" type="Node2D" parent="Node2D/line2"]
+position = Vector2( 512, 0 )
+
+[node name="background" parent="Node2D/line2/Node2D2" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D/line2/Node2D2" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D/line2/Node2D2" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D/line2/Node2D2" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D3" type="Node2D" parent="Node2D/line2"]
+position = Vector2( 1024, 0 )
+
+[node name="background" parent="Node2D/line2/Node2D3" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D/line2/Node2D3" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D/line2/Node2D3" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D/line2/Node2D3" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D4" type="Node2D" parent="Node2D/line2"]
+position = Vector2( 1536, 0 )
+
+[node name="background" parent="Node2D/line2/Node2D4" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D/line2/Node2D4" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D/line2/Node2D4" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D/line2/Node2D4" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="line3" type="Node2D" parent="Node2D"]
+position = Vector2( 0, 256 )
+
+[node name="Node2D" type="Node2D" parent="Node2D/line3"]
+
+[node name="background" parent="Node2D/line3/Node2D" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D/line3/Node2D" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D/line3/Node2D" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D/line3/Node2D" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D2" type="Node2D" parent="Node2D/line3"]
+position = Vector2( 512, 0 )
+
+[node name="background" parent="Node2D/line3/Node2D2" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D/line3/Node2D2" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D/line3/Node2D2" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D/line3/Node2D2" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D3" type="Node2D" parent="Node2D/line3"]
+position = Vector2( 1024, 0 )
+
+[node name="background" parent="Node2D/line3/Node2D3" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D/line3/Node2D3" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D/line3/Node2D3" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D/line3/Node2D3" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D4" type="Node2D" parent="Node2D/line3"]
+position = Vector2( 1536, 0 )
+
+[node name="background" parent="Node2D/line3/Node2D4" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D/line3/Node2D4" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D/line3/Node2D4" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D/line3/Node2D4" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="line4" type="Node2D" parent="Node2D"]
+position = Vector2( 0, 384 )
+
+[node name="Node2D" type="Node2D" parent="Node2D/line4"]
+
+[node name="background" parent="Node2D/line4/Node2D" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D/line4/Node2D" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D/line4/Node2D" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D/line4/Node2D" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D2" type="Node2D" parent="Node2D/line4"]
+position = Vector2( 512, 0 )
+
+[node name="background" parent="Node2D/line4/Node2D2" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D/line4/Node2D2" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D/line4/Node2D2" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D/line4/Node2D2" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D3" type="Node2D" parent="Node2D/line4"]
+position = Vector2( 1024, 0 )
+
+[node name="background" parent="Node2D/line4/Node2D3" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D/line4/Node2D3" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D/line4/Node2D3" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D/line4/Node2D3" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D4" type="Node2D" parent="Node2D/line4"]
+position = Vector2( 1536, 0 )
+
+[node name="background" parent="Node2D/line4/Node2D4" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D/line4/Node2D4" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D/line4/Node2D4" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D/line4/Node2D4" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D2" type="Node2D" parent="."]
+position = Vector2( 0, 512 )
+
+[node name="line" type="Node2D" parent="Node2D2"]
+
+[node name="Node2D" type="Node2D" parent="Node2D2/line"]
+
+[node name="background" parent="Node2D2/line/Node2D" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D2/line/Node2D" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D2/line/Node2D" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D2/line/Node2D" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D2" type="Node2D" parent="Node2D2/line"]
+position = Vector2( 512, 0 )
+
+[node name="background" parent="Node2D2/line/Node2D2" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D2/line/Node2D2" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D2/line/Node2D2" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D2/line/Node2D2" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D3" type="Node2D" parent="Node2D2/line"]
+position = Vector2( 1024, 0 )
+
+[node name="background" parent="Node2D2/line/Node2D3" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D2/line/Node2D3" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D2/line/Node2D3" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D2/line/Node2D3" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D4" type="Node2D" parent="Node2D2/line"]
+position = Vector2( 1536, 0 )
+
+[node name="background" parent="Node2D2/line/Node2D4" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D2/line/Node2D4" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D2/line/Node2D4" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D2/line/Node2D4" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="line2" type="Node2D" parent="Node2D2"]
+position = Vector2( 0, 128 )
+
+[node name="Node2D" type="Node2D" parent="Node2D2/line2"]
+
+[node name="background" parent="Node2D2/line2/Node2D" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D2/line2/Node2D" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D2/line2/Node2D" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D2/line2/Node2D" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D2" type="Node2D" parent="Node2D2/line2"]
+position = Vector2( 512, 0 )
+
+[node name="background" parent="Node2D2/line2/Node2D2" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D2/line2/Node2D2" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D2/line2/Node2D2" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D2/line2/Node2D2" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D3" type="Node2D" parent="Node2D2/line2"]
+position = Vector2( 1024, 0 )
+
+[node name="background" parent="Node2D2/line2/Node2D3" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D2/line2/Node2D3" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D2/line2/Node2D3" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D2/line2/Node2D3" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D4" type="Node2D" parent="Node2D2/line2"]
+position = Vector2( 1536, 0 )
+
+[node name="background" parent="Node2D2/line2/Node2D4" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D2/line2/Node2D4" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D2/line2/Node2D4" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D2/line2/Node2D4" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="line3" type="Node2D" parent="Node2D2"]
+position = Vector2( 0, 256 )
+
+[node name="Node2D" type="Node2D" parent="Node2D2/line3"]
+
+[node name="background" parent="Node2D2/line3/Node2D" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D2/line3/Node2D" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D2/line3/Node2D" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D2/line3/Node2D" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D2" type="Node2D" parent="Node2D2/line3"]
+position = Vector2( 512, 0 )
+
+[node name="background" parent="Node2D2/line3/Node2D2" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D2/line3/Node2D2" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D2/line3/Node2D2" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D2/line3/Node2D2" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D3" type="Node2D" parent="Node2D2/line3"]
+position = Vector2( 1024, 0 )
+
+[node name="background" parent="Node2D2/line3/Node2D3" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D2/line3/Node2D3" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D2/line3/Node2D3" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D2/line3/Node2D3" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D4" type="Node2D" parent="Node2D2/line3"]
+position = Vector2( 1536, 0 )
+
+[node name="background" parent="Node2D2/line3/Node2D4" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D2/line3/Node2D4" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D2/line3/Node2D4" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D2/line3/Node2D4" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="line4" type="Node2D" parent="Node2D2"]
+position = Vector2( 0, 384 )
+
+[node name="Node2D" type="Node2D" parent="Node2D2/line4"]
+
+[node name="background" parent="Node2D2/line4/Node2D" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D2/line4/Node2D" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D2/line4/Node2D" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D2/line4/Node2D" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D2" type="Node2D" parent="Node2D2/line4"]
+position = Vector2( 512, 0 )
+
+[node name="background" parent="Node2D2/line4/Node2D2" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D2/line4/Node2D2" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D2/line4/Node2D2" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D2/line4/Node2D2" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D3" type="Node2D" parent="Node2D2/line4"]
+position = Vector2( 1024, 0 )
+
+[node name="background" parent="Node2D2/line4/Node2D3" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D2/line4/Node2D3" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D2/line4/Node2D3" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D2/line4/Node2D3" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D4" type="Node2D" parent="Node2D2/line4"]
+position = Vector2( 1536, 0 )
+
+[node name="background" parent="Node2D2/line4/Node2D4" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D2/line4/Node2D4" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D2/line4/Node2D4" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D2/line4/Node2D4" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D3" type="Node2D" parent="."]
+position = Vector2( 0, 1024 )
+
+[node name="line" type="Node2D" parent="Node2D3"]
+
+[node name="Node2D" type="Node2D" parent="Node2D3/line"]
+
+[node name="background" parent="Node2D3/line/Node2D" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D3/line/Node2D" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D3/line/Node2D" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D3/line/Node2D" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D2" type="Node2D" parent="Node2D3/line"]
+position = Vector2( 512, 0 )
+
+[node name="background" parent="Node2D3/line/Node2D2" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D3/line/Node2D2" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D3/line/Node2D2" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D3/line/Node2D2" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D3" type="Node2D" parent="Node2D3/line"]
+position = Vector2( 1024, 0 )
+
+[node name="background" parent="Node2D3/line/Node2D3" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D3/line/Node2D3" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D3/line/Node2D3" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D3/line/Node2D3" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D4" type="Node2D" parent="Node2D3/line"]
+position = Vector2( 1536, 0 )
+
+[node name="background" parent="Node2D3/line/Node2D4" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D3/line/Node2D4" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D3/line/Node2D4" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D3/line/Node2D4" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="line2" type="Node2D" parent="Node2D3"]
+position = Vector2( 0, 128 )
+
+[node name="Node2D" type="Node2D" parent="Node2D3/line2"]
+
+[node name="background" parent="Node2D3/line2/Node2D" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D3/line2/Node2D" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D3/line2/Node2D" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D3/line2/Node2D" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D2" type="Node2D" parent="Node2D3/line2"]
+position = Vector2( 512, 0 )
+
+[node name="background" parent="Node2D3/line2/Node2D2" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D3/line2/Node2D2" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D3/line2/Node2D2" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D3/line2/Node2D2" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D3" type="Node2D" parent="Node2D3/line2"]
+position = Vector2( 1024, 0 )
+
+[node name="background" parent="Node2D3/line2/Node2D3" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D3/line2/Node2D3" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D3/line2/Node2D3" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D3/line2/Node2D3" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D4" type="Node2D" parent="Node2D3/line2"]
+position = Vector2( 1536, 0 )
+
+[node name="background" parent="Node2D3/line2/Node2D4" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D3/line2/Node2D4" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D3/line2/Node2D4" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D3/line2/Node2D4" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="line3" type="Node2D" parent="Node2D3"]
+position = Vector2( 0, 256 )
+
+[node name="Node2D" type="Node2D" parent="Node2D3/line3"]
+
+[node name="background" parent="Node2D3/line3/Node2D" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D3/line3/Node2D" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D3/line3/Node2D" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D3/line3/Node2D" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D2" type="Node2D" parent="Node2D3/line3"]
+position = Vector2( 512, 0 )
+
+[node name="background" parent="Node2D3/line3/Node2D2" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D3/line3/Node2D2" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D3/line3/Node2D2" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D3/line3/Node2D2" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D3" type="Node2D" parent="Node2D3/line3"]
+position = Vector2( 1024, 0 )
+
+[node name="background" parent="Node2D3/line3/Node2D3" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D3/line3/Node2D3" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D3/line3/Node2D3" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D3/line3/Node2D3" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D4" type="Node2D" parent="Node2D3/line3"]
+position = Vector2( 1536, 0 )
+
+[node name="background" parent="Node2D3/line3/Node2D4" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D3/line3/Node2D4" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D3/line3/Node2D4" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D3/line3/Node2D4" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="line4" type="Node2D" parent="Node2D3"]
+position = Vector2( 0, 384 )
+
+[node name="Node2D" type="Node2D" parent="Node2D3/line4"]
+
+[node name="background" parent="Node2D3/line4/Node2D" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D3/line4/Node2D" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D3/line4/Node2D" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D3/line4/Node2D" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D2" type="Node2D" parent="Node2D3/line4"]
+position = Vector2( 512, 0 )
+
+[node name="background" parent="Node2D3/line4/Node2D2" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D3/line4/Node2D2" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D3/line4/Node2D2" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D3/line4/Node2D2" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D3" type="Node2D" parent="Node2D3/line4"]
+position = Vector2( 1024, 0 )
+
+[node name="background" parent="Node2D3/line4/Node2D3" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D3/line4/Node2D3" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D3/line4/Node2D3" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D3/line4/Node2D3" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D4" type="Node2D" parent="Node2D3/line4"]
+position = Vector2( 1536, 0 )
+
+[node name="background" parent="Node2D3/line4/Node2D4" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D3/line4/Node2D4" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D3/line4/Node2D4" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D3/line4/Node2D4" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D4" type="Node2D" parent="."]
+position = Vector2( 0, 1536 )
+
+[node name="line" type="Node2D" parent="Node2D4"]
+
+[node name="Node2D" type="Node2D" parent="Node2D4/line"]
+
+[node name="background" parent="Node2D4/line/Node2D" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D4/line/Node2D" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D4/line/Node2D" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D4/line/Node2D" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D2" type="Node2D" parent="Node2D4/line"]
+position = Vector2( 512, 0 )
+
+[node name="background" parent="Node2D4/line/Node2D2" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D4/line/Node2D2" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D4/line/Node2D2" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D4/line/Node2D2" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D3" type="Node2D" parent="Node2D4/line"]
+position = Vector2( 1024, 0 )
+
+[node name="background" parent="Node2D4/line/Node2D3" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D4/line/Node2D3" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D4/line/Node2D3" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D4/line/Node2D3" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D4" type="Node2D" parent="Node2D4/line"]
+position = Vector2( 1536, 0 )
+
+[node name="background" parent="Node2D4/line/Node2D4" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D4/line/Node2D4" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D4/line/Node2D4" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D4/line/Node2D4" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="line2" type="Node2D" parent="Node2D4"]
+position = Vector2( 0, 128 )
+
+[node name="Node2D" type="Node2D" parent="Node2D4/line2"]
+
+[node name="background" parent="Node2D4/line2/Node2D" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D4/line2/Node2D" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D4/line2/Node2D" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D4/line2/Node2D" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D2" type="Node2D" parent="Node2D4/line2"]
+position = Vector2( 512, 0 )
+
+[node name="background" parent="Node2D4/line2/Node2D2" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D4/line2/Node2D2" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D4/line2/Node2D2" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D4/line2/Node2D2" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D3" type="Node2D" parent="Node2D4/line2"]
+position = Vector2( 1024, 0 )
+
+[node name="background" parent="Node2D4/line2/Node2D3" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D4/line2/Node2D3" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D4/line2/Node2D3" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D4/line2/Node2D3" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D4" type="Node2D" parent="Node2D4/line2"]
+position = Vector2( 1536, 0 )
+
+[node name="background" parent="Node2D4/line2/Node2D4" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D4/line2/Node2D4" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D4/line2/Node2D4" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D4/line2/Node2D4" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="line3" type="Node2D" parent="Node2D4"]
+position = Vector2( 0, 256 )
+
+[node name="Node2D" type="Node2D" parent="Node2D4/line3"]
+
+[node name="background" parent="Node2D4/line3/Node2D" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D4/line3/Node2D" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D4/line3/Node2D" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D4/line3/Node2D" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D2" type="Node2D" parent="Node2D4/line3"]
+position = Vector2( 512, 0 )
+
+[node name="background" parent="Node2D4/line3/Node2D2" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D4/line3/Node2D2" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D4/line3/Node2D2" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D4/line3/Node2D2" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D3" type="Node2D" parent="Node2D4/line3"]
+position = Vector2( 1024, 0 )
+
+[node name="background" parent="Node2D4/line3/Node2D3" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D4/line3/Node2D3" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D4/line3/Node2D3" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D4/line3/Node2D3" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D4" type="Node2D" parent="Node2D4/line3"]
+position = Vector2( 1536, 0 )
+
+[node name="background" parent="Node2D4/line3/Node2D4" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D4/line3/Node2D4" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D4/line3/Node2D4" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D4/line3/Node2D4" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="line4" type="Node2D" parent="Node2D4"]
+position = Vector2( 0, 384 )
+
+[node name="Node2D" type="Node2D" parent="Node2D4/line4"]
+
+[node name="background" parent="Node2D4/line4/Node2D" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D4/line4/Node2D" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D4/line4/Node2D" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D4/line4/Node2D" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D2" type="Node2D" parent="Node2D4/line4"]
+position = Vector2( 512, 0 )
+
+[node name="background" parent="Node2D4/line4/Node2D2" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D4/line4/Node2D2" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D4/line4/Node2D2" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D4/line4/Node2D2" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D3" type="Node2D" parent="Node2D4/line4"]
+position = Vector2( 1024, 0 )
+
+[node name="background" parent="Node2D4/line4/Node2D3" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D4/line4/Node2D3" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D4/line4/Node2D3" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D4/line4/Node2D3" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D4" type="Node2D" parent="Node2D4/line4"]
+position = Vector2( 1536, 0 )
+
+[node name="background" parent="Node2D4/line4/Node2D4" instance=ExtResource( 1 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background2" parent="Node2D4/line4/Node2D4" instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = -64.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background3" parent="Node2D4/line4/Node2D4" instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="background4" parent="Node2D4/line4/Node2D4" instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = -64.0
+margin_right = 640.0
+margin_bottom = 192.0
+rect_scale = Vector2( 0.5, 0.5 )
