@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://addons/GameTemplate/Assets/Fonts/m5x7_16.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Assets/Sprites/shopping-cart.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Assets/Sprites/shop_blower_sprite.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Sprites/shop_rubber_texture.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Sprites/shop_tapis.png" type="Texture" id=9]
+[ext_resource path="res://addons/GameTemplate/Assets/Fonts/m5x7.ttf" type="DynamicFontData" id=10]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node
@@ -17,12 +18,13 @@ onready var hp: = $CanvasLayer/GUI/MarginContainer/VBoxContainer/Top/HP
 onready var money: = $CanvasLayer/GUI/MarginContainer/VBoxContainer/Top/TopRight/MoneyWrapper/Money
 onready var poissons: = $CanvasLayer/GUI/MarginContainer/VBoxContainer/Top/TopRight/PoissonsWrapper/Poissons
 onready var gui: = $CanvasLayer/GUI
+onready var hide: = $CanvasLayer/GUI/MarginContainer/VBoxContainer2/Hide
 
 signal buy_item(name)
 signal buy_fish(amount)
 
 var visible: = false setget set_visible
-var shop_visible: = false setget set_shop_visible
+var shop_visible: = true setget set_shop_visible
 
 func _ready()->void:
 	gui.visible = visible
@@ -32,7 +34,12 @@ func set_visible(value: bool)->void:
 	gui.visible = value
 
 func set_shop_visible(value: bool)->void:
-	$CanvasLayer/GUI/MarginContainer/VBoxContainer2.visible = value
+	shop_visible = value
+	$CanvasLayer/GUI/MarginContainer/VBoxContainer2/Top3.visible = value
+	if value:
+		hide.text = \"[SHIFT] Hide Shop\"
+	else:
+		hide.text = \"[SHIFT] Show Shop\"
 
 func set_money(value: int):
 	money.text = str(value)
@@ -43,6 +50,22 @@ func set_money(value: int):
 		money.text = \"0\" + money.text
 	if value < 10:
 		money.text = \"0\" + money.text
+
+var slope = (1.0 - 0.0) / (50.0 - 20.0)
+func _process(delta):
+	var vec = money.get_local_mouse_position().length()
+	var output = 0.0 + slope * (vec - 20.0)
+	output = clamp(output, 0.0, 1.0)
+	$CanvasLayer/GUI/MarginContainer/VBoxContainer.modulate = Color(1, 1, 1, output)
+
+	if not shop_visible:
+		vec = hide.get_local_mouse_position().length()
+		output = 0.0 + slope * (vec - 20.0)
+		output = clamp(output, 0.0, 1.0)
+		hide.modulate = Color(1, 1, 1, output)
+
+	if Input.is_action_just_released(\"Shop\"):
+		set_shop_visible(not shop_visible)
 
 func set_poissons(inPool: int, total: int):
 	var texte = \"\"
@@ -77,6 +100,14 @@ func _on_BuyItem5_pressed():
 func _on_BuyFish_pressed():
 	emit_signal(\"buy_fish\", 1)
 "
+
+[sub_resource type="DynamicFont" id=2]
+size = 6
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 10 )
 
 [node name="Hud" type="Node"]
 script = SubResource( 1 )
@@ -195,12 +226,13 @@ margin_top = 4.0
 margin_right = 316.0
 margin_bottom = 176.0
 mouse_filter = 2
+custom_constants/separation = -1
 alignment = 2
 
 [node name="Top3" type="HBoxContainer" parent="CanvasLayer/GUI/MarginContainer/VBoxContainer2"]
-margin_top = 148.0
+margin_top = 144.0
 margin_right = 312.0
-margin_bottom = 172.0
+margin_bottom = 168.0
 mouse_filter = 2
 custom_constants/separation = 8
 alignment = 1
@@ -257,6 +289,14 @@ margin_bottom = 19.0
 text = "25"
 icon = ExtResource( 5 )
 expand_icon = true
+
+[node name="Hide" type="Label" parent="CanvasLayer/GUI/MarginContainer/VBoxContainer2"]
+margin_top = 167.0
+margin_right = 312.0
+margin_bottom = 172.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 2 )
+text = " [SHIFT] Hide Shop"
 [connection signal="pressed" from="CanvasLayer/GUI/MarginContainer/VBoxContainer2/Top3/BuyItem1" to="." method="_on_BuyItem1_pressed"]
 [connection signal="pressed" from="CanvasLayer/GUI/MarginContainer/VBoxContainer2/Top3/BuyItem2" to="." method="_on_BuyItem2_pressed"]
 [connection signal="pressed" from="CanvasLayer/GUI/MarginContainer/VBoxContainer2/Top3/BuyItem3" to="." method="_on_BuyItem3_pressed"]
