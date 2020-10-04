@@ -1,5 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=15 format=2]
 
+[ext_resource path="res://addons/GameTemplate/GUI/Buttons/DefaultButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://addons/GameTemplate/Assets/Fonts/m5x7_16.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Levels/défaite.gd" type="Script" id=3]
+[ext_resource path="res://Levels/niveau.tscn" type="PackedScene" id=4]
 [ext_resource path="res://addons/GameTemplate/Assets/Fonts/m5x7_64.tres" type="DynamicFont" id=83]
 [ext_resource path="res://Assets/Sprites/sad_jj.png" type="Texture" id=84]
 [ext_resource path="res://Assets/Sounds/échec.wav" type="AudioStream" id=85]
@@ -10,7 +14,89 @@
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.356863, 0.431373, 0.882353, 1 )
 
+[sub_resource type="StyleBoxFlat" id=3]
+content_margin_left = 2.0
+content_margin_right = 2.0
+content_margin_top = 0.0
+content_margin_bottom = 1.0
+bg_color = Color( 0.0705882, 0.305882, 0.537255, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 1, 1, 1, 0 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+corner_detail = 1
+expand_margin_left = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 1.0
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=4]
+content_margin_left = 2.0
+content_margin_right = 2.0
+content_margin_top = 0.0
+content_margin_bottom = 1.0
+bg_color = Color( 0.227451, 0.266667, 0.4, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 1, 1, 1, 0 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+corner_detail = 1
+expand_margin_left = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 1.0
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=5]
+content_margin_left = 2.0
+content_margin_right = 2.0
+content_margin_top = 0.0
+content_margin_bottom = 1.0
+bg_color = Color( 0.14902, 0.168627, 0.266667, 0 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.0705882, 0.305882, 0.537255, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+corner_detail = 1
+expand_margin_left = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 1.0
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=6]
+content_margin_left = 2.0
+content_margin_right = 2.0
+content_margin_top = 0.0
+content_margin_bottom = 1.0
+bg_color = Color( 0.14902, 0.168627, 0.266667, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 1, 1, 1, 0 )
+corner_detail = 1
+expand_margin_left = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 1.0
+anti_aliasing = false
+
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 3 )
+First_Level = ExtResource( 4 )
 
 [node name="Panel" type="Panel" parent="."]
 material = SubResource( 1 )
@@ -93,3 +179,24 @@ fit_content_height = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="NewGame" type="Button" parent="." groups=[
+"MainMenu",
+] instance=ExtResource( 1 )]
+margin_left = 125.0
+margin_top = 160.0
+margin_right = 195.0
+margin_bottom = 174.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 6 )
+custom_fonts/font = ExtResource( 2 )
+text = "New Game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="NewGame" to="." method="_on_NewGame_pressed"]
