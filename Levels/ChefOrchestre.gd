@@ -36,3 +36,9 @@ func full():
 
 func _process(_delta):
 	bar = ((($MixingDeskMusic.bar + 1) / 2) - 1) % 4
+
+func stop():
+	$MixingDeskMusic.fade_out("Song", "strings")
+	$MixingDeskMusic.fade_out("Song", "bass")
+	$MixingDeskMusic.fade_out("Song", "drums")
+	$MixingDeskMusic.fade_out("Song", "recorder")

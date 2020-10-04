@@ -140,6 +140,9 @@ func add_poisson_max():
 func remove_poisson_died():
 	$Piscine.poissonsTotal -= 1
 	update_poissons_hud()
+	if not $Piscine.poissonsTotal:
+		get_tree().change_scene("res://Levels/défaite.tscn")
+		ChefOrchestre.stop()
 
 func refund_object(body):
 	var c = cost[body.objectType]
