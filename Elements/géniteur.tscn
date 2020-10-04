@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/Sprites/geniteur_sprite.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8.92596, 10.7009 )
+extents = Vector2( 12.121, 10.7009 )
 
 [node name="Geniteur" type="Area2D"]
 position = Vector2( 22.1825, 11.323 )
@@ -14,7 +14,6 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-modulate = Color( 0.423529, 0.0509804, 0.0509804, 1 )
 position = Vector2( 6.16908e-06, 1.78814e-06 )
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 2 )
