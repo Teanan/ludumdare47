@@ -19,7 +19,7 @@ func _process(delta):
 
 func _on_Ball_body_entered(body):
 	if (linear_velocity - velocity).length() > 150:
-		var bar_notes = ChefOrchestre.notes[ChefOrchestre.bar - 1]
+		var bar_notes = ChefOrchestre.notes[ChefOrchestre.bar]
 		var note = bar_notes[rand_range(0,bar_notes.size())]
 		$AudioStreamPlayer2D.play()
 		$AudioStreamPlayer2D.pitch_scale = ChefOrchestre.pitch[note]

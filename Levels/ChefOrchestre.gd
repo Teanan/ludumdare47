@@ -26,9 +26,13 @@ export var notes = [
 export var bar = 1
 
 func _ready():
-	pass
+	$MixingDeskMusic.init_song("Song")
+	$MixingDeskMusic.start_alone("Song", "strings")
+	$MixingDeskMusic.fade_in("Song", "bass")
 
-func _on_Timer_timeout():
-	bar = bar + 1
-	if bar > 4:
-		bar = 1
+func full():
+	$MixingDeskMusic.fade_in("Song", "drums")
+	$MixingDeskMusic.fade_in("Song", "recorder")
+
+func _process(_delta):
+	bar = ((($MixingDeskMusic.bar + 1) / 2) - 1) % 4

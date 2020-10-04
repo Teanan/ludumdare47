@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Levels/ChefOrchestre.gd" type="Script" id=1]
+[ext_resource path="res://addons/mixing-desk/music/containers/core_cont.gd" type="Script" id=2]
+[ext_resource path="res://addons/mixing-desk/music/mixing_desk_music.gd" type="Script" id=3]
+[ext_resource path="res://addons/mixing-desk/music/song.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Music/bass.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Music/strings.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Music/drum.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Music/recorder.ogg" type="AudioStream" id=8]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -8,4 +15,35 @@ script = ExtResource( 1 )
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 autostart = true
+
+[node name="MixingDeskMusic" type="Node" parent="."]
+script = ExtResource( 3 )
+play_mode = 1
+
+[node name="Song" type="Node" parent="MixingDeskMusic"]
+script = ExtResource( 4 )
+tempo = 108
+bars = 8
+beats_in_bar = 4
+transition_beats = 4.0
+transition_type = "Bar"
+
+[node name="CoreContainer" type="Node" parent="MixingDeskMusic/Song"]
+script = ExtResource( 2 )
+
+[node name="bass" type="AudioStreamPlayer" parent="MixingDeskMusic/Song/CoreContainer"]
+stream = ExtResource( 5 )
+volume_db = -2.0
+
+[node name="drums" type="AudioStreamPlayer" parent="MixingDeskMusic/Song/CoreContainer"]
+stream = ExtResource( 7 )
+volume_db = -3.0
+
+[node name="strings" type="AudioStreamPlayer" parent="MixingDeskMusic/Song/CoreContainer"]
+stream = ExtResource( 6 )
+volume_db = -7.0
+
+[node name="recorder" type="AudioStreamPlayer" parent="MixingDeskMusic/Song/CoreContainer"]
+stream = ExtResource( 8 )
+volume_db = -2.0
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

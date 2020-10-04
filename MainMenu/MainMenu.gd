@@ -19,6 +19,7 @@ func on_options(value:bool)->void:
 		get_tree().get_nodes_in_group("MainMenu")[0].grab_focus()
 
 func _on_NewGame_pressed()->void:
+	ChefOrchestre.full()
 	Game.emit_signal("NewGame")
 	Game.emit_signal("ChangeScene", First_Level)
 
