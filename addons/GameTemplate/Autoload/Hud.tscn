@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://addons/GameTemplate/Assets/Fonts/m5x7_16.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Assets/Sprites/shopping-cart.png" type="Texture" id=2]
 [ext_resource path="res://addons/GameTemplate/GUI/Buttons/DefaultButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Sprites/shell.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Sprites/ball_sprite.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/shop_wood_texture.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sprites/shop_blower_sprite.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Sprites/shop_rubber_texture.png" type="Texture" id=8]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node
@@ -95,26 +98,26 @@ __meta__ = {
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/GUI/MarginContainer"]
 margin_left = 4.0
 margin_top = 4.0
-margin_right = 316.0
+margin_right = 492.0
 margin_bottom = 176.0
 mouse_filter = 2
 
 [node name="Top" type="HBoxContainer" parent="CanvasLayer/GUI/MarginContainer/VBoxContainer"]
-margin_right = 312.0
+margin_right = 488.0
 margin_bottom = 30.0
 mouse_filter = 2
 
 [node name="HP" type="Label" parent="CanvasLayer/GUI/MarginContainer/VBoxContainer/Top"]
 margin_top = 8.0
-margin_right = 280.0
+margin_right = 456.0
 margin_bottom = 21.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "HP: 3"
 
 [node name="TopRight" type="VBoxContainer" parent="CanvasLayer/GUI/MarginContainer/VBoxContainer/Top"]
-margin_left = 284.0
-margin_right = 312.0
+margin_left = 460.0
+margin_right = 488.0
 margin_bottom = 30.0
 
 [node name="MoneyWrapper" type="HBoxContainer" parent="CanvasLayer/GUI/MarginContainer/VBoxContainer/Top/TopRight"]
@@ -180,60 +183,53 @@ align = 2
 [node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/GUI/MarginContainer"]
 margin_left = 4.0
 margin_top = 4.0
-margin_right = 316.0
+margin_right = 492.0
 margin_bottom = 176.0
 mouse_filter = 2
 alignment = 2
 
 [node name="Top3" type="HBoxContainer" parent="CanvasLayer/GUI/MarginContainer/VBoxContainer2"]
-margin_top = 144.0
-margin_right = 312.0
+margin_top = 148.0
+margin_right = 488.0
 margin_bottom = 172.0
 mouse_filter = 2
-alignment = 2
+custom_constants/separation = 24
+alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/GUI/MarginContainer/VBoxContainer2/Top3"]
 margin_right = 32.0
-margin_bottom = 28.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 32, 24 )
 texture = ExtResource( 2 )
-stretch_mode = 1
+expand = true
+stretch_mode = 5
 
 [node name="BuyItem1" parent="CanvasLayer/GUI/MarginContainer/VBoxContainer2/Top3" instance=ExtResource( 3 )]
-margin_left = 36.0
-margin_top = 7.0
-margin_right = 88.0
-margin_bottom = 21.0
-text = "Platform"
+margin_left = 56.0
+margin_top = 5.0
+margin_right = 184.0
+margin_bottom = 19.0
+text = "20"
+icon = ExtResource( 6 )
+expand_icon = true
 
 [node name="BuyItem2" parent="CanvasLayer/GUI/MarginContainer/VBoxContainer2/Top3" instance=ExtResource( 3 )]
-margin_left = 92.0
-margin_top = 7.0
-margin_right = 144.0
-margin_bottom = 21.0
-text = "Boing"
+margin_left = 208.0
+margin_top = 5.0
+margin_right = 336.0
+margin_bottom = 19.0
+text = "50"
+icon = ExtResource( 8 )
+expand_icon = true
 
 [node name="BuyItem3" parent="CanvasLayer/GUI/MarginContainer/VBoxContainer2/Top3" instance=ExtResource( 3 )]
-margin_left = 148.0
-margin_top = 7.0
-margin_right = 200.0
-margin_bottom = 21.0
-text = "Pfffff"
-
-[node name="BuyItem4" parent="CanvasLayer/GUI/MarginContainer/VBoxContainer2/Top3" instance=ExtResource( 3 )]
-margin_left = 204.0
-margin_top = 7.0
-margin_right = 256.0
-margin_bottom = 21.0
-text = "Item 4"
-
-[node name="BuyItem5" parent="CanvasLayer/GUI/MarginContainer/VBoxContainer2/Top3" instance=ExtResource( 3 )]
-margin_left = 260.0
-margin_top = 7.0
-margin_right = 312.0
-margin_bottom = 21.0
-text = "Item 5"
+margin_left = 360.0
+margin_top = 5.0
+margin_right = 488.0
+margin_bottom = 19.0
+text = "150"
+icon = ExtResource( 7 )
+expand_icon = true
 [connection signal="pressed" from="CanvasLayer/GUI/MarginContainer/VBoxContainer2/Top3/BuyItem1" to="." method="_on_BuyItem1_pressed"]
 [connection signal="pressed" from="CanvasLayer/GUI/MarginContainer/VBoxContainer2/Top3/BuyItem2" to="." method="_on_BuyItem2_pressed"]
 [connection signal="pressed" from="CanvasLayer/GUI/MarginContainer/VBoxContainer2/Top3/BuyItem3" to="." method="_on_BuyItem3_pressed"]
-[connection signal="pressed" from="CanvasLayer/GUI/MarginContainer/VBoxContainer2/Top3/BuyItem4" to="." method="_on_BuyItem4_pressed"]
-[connection signal="pressed" from="CanvasLayer/GUI/MarginContainer/VBoxContainer2/Top3/BuyItem5" to="." method="_on_BuyItem5_pressed"]
