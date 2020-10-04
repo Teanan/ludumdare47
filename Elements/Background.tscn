@@ -8,6 +8,7 @@
 [node name="background" type="Panel"]
 margin_right = 256.0
 margin_bottom = 256.0
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }

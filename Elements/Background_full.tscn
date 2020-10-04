@@ -4,6 +4,7 @@
 
 [node name="Background" type="CanvasModulate"]
 light_mask = 16
+z_index = -3
 color = Color( 0.8, 0.8, 0.8, 1 )
 
 [node name="Node2D" type="Node2D" parent="."]
