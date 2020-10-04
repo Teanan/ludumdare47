@@ -19,6 +19,7 @@ onready var poissons: = $CanvasLayer/GUI/MarginContainer/VBoxContainer/Top/TopRi
 onready var gui: = $CanvasLayer/GUI
 
 signal buy_item(name)
+signal buy_fish(amount)
 
 var visible: = false setget set_visible
 
@@ -70,7 +71,7 @@ func _on_BuyItem5_pressed():
 	emit_signal(\"buy_item\", \"item_5\")
 
 func _on_BuyFish_pressed():
-	emit_signal(\"buy_fish\")
+	emit_signal(\"buy_fish\", 1)
 "
 
 [node name="Hud" type="Node"]

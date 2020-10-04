@@ -20,7 +20,8 @@ var cost = {
 	"Platform": 20,
 	"Trampoline": 50,
 	"conveyor": 75,
-	"Blower": 150
+	"Blower": 150,
+	"Fish": 25
 }
 
 func _ready()->void:
@@ -35,6 +36,7 @@ func _ready()->void:
 	# Initialize HUD
 	Hud.visible = true
 	Hud.connect("buy_item", self, "_on_buy_item")
+	Hud.connect("buy_fish", self, "_on_buy_fish")
 	PauseMenu.can_show = true
 	
 	# Start first Genitor
@@ -103,6 +105,12 @@ func _on_buy_item(name):
 
 		add_child(cursorElement)
 
+func _on_buy_fish(amount: int):
+	var c = cost["Fish"]
+	if money >= c:
+		set_money(money - c)
+		add_poisson_max(amount)
+
 func preload_elmts():
 	var elements_directory = Directory.new()
 	elements_directory.open("res://Elements")
@@ -133,9 +141,9 @@ func poisson_reached_bucket():
 	if poissonsReussis in seuils:
 		emit_signal("niveauSup")
 
-func add_poisson_max():
-	$Piscine.poissonsInPool += 1
-	$Piscine.poissonsTotal += 1
+func add_poisson_max(amount: int):
+	$Piscine.poissonsInPool += amount
+	$Piscine.poissonsTotal += amount
 	update_poissons_hud()
 
 func remove_poisson_died():
