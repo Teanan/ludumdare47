@@ -9,6 +9,7 @@ var tex_closed = load('res://Assets/Sprites/geniteur_sprite_closed.png')
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	self.add_to_group("geniteurs")
+	setSprite(isActive)
 
 func _geniter():
 #	print("je genite")
@@ -21,11 +22,14 @@ func _geniter():
 
 func toggleGeniteur():
 	isActive = !isActive
+	setSprite(isActive)
 
-	if isActive:
+func setSprite(open):
+	if open:
 		get_node("Sprite").set_texture(tex_open)
 	else:
 		get_node("Sprite").set_texture(tex_closed)
+
 
 func _on_Geniteur_input_event(viewport, event, shape_idx):
 	if !isActive and event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.is_pressed():
