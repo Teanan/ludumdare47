@@ -12,6 +12,7 @@ height = 14.8338
 
 [node name="Bucket" type="StaticBody2D"]
 position = Vector2( -0.20204, 0.0515566 )
+scale = Vector2( 1.5, 1.5 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
