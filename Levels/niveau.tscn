@@ -57,6 +57,7 @@ position = Vector2( 850, 465 )
 position = Vector2( 960, 540 )
 current = true
 script = ExtResource( 6 )
+[connection signal="niveauSup" from="." to="Camera2D" method="dezoom"]
 [connection signal="did_genit" from="Piscine" to="." method="update_poissons_hud"]
 [connection signal="timeout" from="Piscine/GenitionTimer" to="Piscine" method="_geniter"]
 [connection signal="timeout" from="Piscine/RefillTimer" to="Piscine" method="_attempt_refill"]
