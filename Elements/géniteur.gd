@@ -14,7 +14,7 @@ func _geniter():
 		var balle = load("res://Elements/Ball.tscn")
 		var noeud = balle.instance()
 		noeud.add_to_group("balls")
-		noeud.connect("poissonDied",self,"myPoissonDied")
+		noeud.connect("poissonDied", self, "myPoissonDied")
 		add_child(noeud)
 
 func toggleGeniteur():

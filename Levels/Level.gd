@@ -56,6 +56,8 @@ func _process(delta):
 				set_money(money - c)
 				cursorElement.modulate = Color(1, 1, 1, 1)
 				cursorElement.disable_collision(false)
+				cursorElement.canBeDestroyed = true
+				cursorElement.connect("wasDestroyed", self, "refund_object")
 				cursorElement = null;
 			else:
 				print("not enought money")
@@ -139,3 +141,8 @@ func add_poisson_max():
 func remove_poisson_died():
 	$Piscine.poissonsTotal -= 1
 	update_poissons_hud()
+
+func refund_object(body):
+	print(body.objectType)
+	var c = cost[body.objectType]
+	set_money(money + (c/2))
