@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Elements/conveyor.gd" type="Script" id=1]
 [ext_resource path="res://Assets/PhysicMaterials/wood_material.tres" type="PhysicsMaterial" id=2]
 [ext_resource path="res://Assets/Sprites/tapis_roulant_sprite.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/arrow.png" type="Texture" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "conveyor_animation"
@@ -42,7 +43,7 @@ script = ExtResource( 1 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 3 )
 hframes = 4
-frame = 1
+frame = 3
 region_rect = Rect2( 0, 0, 65.2238, 17.0692 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -148,6 +149,38 @@ shape = SubResource( 4 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ZoneDeClik"]
 rotation = 1.57079
 shape = SubResource( 5 )
+
+[node name="clockwiseArrows" type="Node2D" parent="."]
+visible = false
+modulate = Color( 0.647059, 0.239216, 0.239216, 1 )
+position = Vector2( -31.0782, 7.78708 )
+
+[node name="Sprite" type="Sprite" parent="clockwiseArrows"]
+position = Vector2( 2, -16 )
+scale = Vector2( -0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="Sprite2" type="Sprite" parent="clockwiseArrows"]
+position = Vector2( 62, 1.5 )
+rotation = 3.14159
+scale = Vector2( -0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="counterClockwiseArrows" type="Node2D" parent="."]
+visible = false
+modulate = Color( 0.266667, 0.333333, 0.745098, 1 )
+position = Vector2( -31.0782, 7.78708 )
+
+[node name="Sprite" type="Sprite" parent="counterClockwiseArrows"]
+position = Vector2( 2, -16 )
+scale = Vector2( -0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="Sprite2" type="Sprite" parent="counterClockwiseArrows"]
+position = Vector2( 62, 1.5 )
+rotation = 3.14159
+scale = Vector2( -0.5, 0.5 )
+texture = ExtResource( 4 )
 [connection signal="input_event" from="ZoneDeClik" to="." method="was_clicked"]
 [connection signal="mouse_entered" from="ZoneDeClik" to="." method="_on_ZoneDeClik_mouse_entered"]
 [connection signal="mouse_exited" from="ZoneDeClik" to="." method="_on_ZoneDeClik_mouse_exited"]
