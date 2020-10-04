@@ -15,8 +15,8 @@ var money: int
 var chainePoissons: int = 0
 var geniteursActifs: int = 0
 var currentNiveau: int = 0
-var seuilsPoissons = [5, 10, 20, 20, 20]
-var seuilsGeniteurs = [1, 2, 4, 7, 10]
+var seuilsPoissons = [5, 10, 20, 20, 20, 9999]
+var seuilsGeniteurs = [1, 2, 4, 7, 10, 99]
 
 var moneyPerPoisson: int = 10
 
