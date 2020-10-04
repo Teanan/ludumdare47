@@ -39,20 +39,23 @@ position = Vector2( 286.474, 13.1522 )
 isActive = true
 
 [node name="Bucket" parent="." instance=ExtResource( 6 )]
-position = Vector2( 20.6653, 133.777 )
+position = Vector2( 54, 135 )
 
 [node name="Trampoline" parent="." instance=ExtResource( 4 )]
-position = Vector2( 114.822, 133.568 )
-rotation = -0.0349066
+position = Vector2( 130, 135 )
+rotation = -0.0523599
 
 [node name="Platform" parent="." instance=ExtResource( 5 )]
-position = Vector2( 224.528, 39.2825 )
-rotation = -0.139626
-scale = Vector2( 2.479, 0.5 )
+position = Vector2( 280, 30 )
+rotation = -0.174533
 
 [node name="Platform2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 10.4869, 184.364 )
-scale = Vector2( 1, 8 )
+position = Vector2( 50, 150 )
+
+[node name="Platform3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 220, 40.7 )
+rotation = -0.174533
+scale = Vector2( 1, 1 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
