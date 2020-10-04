@@ -17,6 +17,8 @@ script = ExtResource( 5 )
 [node name="GenitionTimer" type="Timer" parent="Piscine"]
 wait_time = 2.0
 
+[node name="RefillTimer" type="Timer" parent="Piscine"]
+
 [node name="LevelFrame" type="Node2D" parent="."]
 
 [node name="Trampoline" parent="LevelFrame" instance=ExtResource( 7 )]
@@ -55,5 +57,6 @@ script = ExtResource( 6 )
 [connection signal="niveauSup" from="." to="Camera2D" method="dezoom"]
 [connection signal="did_genit" from="Piscine" to="." method="update_poissons_hud"]
 [connection signal="timeout" from="Piscine/GenitionTimer" to="Piscine" method="_geniter"]
+[connection signal="timeout" from="Piscine/RefillTimer" to="Piscine" method="_attempt_refill"]
 [connection signal="ballEntered" from="Bucket" to="." method="poisson_reached_bucket"]
 [connection signal="myPoissonDied" from="Geniteur_1" to="." method="remove_poisson_died"]

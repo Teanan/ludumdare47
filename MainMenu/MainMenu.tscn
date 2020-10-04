@@ -55,7 +55,6 @@ position = Vector2( 50, 150 )
 [node name="Platform3" parent="." instance=ExtResource( 5 )]
 position = Vector2( 220, 40.7 )
 rotation = -0.174533
-scale = Vector2( 1, 1 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
