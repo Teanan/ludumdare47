@@ -118,7 +118,7 @@ margin_right = 280.0
 margin_bottom = 21.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
-text = "HP: 3"
+text = " "
 
 [node name="TopRight" type="VBoxContainer" parent="CanvasLayer/GUI/MarginContainer/VBoxContainer/Top"]
 margin_left = 284.0
