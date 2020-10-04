@@ -68,7 +68,7 @@ window/stretch/aspect="keep_height"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "GameTemplate" )
+enabled=PoolStringArray( "GameTemplate", "mixing-desk" )
 
 [importer_defaults]
 
