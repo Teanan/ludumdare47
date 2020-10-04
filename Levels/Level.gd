@@ -132,7 +132,6 @@ func update_poissons_hud():
 # used by bucket
 func poisson_reached_bucket():
 	$Piscine.poissonsInPool += 1
-	$Piscine.poissonsTotal += 1
 	update_poissons_hud()
 	
 	set_money(money + moneyPerPoisson)

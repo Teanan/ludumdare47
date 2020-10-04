@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Elements/conveyor.gd" type="Script" id=1]
 [ext_resource path="res://Assets/PhysicMaterials/wood_material.tres" type="PhysicsMaterial" id=2]
@@ -29,6 +29,10 @@ extents = Vector2( 26.2562, 1.27389 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 2.72375, 1.15318 )
+
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 6.94071
+height = 46.7668
 
 [node name="Conveyor" type="RigidBody2D"]
 mode = 1
@@ -138,3 +142,10 @@ gravity = 200.0
 position = Vector2( 29.4051, 0.161703 )
 rotation = 1.5708
 shape = SubResource( 4 )
+
+[node name="ZoneDeClik" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZoneDeClik"]
+rotation = 1.57079
+shape = SubResource( 5 )
+[connection signal="input_event" from="ZoneDeClik" to="." method="was_clicked"]
