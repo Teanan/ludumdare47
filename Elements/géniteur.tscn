@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Elements/géniteur.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Sprites/blower_sprite.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/geniteur_sprite.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 5.005, 5.01051 )
+extents = Vector2( 8.92596, 10.7009 )
 
 [node name="Geniteur" type="Area2D"]
 position = Vector2( 22.1825, 11.323 )
@@ -15,7 +15,7 @@ shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 modulate = Color( 0.423529, 0.0509804, 0.0509804, 1 )
-position = Vector2( 0.420929, 0.947079 )
-scale = Vector2( 0.2, 0.2 )
+position = Vector2( 6.16908e-06, 1.78814e-06 )
+scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 2 )
 [connection signal="input_event" from="." to="." method="_on_Geniteur_input_event"]
