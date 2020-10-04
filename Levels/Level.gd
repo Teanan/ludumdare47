@@ -88,11 +88,10 @@ func _on_buy_item(name):
 			remove_child(cursorElement)
 			cursorElement.queue_free()
 
-		var mouse = get_viewport().get_mouse_position()
 		var prefab = elements[name]
 
 		cursorElement = prefab.instance()
-		cursorElement.position = mouse
+		cursorElement.position = get_local_mouse_position()
 		cursorElement.modulate = Color(1, 1, 1, 0.5)
 		cursorElement.disable_collision(true)
 		cursorElementName = name

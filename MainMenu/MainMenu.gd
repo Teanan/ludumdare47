@@ -6,6 +6,8 @@ func _ready()->void:
 	get_tree().get_nodes_in_group("MainMenu")[0].grab_focus()					#Godot doesn't have buttons auto grab_focus when noone has focus
 	MenuEvent.connect("Options", self, "on_options")
 
+	$Geniteur._geniter()
+
 	if OS.get_name() == "HTML5":
 		$"BG/MarginContainer/VBoxMain/HBoxContainer/ButtonContainer/Exit".visible = false
 	#Localization
