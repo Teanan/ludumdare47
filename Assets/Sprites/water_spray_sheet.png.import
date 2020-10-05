@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/water_flow_01.png-78af7281ff5f9735d918c574917be41a.stex"
+path="res://.import/water_spray_sheet.png-61eb127b8daf69f3d3a8d31c950d933c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/water_flow_01.png"
-dest_files=[ "res://.import/water_flow_01.png-78af7281ff5f9735d918c574917be41a.stex" ]
+source_file="res://Assets/Sprites/water_spray_sheet.png"
+dest_files=[ "res://.import/water_spray_sheet.png-61eb127b8daf69f3d3a8d31c950d933c.stex" ]
 
 [params]
 

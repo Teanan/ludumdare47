@@ -1,29 +1,28 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Assets/Sprites/water_spray_01.png" type="Texture" id=1]
-[ext_resource path="res://Assets/Sprites/water_flow_01.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/water_spray_sheet.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Sprites/blower_sprite.png" type="Texture" id=3]
 [ext_resource path="res://Assets/PhysicMaterials/wood_material.tres" type="PhysicsMaterial" id=4]
 [ext_resource path="res://Elements/Blower.gd" type="Script" id=5]
 
-[sub_resource type="SpriteFrames" id=1]
-animations = [ {
-"frames": [ ExtResource( 1 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="SpriteFrames" id=2]
-animations = [ {
-"frames": [ ExtResource( 2 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7.20419, 21.3729 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "water_spray"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("water_spray/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.33, 0.67 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
 
 [node name="Blower" type="Node2D"]
 position = Vector2( 54.2378, 19.2269 )
@@ -40,7 +39,7 @@ texture = ExtResource( 3 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="faucet"]
 visible = false
-polygon = PoolVector2Array( 7.0742, -13.6697, 20.3041, 23.1957, 17.9257, 27.5066, 4.99309, 27.5066, -23.5479, 19.3308, -23.3992, -5.93986, -17.1559, -13.3724, -9.42604, -16.0481, -0.0610428, -16.0481 )
+polygon = PoolVector2Array( 7.0742, -13.6697, 8.2236, 3.0271, 16.1786, 11.1588, 20.3041, 23.1957, 17.9257, 27.5066, 4.99309, 27.5066, 1.32932, 24.2403, -3.44366, 11.8659, -15.4645, 11.8659, -19.3536, 19.2906, -23.5479, 19.3308, -23.3992, -5.93986, -17.1559, -13.3724, -9.42604, -16.0481, -0.0610428, -16.0481 )
 
 [node name="water_spray" type="Area2D" parent="."]
 space_override = 1
@@ -48,32 +47,38 @@ gravity_point = true
 gravity_vec = Vector2( 5, 0 )
 gravity = -200.0
 
-[node name="AnimatedSprite2" type="AnimatedSprite" parent="water_spray"]
-position = Vector2( 11.2201, 75.8267 )
-rotation = 3.14159
-frames = SubResource( 1 )
-
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="water_spray"]
-polygon = PoolVector2Array( 19.2039, 59.9484, 43.1424, 59.6334, 42.5124, 72.8626, 32.4331, 81.6821, -7.56944, 82.312, -19.5781, 73.3062, -19.9526, 59.8214, 4.7148, 59.9484 )
+visible = false
+polygon = PoolVector2Array( 18.9173, 62.2611, 38.8886, 66.1503, 39.0989, 75.1899, 31.5308, 83.1784, -7.36067, 83.2835, -16.4003, 74.7695, -16.5054, 65.6247, 4.72721, 62.156 )
+
+[node name="Sprite" type="Sprite" parent="water_spray"]
+position = Vector2( 11.1184, 59.9177 )
+rotation = -3.14159
+texture = ExtResource( 2 )
+hframes = 3
 
 [node name="water_flow" type="Area2D" parent="."]
+position = Vector2( 0, -2 )
 space_override = 1
 gravity_point = true
 gravity_vec = Vector2( 5, 0 )
 gravity = -300.0
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="water_flow"]
-position = Vector2( 11.2516, 43.9211 )
-frames = SubResource( 2 )
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="water_flow"]
+visible = false
 position = Vector2( 11.2484, 46.7421 )
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+visible = false
 polygon = PoolVector2Array( -16.9969, -11.2835, -15.6621, -13.9532, -10.4896, -13.6195, -9.48846, -16.1223, -0.311432, -16.1223, 1.15115, -13.9864, 5.93973, -14.042, 8.05561, -11.1466, 6.10677, -8.30689, 1.09546, -8.19553, -1.68859, -6.07964, -1.79199, -2.37106, 2.06647, -2.30091, 2.06647, 1.83817, 6.06525, 1.83817, 15.8868, 11.8, 16.0973, 19.7975, 20.0259, 23.1649, 17.9213, 27.7249, 4.10094, 27.7249, 1.85602, 24.0068, 6.06525, 19.7274, 6.27571, 14.6062, 1.92617, 11.8, -15.7526, 11.7298, -20.1021, 19.3766, -23.7501, 19.5169, -23.7501, -5.94893, -20.032, -5.94893, -15.9631, 1.41723, -11.8941, 1.55754, -11.8941, -1.95016, -7.89537, -2.16062, -7.82522, -5.94893, -17.1557, -9.59693 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "water_spray"
+playback_speed = 3.0
+anims/water_spray = SubResource( 2 )
 [connection signal="input_event" from="Area2D" to="." method="was_clicked"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_Area2D_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_Area2D_mouse_exited"]
