@@ -234,14 +234,14 @@ func poisson_reached_bucket(poissonNode):
 	update_streak()
 	print("Poi: " + str(chainePoissons) + " Gen: " + str(geniteursActifs) + " Niv: " + str(currentNiveau))
 
-	if chainePoissons >= seuilsPoissons[currentNiveau] && geniteursActifs >= seuilsGeniteurs[currentNiveau]:
+	if currentNiveau < 5 and chainePoissons >= seuilsPoissons[currentNiveau] and geniteursActifs >= seuilsGeniteurs[currentNiveau]:
 		level_up()
 		$Camera.set_zoom_level(currentNiveau)
 
 	if currentNiveau == 5 and chainePoissons > 100 and geniteursActifs == totalGeniteurs:
 		chainePoissons = 0
 		update_streak()
-		Hud.set_temp_message("Getting faster !", 5)
+		Hud.set_temp_message("Getting faster !", 3)
 		$Piscine.set_timer($Piscine.get_timer() * 0.9)
 
 func level_up():
