@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://addons/GameTemplate/Assets/Fonts/m5x7_16.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Assets/Sprites/shopping-cart.png" type="Texture" id=2]
@@ -20,6 +20,9 @@ onready var poissons: = $CanvasLayer/GUI/MarginContainer/VBoxContainer/Top/TopRi
 onready var gui: = $CanvasLayer/GUI
 onready var hide: = $CanvasLayer/GUI/MarginContainer/VBoxContainer2/Hide
 onready var topr: = $CanvasLayer/GUI/MarginContainer/VBoxContainer/Top/TopRight
+onready var topl: = $CanvasLayer/GUI/MarginContainer/VBoxContainer/Top/TopLeft
+onready var streak: = $CanvasLayer/GUI/MarginContainer/VBoxContainer/Top/TopLeft/Streak
+onready var genW: = $CanvasLayer/GUI/MarginContainer/VBoxContainer/Top/TopLeft/GeniteurWarning
 
 signal buy_item(name)
 signal buy_fish(amount)
@@ -54,14 +57,18 @@ func set_money(value: int):
 
 var slope = (1.0 - 0.0) / (50.0 - 20.0)
 func _process(delta):
-	var vec = (topr.get_local_mouse_position() - topr.rect_size / 2.0).length()
-	var output = 0.0 + slope * (vec - 20.0)
-	output = clamp(output, 0.0, 1.0)
-	$CanvasLayer/GUI/MarginContainer/VBoxContainer.modulate = Color(1, 1, 1, output)
+	var vecr = (topr.get_local_mouse_position() - topr.rect_size / 2.0).length()
+	var outputr = 0.0 + slope * (vecr - 20.0)
+	outputr = clamp(outputr, 0.0, 1.0)
+	topr.modulate = Color(1, 1, 1, outputr)
+	var vecl = (topl.get_local_mouse_position() - topr.rect_size / 2.0).length()
+	var outputl = 0.0 + slope * (vecl - 20.0)
+	outputl = clamp(outputl, 0.0, 1.0)
+	topl.modulate = Color(1, 1, 1, outputl)
 
 	if not shop_visible:
-		vec = hide.get_local_mouse_position().length()
-		output = 0.0 + slope * (vec - 20.0)
+		var vec = hide.get_local_mouse_position().length()
+		var output = 0.0 + slope * (vec - 20.0)
 		output = clamp(output, 0.0, 1.0)
 		hide.modulate = Color(1, 1, 1, output)
 
@@ -83,6 +90,12 @@ func set_poissons(inPool: int, total: int):
 		
 	poissons.text = texte
 
+func set_streak(amount: int, objective: int):
+	streak.text = \"Streak: \" + str(amount) + \"/\" + str(objective)
+
+func set_genitor_warning(visible: bool):
+	genW.visible = visible
+
 func _on_BuyItem1_pressed():
 	emit_signal(\"buy_item\", \"Platform\")
 
@@ -101,6 +114,12 @@ func _on_BuyItem5_pressed():
 func _on_BuyFish_pressed():
 	emit_signal(\"buy_fish\", 1)
 "
+
+[sub_resource type="DynamicFont" id=3]
+size = 10
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 10 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 6
@@ -148,13 +167,37 @@ margin_right = 312.0
 margin_bottom = 30.0
 mouse_filter = 2
 
-[node name="HP" type="Label" parent="CanvasLayer/GUI/MarginContainer/VBoxContainer/Top"]
+[node name="TopLeft" type="VBoxContainer" parent="CanvasLayer/GUI/MarginContainer/VBoxContainer/Top"]
+margin_right = 109.0
+margin_bottom = 30.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Streak" type="Label" parent="CanvasLayer/GUI/MarginContainer/VBoxContainer/Top/TopLeft"]
+margin_right = 109.0
+margin_bottom = 13.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Streak: 0"
+
+[node name="GeniteurWarning" type="Label" parent="CanvasLayer/GUI/MarginContainer/VBoxContainer/Top/TopLeft"]
+margin_top = 17.0
+margin_right = 109.0
+margin_bottom = 26.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 3 )
+text = "Unlock all spawners to proceed !"
+
+[node name="Streak3" type="Label" parent="CanvasLayer/GUI/MarginContainer/VBoxContainer/Top"]
+margin_left = 113.0
 margin_top = 8.0
 margin_right = 280.0
 margin_bottom = 21.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
-text = " "
+text = "Xavier génie"
+percent_visible = 0.0
 
 [node name="TopRight" type="VBoxContainer" parent="CanvasLayer/GUI/MarginContainer/VBoxContainer/Top"]
 margin_left = 284.0

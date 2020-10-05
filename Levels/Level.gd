@@ -17,7 +17,7 @@ var totalGeniteurs: int
 var chainePoissons: int = 0
 var geniteursActifs: int = 0
 var currentNiveau: int = 0
-var seuilsPoissons = [5, 10, 20, 20, 20, 9999]
+var seuilsPoissons = [5, 10, 20, 30, 50, 100]
 var seuilsGeniteurs = [1, 2, 4, 7, 10, 99]
 
 var moneyPerPoisson: int = 10
@@ -74,6 +74,8 @@ func _ready()->void:
 	Hud.visible = true
 	Hud.connect("buy_item", self, "_on_buy_item")
 	Hud.connect("buy_fish", self, "_on_buy_fish")
+	Hud.set_genitor_warning(false)
+	Hud.set_streak(0, seuilsPoissons[currentNiveau])
 	PauseMenu.can_show = true
 
 	# Start first Genitor
@@ -189,6 +191,11 @@ func _on_buy_genitor(genitor):
 		chainePoissons = 0
 		geniteursActifs += 1
 		popup("-" + str(c), Color(255, 0, 0), get_local_mouse_position())
+
+		if (geniteursActifs < seuilsGeniteurs[currentNiveau]):
+			Hud.set_genitor_warning(true)
+		else:
+			Hud.set_genitor_warning(false)
 	else :
 		popup("not enought money!", Color(255, 0, 0), get_local_mouse_position())
 
@@ -224,22 +231,25 @@ func poisson_reached_bucket(poissonNode):
 	set_money(money + moneyPerPoisson)
 
 	chainePoissons += 1
-
+	Hud.set_streak(chainePoissons, seuilsPoissons[currentNiveau])
 	print("Poi: " + str(chainePoissons) + " Gen: " + str(geniteursActifs) + " Niv: " + str(currentNiveau))
 
 	if chainePoissons >= seuilsPoissons[currentNiveau] && geniteursActifs >= seuilsGeniteurs[currentNiveau]:
-		chainePoissons = 0
 		level_up()
 		$Camera.set_zoom_level(currentNiveau)
 
 	if currentNiveau == 5 and chainePoissons > 100 and geniteursActifs == totalGeniteurs:
 		chainePoissons = 0
+		Hud.set_streak(0, seuilsPoissons[currentNiveau])
 		$Piscine.set_timer($Piscine.get_timer() * 0.9)
 
 func level_up():
 	currentNiveau += 1
+	chainePoissons = 0
 	toogle_level_elements(levelNodes[currentNiveau], true)
 	refresh_genitor_prices()
+	Hud.set_streak(0, seuilsPoissons[currentNiveau])
+	Hud.set_genitor_warning(true)
 
 func toogle_level_elements(nodeName: String, value: bool):
 	for element in get_node(nodeName).get_children():
