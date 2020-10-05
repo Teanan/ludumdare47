@@ -312,7 +312,7 @@ margin_left = 152.0
 margin_top = 5.0
 margin_right = 200.0
 margin_bottom = 19.0
-text = "75"
+text = "100"
 icon = ExtResource( 9 )
 expand_icon = true
 
