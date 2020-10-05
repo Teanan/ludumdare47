@@ -1,6 +1,7 @@
 extends Node2D
 
 signal niveauSup
+signal Paused(paused)
 
 export (String, FILE, "*.tscn") var Next_Scene: String
 
@@ -96,10 +97,13 @@ func _process(delta):
 				print("not enought money")
 	if Input.is_action_just_released("cancel"):
 		if cursorElement:
-			remove_child(cursorElement)
-			cursorElement.queue_free()
-			cursorElement = null;
-			Hud.set_shop_visible(true)
+			clean_selection()
+
+func clean_selection():
+	remove_child(cursorElement)
+	cursorElement.queue_free()
+	cursorElement = null;
+	Hud.set_shop_visible(true)
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -216,7 +220,7 @@ func poisson_reached_bucket(poissonNode):
 		chainePoissons = 0
 		level_up()
 		$Camera.set_zoom_level(currentNiveau)
-	
+
 	if currentNiveau == 5 and chainePoissons > 100 and geniteursActifs == totalGeniteurs:
 		chainePoissons = 0
 		$Piscine.set_timer($Piscine.get_timer() * 0.9)
@@ -237,9 +241,13 @@ func remove_poisson_died():
 	if not $Piscine.poissonsTotal and money < cost["Fish"]:
 		game_over()
 
-func game_over(): 
+func game_over():
 	get_tree().change_scene("res://Levels/défaite.tscn")
 	ChefOrchestre.stop()
+
+func on_pause(paused:bool):
+	if paused and cursorElement:
+		clean_selection()
 
 func refund_object(body):
 	var c = cost[body.objectType]
