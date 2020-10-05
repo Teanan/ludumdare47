@@ -80,6 +80,8 @@ func _ready()->void:
 	update_streak()
 	PauseMenu.can_show = true
 
+	MenuEvent.connect("Paused", self, "on_pause")
+
 func _on_Button_pressed()->void:
 	Game.emit_signal("ChangeScene", Next_Scene)
 
