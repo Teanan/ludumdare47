@@ -61,12 +61,12 @@ margin_right = 305.0
 margin_bottom = 157.0
 custom_fonts/normal_font = ExtResource( 7 )
 bbcode_enabled = true
-bbcode_text = " [center][wave amp=100 freq=2]Titre
-du
-jeu[/wave][/center]"
-text = " Titre
-du
-jeu"
+bbcode_text = " [center][wave amp=100 freq=2]Finding
+Jean-
+Jacques[/wave][/center]"
+text = " Finding
+Jean-
+Jacques"
 __meta__ = {
 "_edit_use_anchors_": false
 }
