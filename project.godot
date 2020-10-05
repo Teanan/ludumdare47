@@ -26,9 +26,9 @@ _global_script_class_icons={
 
 [application]
 
-config/name="LD47"
+config/name="Pufferfish Panic : Proliferating Pressure"
 run/main_scene="res://MainMenu/MainMenu.tscn"
-config/icon="res://icon.png"
+config/icon="res://Assets/Sprites/ball_sprite.png"
 
 [autoload]
 
