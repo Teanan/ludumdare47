@@ -30,16 +30,19 @@ texture = ExtResource( 2 )
 flip_h = true
 
 [node name="Geniteur" parent="." instance=ExtResource( 7 )]
-position = Vector2( 202.19, 26.2898 )
+position = Vector2( 200.718, 75.6925 )
 isActive = true
 
 [node name="Blower" parent="Geniteur" instance=ExtResource( 4 )]
-position = Vector2( 11.923, 52.8479 )
-rotation = 2.96706
+position = Vector2( 7, 30 )
+rotation = 3.10669
 
 [node name="Bucket" parent="." instance=ExtResource( 3 )]
-position = Vector2( 132.19, 70.7828 )
+position = Vector2( 155.104, 83.8167 )
 scale = Vector2( 1, 1 )
+
+[node name="Platform2" parent="Bucket" instance=ExtResource( 9 )]
+position = Vector2( -4, 15 )
 
 [node name="Trampoline" parent="." instance=ExtResource( 8 )]
 position = Vector2( 305.807, 99.38 )
@@ -48,9 +51,6 @@ rotation = -0.139626
 [node name="Platform" parent="." instance=ExtResource( 9 )]
 position = Vector2( 307.649, 52.8922 )
 rotation = -0.174533
-
-[node name="Platform2" parent="." instance=ExtResource( 9 )]
-position = Vector2( 128.19, 85.7828 )
 
 [node name="Platform3" parent="." instance=ExtResource( 9 )]
 position = Vector2( 305.92, 73.7005 )
