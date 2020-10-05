@@ -18,7 +18,7 @@ var chainePoissons: int = 0
 var geniteursActifs: int = 0
 var currentNiveau: int = 0
 var seuilsPoissons = [5, 10, 20, 30, 50, 100]
-var seuilsGeniteurs = [1, 2, 4, 7, 10, 99]
+var seuilsGeniteurs = [1, 2, 4, 7, 10, 15]
 
 var moneyPerPoisson: int = 10
 
@@ -49,7 +49,6 @@ var levelNodes = [
 ]
 
 func _ready()->void:
-
 	preload_elmts()
 
 	# Initialize resource values
@@ -70,17 +69,16 @@ func _ready()->void:
 		geniteur.connect("iWasClicked", self, "_on_buy_genitor")
 		geniteur.connect("myPoissonDied", self, "remove_poisson_died")
 
+	# Start first Genitor
+	$Level0/Geniteur_1.toggleGeniteur()
+	geniteursActifs += 1
+
 	# Initialize HUD
 	Hud.visible = true
 	Hud.connect("buy_item", self, "_on_buy_item")
 	Hud.connect("buy_fish", self, "_on_buy_fish")
-	Hud.set_genitor_warning(false)
-	Hud.set_streak(0, seuilsPoissons[currentNiveau])
+	update_streak()
 	PauseMenu.can_show = true
-
-	# Start first Genitor
-	$Level0/Geniteur_1.toggleGeniteur()
-	geniteursActifs += 1
 
 func _on_Button_pressed()->void:
 	Game.emit_signal("ChangeScene", Next_Scene)
@@ -193,9 +191,9 @@ func _on_buy_genitor(genitor):
 		popup("-" + str(c), Color(255, 0, 0), get_local_mouse_position())
 
 		if (geniteursActifs < seuilsGeniteurs[currentNiveau]):
-			Hud.set_genitor_warning(true)
+			Hud.set_genitor_warning()
 		else:
-			Hud.set_genitor_warning(false)
+			update_streak()
 	else :
 		popup("not enought money!", Color(255, 0, 0), get_local_mouse_position())
 
@@ -231,7 +229,7 @@ func poisson_reached_bucket(poissonNode):
 	set_money(money + moneyPerPoisson)
 
 	chainePoissons += 1
-	Hud.set_streak(chainePoissons, seuilsPoissons[currentNiveau])
+	update_streak()
 	print("Poi: " + str(chainePoissons) + " Gen: " + str(geniteursActifs) + " Niv: " + str(currentNiveau))
 
 	if chainePoissons >= seuilsPoissons[currentNiveau] && geniteursActifs >= seuilsGeniteurs[currentNiveau]:
@@ -240,7 +238,8 @@ func poisson_reached_bucket(poissonNode):
 
 	if currentNiveau == 5 and chainePoissons > 100 and geniteursActifs == totalGeniteurs:
 		chainePoissons = 0
-		Hud.set_streak(0, seuilsPoissons[currentNiveau])
+		update_streak()
+		Hud.set_temp_message("Getting faster !", 5)
 		$Piscine.set_timer($Piscine.get_timer() * 0.9)
 
 func level_up():
@@ -248,8 +247,7 @@ func level_up():
 	chainePoissons = 0
 	toogle_level_elements(levelNodes[currentNiveau], true)
 	refresh_genitor_prices()
-	Hud.set_streak(0, seuilsPoissons[currentNiveau])
-	Hud.set_genitor_warning(true)
+	Hud.set_genitor_warning()
 
 func toogle_level_elements(nodeName: String, value: bool):
 	for element in get_node(nodeName).get_children():
@@ -289,3 +287,7 @@ func popup(text, color, pos):
 	t.position = pos
 	t.set_floating_text(text)
 	t.set_floating_color(color)
+
+func update_streak():
+	if (geniteursActifs >= seuilsGeniteurs[currentNiveau]):
+		Hud.set_streak(chainePoissons, seuilsPoissons[currentNiveau])

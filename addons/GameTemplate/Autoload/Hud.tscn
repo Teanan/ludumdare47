@@ -22,7 +22,7 @@ onready var hide: = $CanvasLayer/GUI/MarginContainer/VBoxContainer2/Hide
 onready var topr: = $CanvasLayer/GUI/MarginContainer/VBoxContainer/Top/TopRight
 onready var topl: = $CanvasLayer/GUI/MarginContainer/VBoxContainer/Top/TopLeft
 onready var streak: = $CanvasLayer/GUI/MarginContainer/VBoxContainer/Top/TopLeft/Streak
-onready var genW: = $CanvasLayer/GUI/MarginContainer/VBoxContainer/Top/TopLeft/GeniteurWarning
+onready var warn: = $CanvasLayer/GUI/MarginContainer/VBoxContainer/Top/TopLeft/GeniteurWarning
 
 signal buy_item(name)
 signal buy_fish(amount)
@@ -93,8 +93,18 @@ func set_poissons(inPool: int, total: int):
 func set_streak(amount: int, objective: int):
 	streak.text = \"Streak: \" + str(amount) + \"/\" + str(objective)
 
-func set_genitor_warning(visible: bool):
-	genW.visible = visible
+func set_temp_message(message: String, timeout: int):
+	warn.text = message
+	var timer = Timer.new()
+	self.add_child(timer)
+	timer.start(5)
+	timer.connect(\"timeout\", self, \"_hide_message\")
+
+func _hide_message():
+	warn.text = \"\"
+
+func set_genitor_warning():
+	streak.text = \"Unlock all spawners to proceed !\"
 
 func _on_BuyItem1_pressed():
 	emit_signal(\"buy_item\", \"Platform\")
@@ -115,13 +125,13 @@ func _on_BuyFish_pressed():
 	emit_signal(\"buy_fish\", 1)
 "
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 size = 10
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 10 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=3]
 size = 6
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
@@ -168,14 +178,15 @@ margin_bottom = 30.0
 mouse_filter = 2
 
 [node name="TopLeft" type="VBoxContainer" parent="CanvasLayer/GUI/MarginContainer/VBoxContainer/Top"]
-margin_right = 109.0
+margin_right = 46.0
 margin_bottom = 30.0
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Streak" type="Label" parent="CanvasLayer/GUI/MarginContainer/VBoxContainer/Top/TopLeft"]
-margin_right = 109.0
+margin_right = 46.0
 margin_bottom = 13.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
@@ -183,14 +194,13 @@ text = "Streak: 0"
 
 [node name="GeniteurWarning" type="Label" parent="CanvasLayer/GUI/MarginContainer/VBoxContainer/Top/TopLeft"]
 margin_top = 17.0
-margin_right = 109.0
+margin_right = 46.0
 margin_bottom = 26.0
 size_flags_horizontal = 3
-custom_fonts/font = SubResource( 3 )
-text = "Unlock all spawners to proceed !"
+custom_fonts/font = SubResource( 2 )
 
 [node name="Streak3" type="Label" parent="CanvasLayer/GUI/MarginContainer/VBoxContainer/Top"]
-margin_left = 113.0
+margin_left = 50.0
 margin_top = 8.0
 margin_right = 280.0
 margin_bottom = 21.0
@@ -339,7 +349,7 @@ margin_top = 167.0
 margin_right = 312.0
 margin_bottom = 172.0
 size_flags_horizontal = 3
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = " [SHIFT] Hide Shop"
 [connection signal="pressed" from="CanvasLayer/GUI/MarginContainer/VBoxContainer2/Top3/BuyItem1" to="." method="_on_BuyItem1_pressed"]
 [connection signal="pressed" from="CanvasLayer/GUI/MarginContainer/VBoxContainer2/Top3/BuyItem2" to="." method="_on_BuyItem2_pressed"]
