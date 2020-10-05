@@ -92,6 +92,8 @@ func set_poissons(inPool: int, total: int):
 
 func set_streak(amount: int, objective: int):
 	streak.text = \"Streak: \" + str(amount) + \"/\" + str(objective)
+	if warn.text == \"Unlock all spawners to proceed !\":
+		warn.text = \"\"
 
 func set_temp_message(message: String, timeout: int):
 	warn.text = message
@@ -104,7 +106,8 @@ func _hide_message():
 	warn.text = \"\"
 
 func set_genitor_warning():
-	streak.text = \"Unlock all spawners to proceed !\"
+	streak.text = \"\"
+	warn.text = \"Unlock all spawners to proceed !\"
 
 func _on_BuyItem1_pressed():
 	emit_signal(\"buy_item\", \"Platform\")
