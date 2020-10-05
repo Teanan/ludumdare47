@@ -9,7 +9,7 @@ func _ready():
 	pass
 
 func disable_collision(disabled: bool):
-	$CollisionShape2D.disabled = disabled
+	$CollisionShape2D.set_deferred("disabled", disabled)
 
 func was_clicked(viewport, event, shape_idx):
 	if canBeDestroyed and event is InputEventMouseButton \

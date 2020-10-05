@@ -22,5 +22,5 @@ func _on_Area_body_entered(body):
 		body.queue_free()
 
 func disable_collision(disabled: bool):
-	$"CollisionPolygon2D".disabled = disabled
-	$"Area/CollisionShape2D".disabled = disabled
+	$"CollisionPolygon2D".set_deferred("disabled", disabled)
+	$"Area/CollisionShape2D".set_deferred("disabled", disabled)

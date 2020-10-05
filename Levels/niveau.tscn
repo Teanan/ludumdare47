@@ -202,10 +202,6 @@ rotation = 1.57079
 position = Vector2( 793.489, 742.844 )
 rotation = -0.785397
 
-[node name="Platform28" parent="Level3" instance=ExtResource( 1 )]
-position = Vector2( 555.081, 301.546 )
-rotation = 1.57079
-
 [node name="Platform34" parent="Level3" instance=ExtResource( 1 )]
 position = Vector2( 1293.79, 439.148 )
 rotation = 1.57079
@@ -216,10 +212,6 @@ rotation = 1.57079
 
 [node name="Platform36" parent="Level3" instance=ExtResource( 1 )]
 position = Vector2( 1293.79, 324.186 )
-rotation = 1.57079
-
-[node name="Platform37" parent="Level3" instance=ExtResource( 1 )]
-position = Vector2( 1293.79, 267.186 )
 rotation = 1.57079
 
 [node name="Platform33" parent="Level3" instance=ExtResource( 1 )]
@@ -241,11 +233,8 @@ rotation = 1.57079
 position = Vector2( 998.932, 736.358 )
 rotation = 1.57079
 
-[node name="Blower2" parent="Level3" instance=ExtResource( 9 )]
-position = Vector2( 571.461, 290.903 )
-
 [node name="Blower3" parent="Level3" instance=ExtResource( 9 )]
-position = Vector2( 1310.57, 288.861 )
+position = Vector2( 1310.17, 340.055 )
 
 [node name="Conveyor" parent="Level3" instance=ExtResource( 10 )]
 position = Vector2( 1309.24, 738.954 )
@@ -310,6 +299,19 @@ position = Vector2( 1395.42, 391.537 )
 
 [node name="Geniteur_4" parent="Level4" instance=ExtResource( 2 )]
 position = Vector2( 512.427, 350.006 )
+
+[node name="Platform28" parent="Level4" instance=ExtResource( 1 )]
+position = Vector2( 535.132, 301.061 )
+rotation = -1.5708
+
+[node name="Blower2" parent="Level4" instance=ExtResource( 9 )]
+position = Vector2( 518.4, 289.857 )
+rotation = 3.14159
+scale = Vector2( 0.5, -0.5 )
+
+[node name="Platform37" parent="Level4" instance=ExtResource( 1 )]
+position = Vector2( 1293.79, 267.186 )
+rotation = 1.57079
 
 [node name="Level5" type="Node2D" parent="."]
 

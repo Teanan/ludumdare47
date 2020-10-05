@@ -51,5 +51,5 @@ func myPoissonDied():
 	emit_signal("myPoissonDied")
 
 func disable_collision(disabled: bool):
-	$"CollisionShape2D".disabled = disabled
-	$"CollisionShape2D2".disabled = disabled
+	$"CollisionShape2D".set_deferred("disabled", disabled)
+	$"CollisionShape2D2".set_deferred("disabled", disabled)

@@ -254,8 +254,9 @@ func level_up():
 func toogle_level_elements(nodeName: String, value: bool):
 	for element in get_node(nodeName).get_children():
 		element.set_visible(value)
-		for elementChild in element.get_children():
-			elementChild.set_deferred("disabled", !value)
+		element.disable_collision(!value)
+#		for elementChild in element.get_children():
+#			elementChild.set_deferred("disabled", !value)
 
 func add_poisson_max(amount: int):
 	$Piscine.poissonsInPool += amount

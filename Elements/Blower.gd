@@ -9,9 +9,9 @@ func _ready():
 	pass
 
 func disable_collision(disabled: bool):
-	$faucet/CollisionPolygon2D.disabled = disabled
-	$water_spray/CollisionPolygon2D.disabled = disabled
-	$water_flow/CollisionShape2D.disabled = disabled
+	$faucet/CollisionPolygon2D.set_deferred("disabled", disabled)
+	$water_spray/CollisionPolygon2D.set_deferred("disabled", disabled)
+	$water_flow/CollisionShape2D.set_deferred("disabled", disabled)
 
 func was_clicked(viewport, event, shape_idx):
 	if canBeDestroyed and event is InputEventMouseButton \
