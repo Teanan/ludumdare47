@@ -18,7 +18,7 @@ func _ready():
 
 func _update_price(newPrice: int):
 	get_node("Money_tag/Price").set_text(str(newPrice))
-	
+
 func _geniter():
 	if isActive:
 		var balle = load("res://Elements/Ball.tscn")
@@ -48,3 +48,7 @@ func _on_Geniteur_input_event(viewport, event, shape_idx):
 
 func myPoissonDied():
 	emit_signal("myPoissonDied")
+
+func disable_collision(disabled: bool):
+	$"CollisionShape2D".disabled = disabled
+	$"CollisionShape2D2".disabled = disabled

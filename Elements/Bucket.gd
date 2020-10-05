@@ -20,3 +20,7 @@ func _on_Area_body_entered(body):
 
 		emit_signal("ballEntered", self)
 		body.queue_free()
+
+func disable_collision(disabled: bool):
+	$"CollisionPolygon2D".disabled = disabled
+	$"Area/CollisionShape2D".disabled = disabled

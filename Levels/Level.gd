@@ -39,6 +39,15 @@ var geniteurCost = [
 	500,
 ]
 
+var levelNodes = [
+	"Level0",
+	"Level1",
+	"Level2",
+	"Level3",
+	"Level4",
+	"Level5",
+]
+
 func _ready()->void:
 
 	preload_elmts()
@@ -49,6 +58,10 @@ func _ready()->void:
 
 	# Initialize zoom
 	$Camera.set_zoom_level(currentNiveau)
+
+	# Desactivate all elements unseen
+	for level_index in range(1,levelNodes.size()):
+		toogle_level_elements(levelNodes[level_index], false)
 
 	# Initialize genitors
 	var geniteurs = get_tree().get_nodes_in_group("geniteurs")
@@ -64,7 +77,7 @@ func _ready()->void:
 	PauseMenu.can_show = true
 
 	# Start first Genitor
-	$Geniteur_1.toggleGeniteur()
+	$Level0/Geniteur_1.toggleGeniteur()
 	geniteursActifs += 1
 
 func _on_Button_pressed()->void:
@@ -227,7 +240,13 @@ func poisson_reached_bucket(poissonNode):
 
 func level_up():
 	currentNiveau += 1
+	toogle_level_elements(levelNodes[currentNiveau], true)
 	refresh_genitor_prices()
+
+func toogle_level_elements(nodeName: String, value: bool):
+	for element in get_node(nodeName).get_children():
+		element.set_visible(value)
+		element.disable_collision(!value)
 
 func add_poisson_max(amount: int):
 	$Piscine.poissonsInPool += amount

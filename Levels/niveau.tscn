@@ -49,298 +49,30 @@ wait_time = 2.0
 
 [node name="RefillTimer" type="Timer" parent="Piscine"]
 
-[node name="LevelFrame" type="Node2D" parent="."]
-
-[node name="Trampoline" parent="LevelFrame" instance=ExtResource( 7 )]
-position = Vector2( 850, 500 )
-rotation = 0.523598
-
-[node name="Trampoline7" parent="LevelFrame" instance=ExtResource( 7 )]
-position = Vector2( 681.047, 386.735 )
-rotation = -0.785397
-
-[node name="Trampoline5" parent="LevelFrame" instance=ExtResource( 7 )]
-position = Vector2( 682.501, 670.035 )
-
-[node name="Trampoline6" parent="LevelFrame" instance=ExtResource( 7 )]
-position = Vector2( 596.658, 670.012 )
-
-[node name="Trampoline4" parent="LevelFrame" instance=ExtResource( 7 )]
-position = Vector2( 493.318, 417.318 )
-rotation = 0.523598
-
-[node name="Trampoline9" parent="LevelFrame" instance=ExtResource( 7 )]
-position = Vector2( 433.614, 724.245 )
-rotation = 0.523598
-
-[node name="Trampoline2" parent="LevelFrame" instance=ExtResource( 7 )]
-position = Vector2( 1239.44, 618.268 )
-rotation = 0.0206416
-
-[node name="Trampoline8" parent="LevelFrame" instance=ExtResource( 7 )]
-position = Vector2( 1323.52, 504.872 )
-rotation = -0.785397
-
-[node name="Trampoline3" parent="LevelFrame" instance=ExtResource( 7 )]
-position = Vector2( 918.61, 662.876 )
-
-[node name="Platform" parent="LevelFrame" instance=ExtResource( 1 )]
-position = Vector2( 915, 510 )
-rotation = 0.0872665
-
-[node name="Platform13" parent="LevelFrame" instance=ExtResource( 1 )]
-position = Vector2( 763.403, 484.602 )
-
-[node name="Platform31" parent="LevelFrame" instance=ExtResource( 1 )]
-position = Vector2( 847.536, 341.036 )
-rotation = 0.261799
-
-[node name="Platform32" parent="LevelFrame" instance=ExtResource( 1 )]
-position = Vector2( 819.256, 304.253 )
-rotation = 1.57079
-
-[node name="Platform29" parent="LevelFrame" instance=ExtResource( 1 )]
-position = Vector2( 763.403, 602.586 )
-
-[node name="Platform9" parent="LevelFrame" instance=ExtResource( 1 )]
-position = Vector2( 505.408, 574.841 )
-rotation = -0.785397
-
-[node name="Platform21" parent="LevelFrame" instance=ExtResource( 1 )]
-position = Vector2( 444.236, 325.591 )
-
-[node name="Platform27" parent="LevelFrame" instance=ExtResource( 1 )]
-position = Vector2( 415.225, 349.556 )
-rotation = 1.57079
-
-[node name="Platform20" parent="LevelFrame" instance=ExtResource( 1 )]
-position = Vector2( 536.182, 439.076 )
-rotation = 0.523598
-scale = Vector2( 0.7, 1 )
-physics_material_override = SubResource( 1 )
-script = SubResource( 2 )
-
-[node name="Platform15" parent="LevelFrame" instance=ExtResource( 1 )]
-position = Vector2( 793.489, 742.844 )
-rotation = -0.785397
-
-[node name="Platform19" parent="LevelFrame" instance=ExtResource( 1 )]
-position = Vector2( 518.075, 667.074 )
-
-[node name="Platform10" parent="LevelFrame" instance=ExtResource( 1 )]
-position = Vector2( 646.772, 634.159 )
-rotation = 1.57079
-
-[node name="Platform11" parent="LevelFrame" instance=ExtResource( 1 )]
-position = Vector2( 646.772, 576.159 )
-rotation = 1.57079
-
-[node name="Platform12" parent="LevelFrame" instance=ExtResource( 1 )]
-position = Vector2( 646.772, 518.159 )
-rotation = 1.57079
-
-[node name="Platform28" parent="LevelFrame" instance=ExtResource( 1 )]
-position = Vector2( 555.081, 301.546 )
-rotation = 1.57079
-
-[node name="Platform6" parent="LevelFrame" instance=ExtResource( 1 )]
-position = Vector2( 1142.39, 560.759 )
-rotation = 0.785397
-
-[node name="Platform38" parent="LevelFrame" instance=ExtResource( 1 )]
-position = Vector2( 1182.01, 600.424 )
-rotation = 0.785397
-
-[node name="Platform30" parent="LevelFrame" instance=ExtResource( 1 )]
-position = Vector2( 1143.34, 657.978 )
-
-[node name="Platform22" parent="LevelFrame" instance=ExtResource( 1 )]
-position = Vector2( 1395.73, 431.313 )
-rotation = -0.785397
-
-[node name="Platform39" parent="LevelFrame" instance=ExtResource( 1 )]
-position = Vector2( 1447.33, 495.664 )
-rotation = 1.57079
-
-[node name="Platform40" parent="LevelFrame" instance=ExtResource( 1 )]
-position = Vector2( 1524.04, 585.449 )
-rotation = 3.14159
-
-[node name="Platform34" parent="LevelFrame" instance=ExtResource( 1 )]
-position = Vector2( 1293.79, 439.148 )
-rotation = 1.57079
-
-[node name="Platform35" parent="LevelFrame" instance=ExtResource( 1 )]
-position = Vector2( 1293.79, 381.186 )
-rotation = 1.57079
-
-[node name="Platform36" parent="LevelFrame" instance=ExtResource( 1 )]
-position = Vector2( 1293.79, 324.186 )
-rotation = 1.57079
-
-[node name="Platform37" parent="LevelFrame" instance=ExtResource( 1 )]
-position = Vector2( 1293.79, 267.186 )
-rotation = 1.57079
-
-[node name="Platform23" parent="LevelFrame" instance=ExtResource( 1 )]
-position = Vector2( 1476.15, 827.932 )
-rotation = 0.785397
-
-[node name="Platform7" parent="LevelFrame" instance=ExtResource( 1 )]
-position = Vector2( 1038.98, 428.921 )
-rotation = 0.785397
-
-[node name="Platform33" parent="LevelFrame" instance=ExtResource( 1 )]
-position = Vector2( 1119.84, 337.947 )
-rotation = -0.785397
-
-[node name="Platform2" parent="LevelFrame" instance=ExtResource( 1 )]
-position = Vector2( 980, 520 )
-rotation = 0.0872665
-
-[node name="Platform3" parent="LevelFrame" instance=ExtResource( 1 )]
-position = Vector2( 1050, 560 )
-rotation = -0.698132
-
-[node name="Platform4" parent="LevelFrame" instance=ExtResource( 1 )]
-position = Vector2( 960, 580 )
-
-[node name="Platform16" parent="LevelFrame" instance=ExtResource( 1 )]
-position = Vector2( 1008.39, 724.797 )
-rotation = 6.28318
-
-[node name="Platform14" parent="LevelFrame" instance=ExtResource( 1 )]
-position = Vector2( 673.912, 718.11 )
-
-[node name="Platform5" parent="LevelFrame" instance=ExtResource( 1 )]
-position = Vector2( 865, 600 )
-
-[node name="Platform8" parent="LevelFrame" instance=ExtResource( 1 )]
-position = Vector2( 1231.39, 774.525 )
-
-[node name="Platform26" parent="LevelFrame" instance=ExtResource( 1 )]
-position = Vector2( 1405.52, 774.525 )
-
-[node name="Platform18" parent="LevelFrame" instance=ExtResource( 1 )]
-position = Vector2( 1202.25, 741.227 )
-rotation = 1.57079
-
-[node name="Platform17" parent="LevelFrame" instance=ExtResource( 1 )]
-position = Vector2( 1005.31, 810.845 )
-
-[node name="Blower" parent="LevelFrame" instance=ExtResource( 9 )]
-position = Vector2( 998.932, 736.358 )
-rotation = 1.57079
-
-[node name="Blower2" parent="LevelFrame" instance=ExtResource( 9 )]
-position = Vector2( 571.461, 290.903 )
-
-[node name="Blower3" parent="LevelFrame" instance=ExtResource( 9 )]
-position = Vector2( 1310.57, 288.861 )
-
-[node name="Blower4" parent="LevelFrame" instance=ExtResource( 9 )]
-position = Vector2( 1508.57, 602.595 )
-rotation = 1.57079
-
-[node name="Conveyor" parent="LevelFrame" instance=ExtResource( 10 )]
-position = Vector2( 1309.24, 738.954 )
-rotation = 3.14159
-
-[node name="Bucket" parent="." instance=ExtResource( 4 )]
-position = Vector2( 870, 580 )
-
-[node name="Bucket8" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1143.72, 638.52 )
-
-[node name="Bucket5" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1006.29, 790.932 )
-
-[node name="Bucket4" parent="." instance=ExtResource( 4 )]
-position = Vector2( 660.679, 697.326 )
-rotation = 1.57079
-
-[node name="Bucket3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 507.045, 646.647 )
-
-[node name="Bucket7" parent="." instance=ExtResource( 4 )]
-position = Vector2( 443.965, 340.83 )
-rotation = -3.14159
-
-[node name="Bucket2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1229.19, 753.982 )
-
-[node name="Bucket6" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1402.43, 753.982 )
-
-[node name="Geniteur_1" parent="." instance=ExtResource( 2 )]
-position = Vector2( 850, 465 )
-
-[node name="Geniteur_2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1140.49, 430.35 )
-
-[node name="Geniteur_3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1042.73, 339.733 )
-
-[node name="Geniteur_9" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1119.1, 292.37 )
-
-[node name="Geniteur_8" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1395.42, 391.537 )
-
-[node name="Geniteur_15" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1481.31, 499.139 )
-
-[node name="Geniteur_12" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1318.05, 446.412 )
-
-[node name="Geniteur_11" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1480.88, 768.038 )
-
-[node name="Geniteur_5" parent="." instance=ExtResource( 2 )]
-position = Vector2( 682.501, 412.432 )
-
-[node name="Geniteur_13" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1236.65, 557.066 )
-
-[node name="Geniteur_7" parent="." instance=ExtResource( 2 )]
-position = Vector2( 682.501, 333.86 )
-
-[node name="Geniteur_6" parent="." instance=ExtResource( 2 )]
-position = Vector2( 847.573, 249.541 )
-
-[node name="Geniteur_4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 512.427, 350.006 )
-
-[node name="Geniteur_10" parent="." instance=ExtResource( 2 )]
-position = Vector2( 444.526, 288.099 )
-
-[node name="Geniteur_14" parent="." instance=ExtResource( 2 )]
-position = Vector2( 442.414, 655.869 )
-
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Cameras_visual_only" type="Node2D" parent="."]
 position = Vector2( 960, 540 )
 
-[node name="Camera2" type="Camera2D" parent="Node2D"]
+[node name="Camera2" type="Camera2D" parent="Cameras_visual_only"]
 current = true
 zoom = Vector2( 1.5, 1.5 )
 script = ExtResource( 6 )
 
-[node name="Camera3" type="Camera2D" parent="Node2D"]
+[node name="Camera3" type="Camera2D" parent="Cameras_visual_only"]
 current = true
 zoom = Vector2( 2, 2 )
 script = ExtResource( 6 )
 
-[node name="Camera4" type="Camera2D" parent="Node2D"]
+[node name="Camera4" type="Camera2D" parent="Cameras_visual_only"]
 current = true
 zoom = Vector2( 2.5, 2.5 )
 script = ExtResource( 6 )
 
-[node name="Camera5" type="Camera2D" parent="Node2D"]
+[node name="Camera5" type="Camera2D" parent="Cameras_visual_only"]
 current = true
 zoom = Vector2( 3, 3 )
 script = ExtResource( 6 )
 
-[node name="Camera6" type="Camera2D" parent="Node2D"]
+[node name="Camera6" type="Camera2D" parent="Cameras_visual_only"]
 current = true
 zoom = Vector2( 3.5, 3.5 )
 script = ExtResource( 6 )
@@ -349,15 +81,292 @@ script = ExtResource( 6 )
 position = Vector2( 960, 540 )
 current = true
 script = ExtResource( 6 )
+
+[node name="Level0" type="Node2D" parent="."]
+
+[node name="Trampoline" parent="Level0" instance=ExtResource( 7 )]
+position = Vector2( 850, 500 )
+rotation = 0.523598
+
+[node name="Platform" parent="Level0" instance=ExtResource( 1 )]
+position = Vector2( 915, 510 )
+rotation = 0.0872665
+
+[node name="Platform2" parent="Level0" instance=ExtResource( 1 )]
+position = Vector2( 980, 520 )
+rotation = 0.0872665
+
+[node name="Platform3" parent="Level0" instance=ExtResource( 1 )]
+position = Vector2( 1050, 560 )
+rotation = -0.698132
+
+[node name="Platform4" parent="Level0" instance=ExtResource( 1 )]
+position = Vector2( 960, 580 )
+
+[node name="Platform5" parent="Level0" instance=ExtResource( 1 )]
+position = Vector2( 865, 600 )
+
+[node name="Bucket" parent="Level0" instance=ExtResource( 4 )]
+position = Vector2( 870, 580 )
+
+[node name="Geniteur_1" parent="Level0" instance=ExtResource( 2 )]
+position = Vector2( 850, 465 )
+
+[node name="Level1" type="Node2D" parent="."]
+
+[node name="Trampoline3" parent="Level1" instance=ExtResource( 7 )]
+position = Vector2( 918.61, 662.876 )
+
+[node name="Platform13" parent="Level1" instance=ExtResource( 1 )]
+position = Vector2( 763.403, 484.602 )
+
+[node name="Platform29" parent="Level1" instance=ExtResource( 1 )]
+position = Vector2( 763.403, 602.586 )
+
+[node name="Platform6" parent="Level1" instance=ExtResource( 1 )]
+position = Vector2( 1142.39, 560.759 )
+rotation = 0.785397
+
+[node name="Platform38" parent="Level1" instance=ExtResource( 1 )]
+position = Vector2( 1182.01, 600.424 )
+rotation = 0.785397
+
+[node name="Platform30" parent="Level1" instance=ExtResource( 1 )]
+position = Vector2( 1143.34, 657.978 )
+
+[node name="Platform7" parent="Level1" instance=ExtResource( 1 )]
+position = Vector2( 1038.98, 428.921 )
+rotation = 0.785397
+
+[node name="Bucket8" parent="Level1" instance=ExtResource( 4 )]
+position = Vector2( 1143.72, 638.52 )
+
+[node name="Geniteur_2" parent="Level1" instance=ExtResource( 2 )]
+position = Vector2( 1140.49, 430.35 )
+
+[node name="Level2" type="Node2D" parent="."]
+
+[node name="Trampoline7" parent="Level2" instance=ExtResource( 7 )]
+position = Vector2( 681.047, 386.735 )
+rotation = -0.785397
+
+[node name="Trampoline5" parent="Level2" instance=ExtResource( 7 )]
+position = Vector2( 682.501, 670.035 )
+
+[node name="Trampoline2" parent="Level2" instance=ExtResource( 7 )]
+position = Vector2( 1250, 600 )
+
+[node name="Platform10" parent="Level2" instance=ExtResource( 1 )]
+position = Vector2( 646.772, 634.159 )
+rotation = 1.57079
+
+[node name="Platform11" parent="Level2" instance=ExtResource( 1 )]
+position = Vector2( 646.772, 576.159 )
+rotation = 1.57079
+
+[node name="Platform12" parent="Level2" instance=ExtResource( 1 )]
+position = Vector2( 646.772, 518.159 )
+rotation = 1.57079
+
+[node name="Platform14" parent="Level2" instance=ExtResource( 1 )]
+position = Vector2( 673.912, 718.11 )
+
+[node name="Bucket4" parent="Level2" instance=ExtResource( 4 )]
+position = Vector2( 660.679, 697.326 )
+rotation = 1.57079
+
+[node name="Geniteur_5" parent="Level2" instance=ExtResource( 2 )]
+position = Vector2( 682.501, 412.432 )
+
+[node name="Geniteur_13" parent="Level2" instance=ExtResource( 2 )]
+position = Vector2( 1236.65, 557.066 )
+
+[node name="Level3" type="Node2D" parent="."]
+
+[node name="Trampoline6" parent="Level3" instance=ExtResource( 7 )]
+position = Vector2( 596.658, 670.012 )
+
+[node name="Trampoline8" parent="Level3" instance=ExtResource( 7 )]
+position = Vector2( 1323.52, 504.872 )
+rotation = -0.785397
+
+[node name="Platform31" parent="Level3" instance=ExtResource( 1 )]
+position = Vector2( 847.536, 341.036 )
+rotation = 0.261799
+
+[node name="Platform32" parent="Level3" instance=ExtResource( 1 )]
+position = Vector2( 819.256, 304.253 )
+rotation = 1.57079
+
+[node name="Platform15" parent="Level3" instance=ExtResource( 1 )]
+position = Vector2( 793.489, 742.844 )
+rotation = -0.785397
+
+[node name="Platform28" parent="Level3" instance=ExtResource( 1 )]
+position = Vector2( 555.081, 301.546 )
+rotation = 1.57079
+
+[node name="Platform34" parent="Level3" instance=ExtResource( 1 )]
+position = Vector2( 1293.79, 439.148 )
+rotation = 1.57079
+
+[node name="Platform35" parent="Level3" instance=ExtResource( 1 )]
+position = Vector2( 1293.79, 381.186 )
+rotation = 1.57079
+
+[node name="Platform36" parent="Level3" instance=ExtResource( 1 )]
+position = Vector2( 1293.79, 324.186 )
+rotation = 1.57079
+
+[node name="Platform37" parent="Level3" instance=ExtResource( 1 )]
+position = Vector2( 1293.79, 267.186 )
+rotation = 1.57079
+
+[node name="Platform33" parent="Level3" instance=ExtResource( 1 )]
+position = Vector2( 1119.84, 337.947 )
+rotation = -0.785397
+
+[node name="Platform16" parent="Level3" instance=ExtResource( 1 )]
+position = Vector2( 1008.39, 724.797 )
+rotation = -5.07036e-06
+
+[node name="Platform8" parent="Level3" instance=ExtResource( 1 )]
+position = Vector2( 1231.39, 774.525 )
+
+[node name="Platform18" parent="Level3" instance=ExtResource( 1 )]
+position = Vector2( 1202.25, 741.227 )
+rotation = 1.57079
+
+[node name="Blower" parent="Level3" instance=ExtResource( 9 )]
+position = Vector2( 998.932, 736.358 )
+rotation = 1.57079
+
+[node name="Blower2" parent="Level3" instance=ExtResource( 9 )]
+position = Vector2( 571.461, 290.903 )
+
+[node name="Blower3" parent="Level3" instance=ExtResource( 9 )]
+position = Vector2( 1310.57, 288.861 )
+
+[node name="Conveyor" parent="Level3" instance=ExtResource( 10 )]
+position = Vector2( 1309.24, 738.954 )
+rotation = 3.14159
+
+[node name="Bucket2" parent="Level3" instance=ExtResource( 4 )]
+position = Vector2( 1229.19, 753.982 )
+
+[node name="Geniteur_3" parent="Level3" instance=ExtResource( 2 )]
+position = Vector2( 1042.73, 339.733 )
+
+[node name="Geniteur_12" parent="Level3" instance=ExtResource( 2 )]
+position = Vector2( 1318.05, 446.412 )
+
+[node name="Geniteur_7" parent="Level3" instance=ExtResource( 2 )]
+position = Vector2( 682.501, 333.86 )
+
+[node name="Level4" type="Node2D" parent="."]
+
+[node name="Trampoline4" parent="Level4" instance=ExtResource( 7 )]
+position = Vector2( 493.318, 417.318 )
+rotation = 0.523598
+
+[node name="Platform9" parent="Level4" instance=ExtResource( 1 )]
+position = Vector2( 505.408, 574.841 )
+rotation = -0.785397
+
+[node name="Platform20" parent="Level4" instance=ExtResource( 1 )]
+position = Vector2( 536.182, 439.076 )
+rotation = 0.523598
+scale = Vector2( 0.7, 1 )
+physics_material_override = SubResource( 1 )
+script = SubResource( 2 )
+
+[node name="Platform19" parent="Level4" instance=ExtResource( 1 )]
+position = Vector2( 518.075, 667.074 )
+
+[node name="Platform22" parent="Level4" instance=ExtResource( 1 )]
+position = Vector2( 1395.73, 431.313 )
+rotation = -0.785397
+
+[node name="Platform26" parent="Level4" instance=ExtResource( 1 )]
+position = Vector2( 1405.52, 774.525 )
+
+[node name="Platform17" parent="Level4" instance=ExtResource( 1 )]
+position = Vector2( 1005.31, 810.845 )
+
+[node name="Bucket5" parent="Level4" instance=ExtResource( 4 )]
+position = Vector2( 1006.29, 790.932 )
+
+[node name="Bucket3" parent="Level4" instance=ExtResource( 4 )]
+position = Vector2( 507.045, 646.647 )
+
+[node name="Bucket6" parent="Level4" instance=ExtResource( 4 )]
+position = Vector2( 1402.43, 753.982 )
+
+[node name="Geniteur_9" parent="Level4" instance=ExtResource( 2 )]
+position = Vector2( 1119.1, 292.37 )
+
+[node name="Geniteur_8" parent="Level4" instance=ExtResource( 2 )]
+position = Vector2( 1395.42, 391.537 )
+
+[node name="Geniteur_4" parent="Level4" instance=ExtResource( 2 )]
+position = Vector2( 512.427, 350.006 )
+
+[node name="Level5" type="Node2D" parent="."]
+
+[node name="Trampoline9" parent="Level5" instance=ExtResource( 7 )]
+position = Vector2( 433.614, 724.245 )
+rotation = 0.523598
+
+[node name="Platform21" parent="Level5" instance=ExtResource( 1 )]
+position = Vector2( 444.236, 325.591 )
+
+[node name="Platform27" parent="Level5" instance=ExtResource( 1 )]
+position = Vector2( 415.225, 349.556 )
+rotation = 1.57079
+
+[node name="Platform39" parent="Level5" instance=ExtResource( 1 )]
+position = Vector2( 1447.33, 495.664 )
+rotation = 1.57079
+
+[node name="Platform40" parent="Level5" instance=ExtResource( 1 )]
+position = Vector2( 1524.04, 585.449 )
+rotation = 3.14159
+
+[node name="Platform23" parent="Level5" instance=ExtResource( 1 )]
+position = Vector2( 1476.15, 827.932 )
+rotation = 0.785397
+
+[node name="Blower4" parent="Level5" instance=ExtResource( 9 )]
+position = Vector2( 1508.57, 602.595 )
+rotation = 1.57079
+
+[node name="Bucket7" parent="Level5" instance=ExtResource( 4 )]
+position = Vector2( 443.965, 340.83 )
+rotation = -3.14159
+
+[node name="Geniteur_15" parent="Level5" instance=ExtResource( 2 )]
+position = Vector2( 1481.31, 499.139 )
+
+[node name="Geniteur_11" parent="Level5" instance=ExtResource( 2 )]
+position = Vector2( 1480.88, 768.038 )
+
+[node name="Geniteur_6" parent="Level5" instance=ExtResource( 2 )]
+position = Vector2( 847.573, 249.541 )
+
+[node name="Geniteur_10" parent="Level5" instance=ExtResource( 2 )]
+position = Vector2( 444.526, 288.099 )
+
+[node name="Geniteur_14" parent="Level5" instance=ExtResource( 2 )]
+position = Vector2( 442.414, 655.869 )
 [connection signal="Paused" from="." to="." method="on_pause"]
 [connection signal="did_genit" from="Piscine" to="." method="update_poissons_hud"]
 [connection signal="timeout" from="Piscine/GenitionTimer" to="Piscine" method="_geniter"]
 [connection signal="timeout" from="Piscine/RefillTimer" to="Piscine" method="_attempt_refill"]
-[connection signal="ballEntered" from="Bucket" to="." method="poisson_reached_bucket"]
-[connection signal="ballEntered" from="Bucket8" to="." method="poisson_reached_bucket"]
-[connection signal="ballEntered" from="Bucket5" to="." method="poisson_reached_bucket"]
-[connection signal="ballEntered" from="Bucket4" to="." method="poisson_reached_bucket"]
-[connection signal="ballEntered" from="Bucket3" to="." method="poisson_reached_bucket"]
-[connection signal="ballEntered" from="Bucket7" to="." method="poisson_reached_bucket"]
-[connection signal="ballEntered" from="Bucket2" to="." method="poisson_reached_bucket"]
-[connection signal="ballEntered" from="Bucket6" to="." method="poisson_reached_bucket"]
+[connection signal="ballEntered" from="Level0/Bucket" to="." method="poisson_reached_bucket"]
+[connection signal="ballEntered" from="Level1/Bucket8" to="." method="poisson_reached_bucket"]
+[connection signal="ballEntered" from="Level2/Bucket4" to="." method="poisson_reached_bucket"]
+[connection signal="ballEntered" from="Level3/Bucket2" to="." method="poisson_reached_bucket"]
+[connection signal="ballEntered" from="Level4/Bucket5" to="." method="poisson_reached_bucket"]
+[connection signal="ballEntered" from="Level4/Bucket3" to="." method="poisson_reached_bucket"]
+[connection signal="ballEntered" from="Level4/Bucket6" to="." method="poisson_reached_bucket"]
+[connection signal="ballEntered" from="Level5/Bucket7" to="." method="poisson_reached_bucket"]
