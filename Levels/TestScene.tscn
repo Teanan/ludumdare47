@@ -1,0 +1,152 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://addons/GameTemplate/GUI/Buttons/DefaultButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Sprites/ball_sprite.png" type="Texture" id=2]
+[ext_resource path="res://Elements/Bucket.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Elements/Blower.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Levels/niveau.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Elements/Background_full.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Elements/géniteur.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Elements/Trampoline.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Elements/Platform.tscn" type="PackedScene" id=9]
+[ext_resource path="res://addons/GameTemplate/Assets/Fonts/m5x7_64.tres" type="DynamicFont" id=10]
+[ext_resource path="res://Assets/Fonts/m5x7_16.tres" type="DynamicFont" id=11]
+[ext_resource path="res://MainMenu/MainMenu.gd" type="Script" id=12]
+
+[node name="MainMenu" type="CanvasLayer"]
+layer = 0
+script = ExtResource( 12 )
+First_Level = ExtResource( 5 )
+
+[node name="Background" parent="." instance=ExtResource( 6 )]
+
+[node name="Sprite" type="Sprite" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0.32549 )
+position = Vector2( 96.6968, 91.7471 )
+rotation = 0.328122
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+flip_h = true
+
+[node name="Geniteur" parent="." instance=ExtResource( 7 )]
+position = Vector2( 202.19, 26.2898 )
+isActive = true
+
+[node name="Blower" parent="Geniteur" instance=ExtResource( 4 )]
+position = Vector2( 11.923, 52.8479 )
+rotation = 2.96706
+
+[node name="Bucket" parent="." instance=ExtResource( 3 )]
+position = Vector2( 132.19, 70.7828 )
+scale = Vector2( 1, 1 )
+
+[node name="Trampoline" parent="." instance=ExtResource( 8 )]
+position = Vector2( 305.807, 99.38 )
+rotation = -0.139626
+
+[node name="Platform" parent="." instance=ExtResource( 9 )]
+position = Vector2( 307.649, 52.8922 )
+rotation = -0.174533
+
+[node name="Platform2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 128.19, 85.7828 )
+
+[node name="Platform3" parent="." instance=ExtResource( 9 )]
+position = Vector2( 305.92, 73.7005 )
+rotation = -0.174533
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
+margin_left = 181.0
+margin_top = 33.0
+margin_right = 305.0
+margin_bottom = 157.0
+custom_fonts/normal_font = ExtResource( 10 )
+bbcode_enabled = true
+bbcode_text = " [center][wave amp=100 freq=2]Titre
+du
+jeu[/wave][/center]"
+text = " Titre
+du
+jeu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+visible = false
+margin_left = 16.0
+margin_top = 160.0
+margin_right = 304.0
+margin_bottom = 174.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NewGame" parent="HBoxContainer" groups=[
+"MainMenu",
+] instance=ExtResource( 1 )]
+margin_right = 93.0
+margin_bottom = 14.0
+text = "New Game"
+
+[node name="Options" parent="HBoxContainer" instance=ExtResource( 1 )]
+margin_left = 97.0
+margin_right = 190.0
+margin_bottom = 14.0
+text = "Options"
+
+[node name="Exit" parent="HBoxContainer" instance=ExtResource( 1 )]
+margin_left = 194.0
+margin_right = 288.0
+margin_bottom = 14.0
+text = "Exit"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+visible = false
+margin_left = -1.0
+margin_top = 7.0
+margin_right = 53.0
+margin_bottom = 22.0
+custom_fonts/normal_font = ExtResource( 11 )
+text = " MADE BY"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+visible = false
+margin_left = 50.0
+margin_top = 1.0
+margin_right = 177.0
+margin_bottom = 33.0
+custom_fonts/normal_font = ExtResource( 11 )
+text = " Teanan
+ Salier"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="."]
+visible = false
+margin_left = 98.0
+margin_top = 1.0
+margin_right = 177.0
+margin_bottom = 33.0
+custom_fonts/normal_font = ExtResource( 11 )
+text = " Loucasse
+ Élafru"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="timeout" from="Timer" to="Geniteur" method="_geniter"]
+[connection signal="pressed" from="HBoxContainer/NewGame" to="." method="_on_NewGame_pressed"]
+[connection signal="pressed" from="HBoxContainer/Options" to="." method="_on_Options_pressed"]
+[connection signal="pressed" from="HBoxContainer/Exit" to="." method="_on_Exit_pressed"]
