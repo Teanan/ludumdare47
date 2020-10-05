@@ -3,6 +3,7 @@ extends Node2D
 export var isActive = false
 export var defaultPrice = "50"
 
+var rng = RandomNumberGenerator.new()
 var shinyRate = 100
 
 signal myPoissonDied
@@ -26,7 +27,7 @@ func _geniter():
 		noeud.add_to_group("balls")
 		noeud.connect("poissonDied", self, "myPoissonDied")
 
-		if (not randi() % shinyRate):
+		if (not rng.randi_range(0, shinyRate)):
 			noeud.modulate = "#ffd700"
 
 		add_child(noeud)

@@ -143,8 +143,6 @@ func switch_conveyor():
 		cursorElement.set_rotation(current - PI)
 	cursorElement.get_node("clockwiseArrows").set_visible(not cursorElement.get_node("clockwiseArrows").is_visible())
 	cursorElement.get_node("counterClockwiseArrows").set_visible(not cursorElement.get_node("counterClockwiseArrows").is_visible())
-	print(cursorElement.get_node("clockwiseArrows").is_visible())
-	print(cursorElement.get_node("counterClockwiseArrows").is_visible())
 	cursorElement.apply_scale(Vector2(-1, 1))
 
 func _on_buy_item(name):
