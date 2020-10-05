@@ -13,11 +13,11 @@ onready var options: = find_node(\"Options\")
 onready var mainmenu: = find_node(\"MainMenu\")
 onready var exit: = find_node(\"Exit\")
 
-var MainMenu: = 'res://MainMenu/MainMenu.tscn'		# MainMenu scene when in levels
+var MainMenuPath: = 'res://MainMenu/MainMenu.tscn'		# MainMenu scene when in levels
 
 func _ready()->void:
 	MenuEvent.Paused = false
-	
+
 	#Localization
 	SettingsLanguage.connect(\"ReTranslate\", self, \"retranslate\")
 	resume.connect(\"pressed\", self, \"_on_Resume_pressed\")
@@ -25,7 +25,7 @@ func _ready()->void:
 	options.connect(\"pressed\", self, \"_on_Options_pressed\")
 	mainmenu.connect(\"pressed\", self, \"_on_MainMenu_pressed\")
 	exit.connect(\"pressed\", self, \"_on_Exit_pressed\")
-	
+
 
 func show(value:bool)->void:
 	if !can_show:
@@ -48,7 +48,7 @@ func _on_Options_pressed()->void:
 	MenuEvent.Options = true
 
 func _on_MainMenu_pressed()->void:
-	Game.emit_signal(\"ChangeScene\", MainMenu)
+	Game.emit_signal(\"ChangeScene\", load(MainMenuPath))
 	show(false)
 
 func _on_Exit_pressed()->void:
