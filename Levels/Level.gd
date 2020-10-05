@@ -25,7 +25,7 @@ var moneyPerPoisson: int = 10
 var cost = {
 	"Platform": 20,
 	"Trampoline": 50,
-	"conveyor": 75,
+	"conveyor": 100,
 	"Blower": 150,
 	"Fish": 25,
 }
@@ -53,7 +53,7 @@ func _ready()->void:
 	preload_elmts()
 
 	# Initialize resource values
-	set_money(500)
+	set_money(300)
 	update_poissons_hud()
 
 	# Initialize zoom
